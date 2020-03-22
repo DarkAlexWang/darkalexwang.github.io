@@ -72,4 +72,4 @@ avatar: https://c2.staticflickr.com/8/7464/27053268555_c92b86047e_o.jpg
 deploy:
   type: git
   repository: https://github.com/DarkAlexWang/darkalexwang.github.io.git
-  branch: gh-pages
+  branch: master
