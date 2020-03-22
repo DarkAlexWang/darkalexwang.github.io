@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"darkalexwang.github.io","root":"/","scheme":"Muse","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Vim Cheatsheet Note: The original post is from github.  Global1234:help keyword # open help for keyword:o file       # open file:saveas file  # save file as:close        # close current pane  Cursor m">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vim Cheatsheet">
+<meta property="og:url" content="darkalexwang.github.io/2016/03/13/Vim-Cheatsheet/index.html">
+<meta property="og:site_name" content="DarkAlexWang&#39;s Blog">
+<meta property="og:description" content="Vim Cheatsheet Note: The original post is from github.  Global1234:help keyword # open help for keyword:o file       # open file:saveas file  # save file as:close        # close current pane  Cursor m">
+<meta property="og:image" content="https://cdn.shopify.com/s/files/1/0165/4168/files/preview.png">
+<meta property="article:published_time" content="2016-03-13T17:08:01.000Z">
+<meta property="article:modified_time" content="2020-03-22T03:05:27.164Z">
+<meta property="article:author" content="darkalexwang">
+<meta property="article:tag" content="Tech">
+<meta property="article:tag" content="Vim">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.shopify.com/s/files/1/0165/4168/files/preview.png">
+
+<link rel="canonical" href="darkalexwang.github.io/2016/03/13/Vim-Cheatsheet/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>Vim Cheatsheet | DarkAlexWang's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">DarkAlexWang's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="darkalexwang.github.io/2016/03/13/Vim-Cheatsheet/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="darkalexwang">
+      <meta itemprop="description" content="Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DarkAlexWang's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Vim Cheatsheet
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2016-03-13 10:08:01" itemprop="dateCreated datePublished" datetime="2016-03-13T10:08:01-07:00">2016-03-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-03-21 20:05:27" itemprop="dateModified" datetime="2020-03-21T20:05:27-07:00">2020-03-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Vim-Cheatsheet"><a href="#Vim-Cheatsheet" class="headerlink" title="Vim Cheatsheet"></a>Vim Cheatsheet</h1><blockquote>
+<p>Note: The original post is from <a href="https://github.com/hackjutsu/vim-cheatsheet/blob/master/README.md" target="_blank" rel="noopener">github</a>.</p>
+</blockquote>
+<h2 id="Global"><a href="#Global" class="headerlink" title="Global"></a>Global</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">:<span class="built_in">help</span> keyword <span class="comment"># open help for keyword</span></span><br><span class="line">:o file       <span class="comment"># open file</span></span><br><span class="line">:saveas file  <span class="comment"># save file as</span></span><br><span class="line">:close        <span class="comment"># close current pane</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Cursor-movement"><a href="#Cursor-movement" class="headerlink" title="Cursor movement"></a>Cursor movement</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">h        <span class="comment"># move cursor left</span></span><br><span class="line">j        <span class="comment"># move cursor down</span></span><br><span class="line">k        <span class="comment"># move cursor up</span></span><br><span class="line">l        <span class="comment"># move cursor right</span></span><br><span class="line">H        <span class="comment"># move to top of screen</span></span><br><span class="line">M        <span class="comment"># move to middle of screen</span></span><br><span class="line">L        <span class="comment"># move to bottom of screen</span></span><br><span class="line">w        <span class="comment"># jump forwards to the start of a word</span></span><br><span class="line">W        <span class="comment"># jump forwards to the start of a word (words can contain punctuation)</span></span><br><span class="line">e        <span class="comment"># jump forwards to the end of a word</span></span><br><span class="line">E        <span class="comment"># jump forwards to the end of a word (words can contain punctuation)</span></span><br><span class="line">b        <span class="comment"># jump backwards to the start of a word</span></span><br><span class="line">B        <span class="comment"># jump backwards to the start of a word (words can contain punctuation)</span></span><br><span class="line">0        <span class="comment"># jump to the start of the line</span></span><br><span class="line">^        <span class="comment"># jump to the first non-blank character of the line</span></span><br><span class="line">$        <span class="comment"># jump to the end of the line</span></span><br><span class="line">g_       <span class="comment"># jump to the last non-blank character of the line</span></span><br><span class="line">gg       <span class="comment"># go to the first line of the document</span></span><br><span class="line">G        <span class="comment"># go to the last line of the document</span></span><br><span class="line">5G       <span class="comment"># go to line 5</span></span><br><span class="line">fx       <span class="comment"># jump to next occurrence of character x</span></span><br><span class="line">tx       <span class="comment"># jump to before next occurrence of character x</span></span><br><span class="line">&#125;        <span class="comment"># jump to next paragraph (or function/block, when editing code)</span></span><br><span class="line">&#123;        <span class="comment"># jump to previous paragraph (or function/block, when editing code)</span></span><br><span class="line">zz       <span class="comment"># center cursor on screen</span></span><br><span class="line">Ctrl + b <span class="comment"># move back one full screen</span></span><br><span class="line">Ctrl + f <span class="comment"># move forward one full screen</span></span><br><span class="line">Ctrl + d <span class="comment"># move forward 1/2 a screen</span></span><br><span class="line">Ctrl + u <span class="comment"># move back 1/2 a screen</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Insert-mode-inserting-appending-text"><a href="#Insert-mode-inserting-appending-text" class="headerlink" title="Insert mode - inserting/appending text"></a>Insert mode - inserting/appending text</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">i        <span class="comment"># insert before the cursor</span></span><br><span class="line">I        <span class="comment"># insert at the beginning of the line</span></span><br><span class="line">a        <span class="comment"># insert (append) after the cursor</span></span><br><span class="line">A        <span class="comment"># insert (append) at the end of the line</span></span><br><span class="line">o        <span class="comment"># append (open) a new line below the current line</span></span><br><span class="line">O        <span class="comment"># append (open) a new line above the current line</span></span><br><span class="line">ea       <span class="comment"># insert (append) at the end of the word</span></span><br><span class="line">Esc      <span class="comment"># exit insert mode</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Editing"><a href="#Editing" class="headerlink" title="Editing"></a>Editing</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">r        <span class="comment"># replace a single character</span></span><br><span class="line">J        <span class="comment"># join line below to the current one</span></span><br><span class="line">cc       <span class="comment"># change (replace) entire line</span></span><br><span class="line">cw       <span class="comment"># change (replace) to the end of the word</span></span><br><span class="line">c$       <span class="comment"># change (replace) to the end of the line</span></span><br><span class="line">s        <span class="comment"># delete character and substitute text</span></span><br><span class="line">S        <span class="comment"># delete line and substitute text (same as cc)</span></span><br><span class="line">xp       <span class="comment"># transpose two letters (delete and paste)</span></span><br><span class="line">.        <span class="comment"># repeat last command</span></span><br><span class="line">u        <span class="comment"># undo</span></span><br><span class="line">Ctrl + r <span class="comment"># redo</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Marking-text-visual-mode"><a href="#Marking-text-visual-mode" class="headerlink" title="Marking text (visual mode)"></a>Marking text (visual mode)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">v        <span class="comment"># start visual mode, mark lines, then do a command (like y-yank)</span></span><br><span class="line">V        <span class="comment"># start linewise visual mode</span></span><br><span class="line">o        <span class="comment"># move to other end of marked area</span></span><br><span class="line">O        <span class="comment"># move to other corner of block</span></span><br><span class="line">aw       <span class="comment"># mark a word</span></span><br><span class="line">ab       <span class="comment"># a block with ()</span></span><br><span class="line">aB       <span class="comment"># a block with &#123;&#125;</span></span><br><span class="line">ib       <span class="comment"># inner block with ()</span></span><br><span class="line">iB       <span class="comment"># inner block with &#123;&#125;</span></span><br><span class="line">Esc      <span class="comment"># exit visual mode</span></span><br><span class="line">Ctrl + v <span class="comment"># start visual block mode</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Visual-commands"><a href="#Visual-commands" class="headerlink" title="Visual commands"></a>Visual commands</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;       <span class="comment"># shift text right</span></span><br><span class="line">&lt;       <span class="comment"># shift text left</span></span><br><span class="line">y       <span class="comment"># yank (copy) marked text</span></span><br><span class="line">d       <span class="comment"># delete marked text</span></span><br><span class="line">~       <span class="comment"># switch case</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Cut-and-paste"><a href="#Cut-and-paste" class="headerlink" title="Cut and paste"></a>Cut and paste</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">yy       <span class="comment"># yank (copy) a line</span></span><br><span class="line">2yy      <span class="comment"># yank (copy) 2 lines</span></span><br><span class="line">yw       <span class="comment"># yank (copy) the characters of the word from the cursor position to the start of the next word</span></span><br><span class="line">y$       <span class="comment"># yank (copy) to end of line</span></span><br><span class="line">p        <span class="comment"># put (paste) the clipboard after cursor</span></span><br><span class="line">P        <span class="comment"># put (paste) before cursor</span></span><br><span class="line">dd       <span class="comment"># delete (cut) a line</span></span><br><span class="line">2dd      <span class="comment"># delete (cut) 2 lines</span></span><br><span class="line">dw       <span class="comment"># delete (cut) the characters of the word from the cursor position to the start of the next word</span></span><br><span class="line">D        <span class="comment"># delete (cut) to the end of the line</span></span><br><span class="line">d$       <span class="comment"># delete (cut) to the end of the line</span></span><br><span class="line">x        <span class="comment"># delete (cut) character</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Search-and-replace"><a href="#Search-and-replace" class="headerlink" title="Search and replace"></a>Search and replace</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/pattern       <span class="comment"># search for pattern</span></span><br><span class="line">?pattern       <span class="comment"># search backward for pattern</span></span><br><span class="line">\vpattern      <span class="comment"># 'very magic' pattern: non-alphanumeric characters are interpreted as special regex symbols (no escaping needed)</span></span><br><span class="line">n              <span class="comment"># repeat search in same direction</span></span><br><span class="line">N              <span class="comment"># repeat search in opposite direction</span></span><br><span class="line">:%s/old/new/g  <span class="comment"># replace all old with new throughout file</span></span><br><span class="line">:%s/old/new/gc <span class="comment"># replace all old with new throughout file with confirmations</span></span><br><span class="line">:noh           <span class="comment"># remove highlighting of search matches</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Search-in-multiple-files"><a href="#Search-in-multiple-files" class="headerlink" title="Search in multiple files"></a>Search in multiple files</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">:vimgrep /pattern/ &#123;file&#125; <span class="comment"># search for pattern in multiple files</span></span><br><span class="line">:cn                       <span class="comment"># jump to the next match</span></span><br><span class="line">:cp                       <span class="comment"># jump to the previous match</span></span><br><span class="line">:copen                    <span class="comment"># open a window containing the list of matches</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Exiting"><a href="#Exiting" class="headerlink" title="Exiting"></a>Exiting</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">:w              <span class="comment"># write (save) the file, but don't exit</span></span><br><span class="line">:w !sudo tee %  <span class="comment"># write out the current file using sudo</span></span><br><span class="line">:wq or :x or ZZ <span class="comment"># write (save) and quit</span></span><br><span class="line">:q              <span class="comment"># quit (fails if there are unsaved changes)</span></span><br><span class="line">:q! or ZQ       <span class="comment"># quit and throw away unsaved changes</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Working-with-multiple-files"><a href="#Working-with-multiple-files" class="headerlink" title="Working with multiple files"></a>Working with multiple files</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">:e file       <span class="comment"># edit a file in a new buffer</span></span><br><span class="line">:bnext or :bn <span class="comment"># go to the next buffer</span></span><br><span class="line">:bprev or :bp <span class="comment"># go to the previous buffer</span></span><br><span class="line">:bd           <span class="comment"># delete a buffer (close a file)</span></span><br><span class="line">:ls           <span class="comment"># list all open buffers</span></span><br><span class="line">:sp file      <span class="comment"># open a file in a new buffer and split window</span></span><br><span class="line">:vsp file     <span class="comment"># open a file in a new buffer and vertically split window</span></span><br><span class="line">Ctrl + ws     <span class="comment"># split window</span></span><br><span class="line">Ctrl + ww     <span class="comment"># switch windows</span></span><br><span class="line">Ctrl + wq     <span class="comment"># quit a window</span></span><br><span class="line">Ctrl + wv     <span class="comment"># split window vertically</span></span><br><span class="line">Ctrl + wh     <span class="comment"># move cursor to the left window (vertical split)</span></span><br><span class="line">Ctrl + wl     <span class="comment"># move cursor to the right window (vertical split)</span></span><br><span class="line">Ctrl + wj     <span class="comment"># move cursor to the window below (horizontal split)</span></span><br><span class="line">Ctrl + wk     <span class="comment"># move cursor to the window above (horizontal split)</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Tabs"><a href="#Tabs" class="headerlink" title="Tabs"></a>Tabs</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">:tabnew or :tabnew file <span class="comment"># open a file in a new tab</span></span><br><span class="line">Ctrl + wT               <span class="comment"># move the current split window into its own tab</span></span><br><span class="line">gt or :tabnext or :tabn <span class="comment"># move to the next tab</span></span><br><span class="line">gT or :tabprev or :tabp <span class="comment"># move to the previous tab</span></span><br><span class="line">&lt;number&gt;gt              <span class="comment"># move to tab &lt;number&gt;</span></span><br><span class="line">:tabmove &lt;number&gt;       <span class="comment"># move current tab to the &lt;number&gt;th position (indexed from 0)</span></span><br><span class="line">:tabclose or :tabc      <span class="comment"># close the current tab and all its windows</span></span><br><span class="line">:tabonly or :tabo       <span class="comment"># close all tabs except for the current one</span></span><br><span class="line">:tabdo <span class="built_in">command</span>          <span class="comment"># run the command on all tabs (e.g. :tabdo q - closes all opened tabs)</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.shopify.com/s/files/1/0165/4168/files/preview.png" alt="Vim Cheat Map" title="Vim Cheat Map"></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Tech/" rel="tag"># Tech</a>
+              <a href="/tags/Vim/" rel="tag"># Vim</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2015/06/04/Deploy-Hexo-MD-Files-on-GitHub/" rel="prev" title="Deploy Hexo MD Files on GitHub">
+      <i class="fa fa-chevron-left"></i> Deploy Hexo MD Files on GitHub
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2016/05/15/How-to-merge-old-post/" rel="next" title="How to merge old post">
+      How to merge old post <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Vim-Cheatsheet"><span class="nav-number">1.</span> <span class="nav-text">Vim Cheatsheet</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Global"><span class="nav-number">1.1.</span> <span class="nav-text">Global</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cursor-movement"><span class="nav-number">1.2.</span> <span class="nav-text">Cursor movement</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Insert-mode-inserting-appending-text"><span class="nav-number">1.3.</span> <span class="nav-text">Insert mode - inserting&#x2F;appending text</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Editing"><span class="nav-number">1.4.</span> <span class="nav-text">Editing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Marking-text-visual-mode"><span class="nav-number">1.5.</span> <span class="nav-text">Marking text (visual mode)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Visual-commands"><span class="nav-number">1.6.</span> <span class="nav-text">Visual commands</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cut-and-paste"><span class="nav-number">1.7.</span> <span class="nav-text">Cut and paste</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Search-and-replace"><span class="nav-number">1.8.</span> <span class="nav-text">Search and replace</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Search-in-multiple-files"><span class="nav-number">1.9.</span> <span class="nav-text">Search in multiple files</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Exiting"><span class="nav-number">1.10.</span> <span class="nav-text">Exiting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Working-with-multiple-files"><span class="nav-number">1.11.</span> <span class="nav-text">Working with multiple files</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tabs"><span class="nav-number">1.12.</span> <span class="nav-text">Tabs</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">darkalexwang</p>
+  <div class="site-description" itemprop="description">Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">47</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">54</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">darkalexwang</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

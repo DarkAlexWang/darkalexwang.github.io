@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"darkalexwang.github.io","root":"/","scheme":"Muse","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="最近 Vim 和 LaTex 用的都比较多，积累了一些经验，如果你也经常使用 Vim来编辑 LaTex 文档，不妨尝试一下我推荐的快捷键、命令以及插件。这些技巧都会提升写作效率，才能享 受写作的乐趣。 一、快捷键 &#x3D; 自动格式化对齐样式，对于有代码洁癖强迫症的人来说绝对是福音。  gq家族 根据 textwidth 自动换行。gqgq: 换行当前段。gqap: 格式化整个段。{Visual}gq:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用 Vim 高效地编辑 LaTeX 文档">
+<meta property="og:url" content="darkalexwang.github.io/2015/05/17/Vim-and-latex-tips/index.html">
+<meta property="og:site_name" content="DarkAlexWang&#39;s Blog">
+<meta property="og:description" content="最近 Vim 和 LaTex 用的都比较多，积累了一些经验，如果你也经常使用 Vim来编辑 LaTex 文档，不妨尝试一下我推荐的快捷键、命令以及插件。这些技巧都会提升写作效率，才能享 受写作的乐趣。 一、快捷键 &#x3D; 自动格式化对齐样式，对于有代码洁癖强迫症的人来说绝对是福音。  gq家族 根据 textwidth 自动换行。gqgq: 换行当前段。gqap: 格式化整个段。{Visual}gq:">
+<meta property="article:published_time" content="2015-05-17T20:14:26.000Z">
+<meta property="article:modified_time" content="2020-03-22T03:05:27.164Z">
+<meta property="article:author" content="darkalexwang">
+<meta property="article:tag" content="Tech">
+<meta property="article:tag" content="Vim">
+<meta property="article:tag" content="Latex">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="darkalexwang.github.io/2015/05/17/Vim-and-latex-tips/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>用 Vim 高效地编辑 LaTeX 文档 | DarkAlexWang's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">DarkAlexWang's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="darkalexwang.github.io/2015/05/17/Vim-and-latex-tips/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="darkalexwang">
+      <meta itemprop="description" content="Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DarkAlexWang's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          用 Vim 高效地编辑 LaTeX 文档
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2015-05-17 13:14:26" itemprop="dateCreated datePublished" datetime="2015-05-17T13:14:26-07:00">2015-05-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-03-21 20:05:27" itemprop="dateModified" datetime="2020-03-21T20:05:27-07:00">2020-03-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>最近 Vim 和 LaTex 用的都比较多，积累了一些经验，如果你也经常使用 Vim来编辑 LaTex 文档，不妨尝试一下我推荐的快捷键、命令以及插件。这些技巧都会提升写作效率，才能享 受写作的乐趣。</p>
+<h1 id="一、快捷键"><a href="#一、快捷键" class="headerlink" title="一、快捷键"></a>一、快捷键</h1><ol>
+<li><p>= 自动格式化对齐样式，对于有代码洁癖强迫症的人来说绝对是福音。</p>
+</li>
+<li><p>gq家族 根据 textwidth 自动换行。gqgq: 换行当前段。gqap: 格式化整个段。{Visual}gq: 格式化选定的部分。对于每行字符数量不能超过 80 的人来说，又一个福音。最后你的文章会非常整齐，就像这样：</p>
+</li>
+</ol>
+<p><code>Vim (an acronym for Vi IMproved) is a text editor written by Bram Moolenaar and
+first released publicly in 1991. Based on the vi editor common to Unix-like
+systems, Vim is designed for use both from a command line interface and as a
+standalone application in a graphical user interface. Vim is free and open
+source software and is released under a license that includes some charityware
+clauses, encouraging users who enjoy the software to consider donating to
+children in Uganda. The license is compatible with the GNU General Public
+License.</code></p>
+<h1 id="二、命令-amp-vimrc"><a href="#二、命令-amp-vimrc" class="headerlink" title="二、命令 &amp; .vimrc"></a>二、命令 &amp; .vimrc</h1><ol>
+<li><p>:set spell 经常写英文的人会用得到的，一不小心打错单词了，Vim 会在单词上加一个下划线提示。你还可以把你认为正确的特殊单词加到字典里面。</p>
+</li>
+<li><p>autocmd BufNewFile,BufRead *.tex set spell 把这句话加到 .vimrc 里面可以在打开 .tex 文件的时候自动进行拼写检查。</p>
+</li>
+<li><p>let g:tex_indent_items=0 估计大家都打开了换行时自动对齐的功能，但是有没有发现这样一个问题，在用 itemize 的时候，每一个 item 都会自动缩进两个，非常麻烦。如果你懒得搞的话，最后就变成了这个样子：</p>
+</li>
+</ol>
+<p>\begin{itemize}<br>  \item fist …<br>    \item second …<br>      \item third …<br>\end{itemize}</p>
+<p>如果在 .vimrc 里面加入 let g:tex_indent_items=0 一句话，自动缩进终于变得正常了。</p>
+<h1 id="三、插件"><a href="#三、插件" class="headerlink" title="三、插件"></a>三、插件</h1><ol>
+<li>UltiSnips 无论是编辑 LaTex 文档还是写代码，UltiSnips 绝对是利器。他可以自动补全常用的代码结构。拿 Tex 举例，输入 item 就会出来：</li>
+</ol>
+<p>item<br>\begin{itemize}<br>  \item<br>\end{itemize}</p>
+<p>fig<br>\begin{figure}[htpb]<br>  \centering<br>  \includegraphics[width=0.8\linewidth]{name.ext}<br>  \caption{Name}<br>  \label{fig:name}<br>\end{figure}</p>
+<p>lp<br>\left(contents\right)</p>
+<p>还有非常多的自动补全，\begin{}…\end{} \section{}…。当然，你还可以编写自己的 snippets。用了这个插件，写东西的时候有一种畅快淋漓的感觉，再也不用纠结乱起八糟的命令了。可以看一下作者录制的四个 screencasts，了解 UltiSpips 更强大的功能。</p>
+<ol start="2">
+<li>Align 用 Align 来对齐表格，又一个强迫症的福音。</li>
+</ol>
+<p>\begin{tabular}{cccc}<br>  a &amp; b &amp; c &amp; d \<br>  Ef &amp; long long &amp; ss &amp; a \<br>  test &amp; n &amp; long content &amp; small \<br>\end{tabular}<br>“ 选中表格内容，按 tt，就可以对齐了，豁然开朗。<br>\begin{tabular}{cccc}<br>  a    &amp; b         &amp; c            &amp; d     \<br>  Ef   &amp; long long &amp; ss           &amp; a     \<br>  test &amp; n         &amp; long content &amp; small \<br>\end{tabular}</p>
+<ol start="3">
+<li>Syntastic Syntastic 是语法检查的利器。对于 Tex<br>文档来说，你总不想到编译的时候才发现 &amp; 符号没有用转移字符 &amp; 吧。Syntastic<br>会动态的检查 Tex<br>文档的语法，除了语法错误的提示，他还会有一些语法的建议。附一张官方的图，这是多么的方便啊！ </li>
+</ol>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p>还有一些不在强烈建议的列表当中，但是也非常的有用。比如说单词补全的插件：neocompletecache。或者直接从<br>markdown 转成 tex 文档，让你完全专注于写作: pandoc。剩下的都是是看个人喜好了。</p>
+<p>Update: 还有一个非常重要的工具，latexmk，是 LaTex 的 Makefile。好像 tex-live 的包里面直接就带了。有了他，就可以左边开一个 Vim，右边放一个 PDF。然后在 Vim 中保存修改，右面 PDF 就会自动更新。想达到这样的效果，首先要建立一个配置文件 .latexmkrc，里面写上：</p>
+<p>$pdf_previewer = “start evince %O %S”;</p>
+<p>这里是为了制定默认的 PDF 浏览器。设置完之后，只要运行 latexmk 命令就能自动监控 tex 文件的修改，然后重新编译。</p>
+<p>latexmk -pdf -pvc xxx.tex      // 用 pdflatex 编译，同时打开 PDF 浏览，并监控修改<br>latexmk -xelatex -pvc xxx.tex  // 用 xelatex 编译，同时打开 PDF 浏览，并监控修改<br>latexmk -c     // 删除生成的中间文件</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Tech/" rel="tag"># Tech</a>
+              <a href="/tags/Vim/" rel="tag"># Vim</a>
+              <a href="/tags/Latex/" rel="tag"># Latex</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2014/08/16/archetype-plugin/" rel="prev" title="archetype plugin">
+      <i class="fa fa-chevron-left"></i> archetype plugin
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2015/06/04/Deploy-Hexo-MD-Files-on-GitHub/" rel="next" title="Deploy Hexo MD Files on GitHub">
+      Deploy Hexo MD Files on GitHub <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、快捷键"><span class="nav-number">1.</span> <span class="nav-text">一、快捷键</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、命令-amp-vimrc"><span class="nav-number">2.</span> <span class="nav-text">二、命令 &amp; .vimrc</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、插件"><span class="nav-number">3.</span> <span class="nav-text">三、插件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他"><span class="nav-number">4.</span> <span class="nav-text">其他</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">darkalexwang</p>
+  <div class="site-description" itemprop="description">Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">47</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">54</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">darkalexwang</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

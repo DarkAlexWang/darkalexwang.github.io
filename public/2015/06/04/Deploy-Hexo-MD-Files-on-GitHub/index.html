@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"darkalexwang.github.io","root":"/","scheme":"Muse","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Modify _config.yml File默认生成的_config.yml： 1234# Deployment## Docs: http:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;deployment.htmldeploy:type: 修改后的_config.yml： 1234deploy:type: gitrepo: 对应仓库的SSH地址（可以在GitHub对应的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Deploy Hexo MD Files on GitHub">
+<meta property="og:url" content="darkalexwang.github.io/2015/06/04/Deploy-Hexo-MD-Files-on-GitHub/index.html">
+<meta property="og:site_name" content="DarkAlexWang&#39;s Blog">
+<meta property="og:description" content="Modify _config.yml File默认生成的_config.yml： 1234# Deployment## Docs: http:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;deployment.htmldeploy:type: 修改后的_config.yml： 1234deploy:type: gitrepo: 对应仓库的SSH地址（可以在GitHub对应的">
+<meta property="article:published_time" content="2015-06-05T04:55:00.000Z">
+<meta property="article:modified_time" content="2020-03-22T03:05:27.162Z">
+<meta property="article:author" content="darkalexwang">
+<meta property="article:tag" content="Git">
+<meta property="article:tag" content="GitHub Pages">
+<meta property="article:tag" content="Tech">
+<meta property="article:tag" content="Deploy">
+<meta property="article:tag" content="Hexo">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="darkalexwang.github.io/2015/06/04/Deploy-Hexo-MD-Files-on-GitHub/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>Deploy Hexo MD Files on GitHub | DarkAlexWang's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">DarkAlexWang's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="darkalexwang.github.io/2015/06/04/Deploy-Hexo-MD-Files-on-GitHub/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="darkalexwang">
+      <meta itemprop="description" content="Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DarkAlexWang's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Deploy Hexo MD Files on GitHub
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2015-06-04 21:55:00" itemprop="dateCreated datePublished" datetime="2015-06-04T21:55:00-07:00">2015-06-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-03-21 20:05:27" itemprop="dateModified" datetime="2020-03-21T20:05:27-07:00">2020-03-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="Modify-config-yml-File"><a href="#Modify-config-yml-File" class="headerlink" title="Modify _config.yml File"></a>Modify _config.yml File</h2><p>默认生成的_config.yml：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: http:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;deployment.html</span><br><span class="line">deploy:</span><br><span class="line">type:</span><br></pre></td></tr></table></figure>
+<p>修改后的_config.yml：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">type: git</span><br><span class="line">repo: 对应仓库的SSH地址（可以在GitHub对应的仓库中复制）</span><br><span class="line">branch: 分支（User Pages为master，Project Pages为gh-pages）</span><br></pre></td></tr></table></figure>
+<p>为了能够使Hexo部署到GitHub上，需要安装一个插件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>然后，执行下列指令即可完成部署：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>之后，可以通过在浏览器键入：username.github.io进行浏览，开心吧~</p>
+<h2 id="Deploy-MD-and-config-files-on-github"><a href="#Deploy-MD-and-config-files-on-github" class="headerlink" title="Deploy MD and config files on github"></a>Deploy MD and config files on github</h2><h1 id="Methond-one"><a href="#Methond-one" class="headerlink" title="Methond one:"></a>Methond one:</h1><p>优化部署与管理</p>
+<ol>
+<li>概述</li>
+</ol>
+<p>Hexo部署到GitHub上的文件，是.md（你的博文）转化之后的.html（静态网页）。因此，当你重装电脑或者想在不同电脑上修改博客时，就不可能了（除非你自己写html o(^▽^)o ）。</p>
+<p>其实，Hexo生成的网站文件中有.gitignore文件，因此它的本意也是想我们将Hexo生成的网站文件存放到GitHub上进行管理的（而不是用U盘或者云备份啦(╬▔皿▔)凸）。这样，不仅解决了上述的问题，还可以通过git的版本控制追踪你的博文的修改过程，是极赞的。</p>
+<p>但是，如果每一个GitHub Pages都需要创建一个额外的仓库来存放Hexo网站文件，我感觉很麻烦（10个项目需要20个仓库(ˉ▽ˉ；)…）。</p>
+<p>所以，我利用了分支！！！</p>
+<p>简单地说，每个想建立GitHub Pages的仓库，起码有两个分支，一个用来存放Hexo网站的文件，一个用来发布网站。</p>
+<p>下面以我的博客作为例子详细地讲述。<br>2. 我的博客搭建流程</p>
+<pre><code>创建仓库，CrazyMilk.github.io；
+创建两个分支：master 与 hexo；
+设置hexo为默认分支（因为我们只需要手动管理这个分支上的Hexo网站文件）；
+使用git clone git@github.com:CrazyMilk/CrazyMilk.github.io.git拷贝仓库；
+在本地CrazyMilk.github.io文件夹下通过Git bash依次执行npm install hexo、hexo init、npm install 和 npm install hexo-deployer-git（此时当前分支应显示为hexo）;
+修改_config.yml中的deploy参数，分支应为master；
+依次执行git add .、git commit -m “…”、git push origin hexo提交网站相关的文件；
+执行hexo generate -d生成网站并部署到GitHub上。</code></pre><p>这样一来，在GitHub上的CrazyMilk.github.io仓库就有两个分支，一个hexo分支用来存放网站的原始文件，一个master分支用来存放生成的静态网页。完美( •̀ ω •́ )y！<br>3. 我的博客管理流程</p>
+<ul>
+<li>日常修改</li>
+</ul>
+<p>在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理：</p>
+<pre><code>依次执行git add .、git commit -m “…”、git push origin hexo指令将改动推送到GitHub（此时当前分支应为hexo）；
+然后才执行hexo generate -d发布网站到master分支上。</code></pre><p>虽然两个过程顺序调转一般不会有问题，不过逻辑上这样的顺序是绝对没问题的（例如突然死机要重装了，悲催….的情况，调转顺序就有问题了）。</p>
+<ul>
+<li>本地资料丢失</li>
+</ul>
+<p>当重装电脑之后，或者想在其他电脑上修改博客，可以使用下列步骤：</p>
+<pre><code>使用git clone git@github.com:CrazyMilk/CrazyMilk.github.io.git拷贝仓库（默认分支为hexo）；
+在本地新拷贝的CrazyMilk.github.io文件夹下通过Git bash依次执行下列指令：npm install hexo、npm install、npm install hexo-deployer-git（记得，不需要hexo init这条指令）。</code></pre><h1 id="Methond-two"><a href="#Methond-two" class="headerlink" title="Methond two:"></a>Methond two:</h1><p>使用 hexo，很多人的第一个困惑就是，如何保存 README.md 文件。网上的方法是，在<br>source 目录下存放 README.md 文件。但这还不够，因为在进行 hexo generate 时会把<br>README.md 渲染成 README.html。</p>
+<p>Use <code>skip_render</code> command to omit the fils with .md and .yml. This commend by<br>default use source/ directory.</p>
+<p><code>skip_render: README.md # 禁止进行渲染的文件</code></p>
+<p>The file tree under <code>source/</code> folder should look like the following:</p>
+<p>│  README.md<br>│<br>├─categories<br>│      index.md<br>│<br>├─ori_data<br>│  │  config.yml<br>│  │<br>│  ├─categories<br>│  │      index.md<br>│  │<br>│  ├─posts<br>│  │      2013-02-05-my-blog-in-github.md<br>│  │      2013-02-06-resolve-goagent-cp65001.m<br>│  │      2013-03-11-c_stack.md<br>│  │      2015-05-03-hello-hexo.md<br>│  │<br>│  ├─tags<br>│  │      index.md<br>│  │<br>│  └─themes<br>│      └─next<br>│              config.yml<br>│<br>├─tags<br>│      index.md<br>│<br>└─_posts<br>2013-02-05-my-blog-in-github.md<br>2013-02-06-resolve-goagent-cp65001.md<br>2013-03-11-c_stack.md<br>2013-03-18-understand_typdef_funp.md<br>2013-03-24-understand_container_of.md<br>2015-05-03-hello-hecommend by</p>
+<p>The <code>_config.yml</code> file should be modified to :</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"># Directory</span><br><span class="line">source_dir: source</span><br><span class="line">public_dir: public</span><br><span class="line">tag_dir: tags</span><br><span class="line">archive_dir: archives</span><br><span class="line">category_dir: categories</span><br><span class="line">code_dir: downloads&#x2F;code</span><br><span class="line">i18n_dir: :lang</span><br><span class="line">skip_render: [README.md, ori_data&#x2F;*, ori_data&#x2F;posts&#x2F;*, ori_data&#x2F;tags&#x2F;*,</span><br><span class="line">ori_data&#x2F;categories&#x2F;*, ori_data&#x2F;themes&#x2F;next&#x2F;*] # 禁止进行渲染的文件</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>P.S.</p>
+<ul>
+<li>Need to change the <code>_config.yml</code> or <code>_post/</code> to <code>config.yml</code> and <code>post/</code>,<br>  because they will be omitted with <code>_</code> prefix.</li>
+<li>After the configuration, we can run <code>hexo generate</code> and <code>hexo deploy</code>, we can<br>  cd into <code>.deploy_git/</code> directory, and take a look at the following file<br>  tree.</li>
+<li>After this, you can simply make modification in <code>source/_posts/</code> directory<br>  and then copy the files to <code>source/ori_data/posts/</code>.</li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
+<li><a href="http://baurine.github.io/2015/05/10/hexo_git.html" target="_blank" rel="noopener">将原始的 .md 文件纳入 hexo<br>的版本管理</a></li>
+<li><a href="http://crazymilk.github.io/2015/12/28/GitHub-Pages-Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/#more" target="_blank" rel="noopener">GitHub Pages + Hexo搭建博客</a></li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Git/" rel="tag"># Git</a>
+              <a href="/tags/GitHub-Pages/" rel="tag"># GitHub Pages</a>
+              <a href="/tags/Tech/" rel="tag"># Tech</a>
+              <a href="/tags/Deploy/" rel="tag"># Deploy</a>
+              <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2015/05/17/Vim-and-latex-tips/" rel="prev" title="用 Vim 高效地编辑 LaTeX 文档">
+      <i class="fa fa-chevron-left"></i> 用 Vim 高效地编辑 LaTeX 文档
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2016/03/13/Vim-Cheatsheet/" rel="next" title="Vim Cheatsheet">
+      Vim Cheatsheet <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Modify-config-yml-File"><span class="nav-number">1.</span> <span class="nav-text">Modify _config.yml File</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Deploy-MD-and-config-files-on-github"><span class="nav-number">2.</span> <span class="nav-text">Deploy MD and config files on github</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Methond-one"><span class="nav-number"></span> <span class="nav-text">Methond one:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Methond-two"><span class="nav-number"></span> <span class="nav-text">Methond two:</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">1.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">darkalexwang</p>
+  <div class="site-description" itemprop="description">Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">47</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">54</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">darkalexwang</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
