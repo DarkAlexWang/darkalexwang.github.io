@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"darkalexwang.github.io","root":"/","scheme":"Muse","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="BackingTracking系列4／35[x] Easy[x] Medium[] Hard   Tips凡是含有duplicate的都需要之前sorted，才能保证没有结果中没有重复 经典7道题46. Permutations12345678910111-2-3 -3-2def backtracking(self, nums, temp, ans):    if len(nums) &#x3D;&#x3D; len">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Backtracking总结">
+<meta property="og:url" content="darkalexwang.github.io/2017/09/06/Backtracking%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="DarkAlexWang&#39;s Blog">
+<meta property="og:description" content="BackingTracking系列4／35[x] Easy[x] Medium[] Hard   Tips凡是含有duplicate的都需要之前sorted，才能保证没有结果中没有重复 经典7道题46. Permutations12345678910111-2-3 -3-2def backtracking(self, nums, temp, ans):    if len(nums) &#x3D;&#x3D; len">
+<meta property="article:published_time" content="2017-09-07T06:31:24.000Z">
+<meta property="article:modified_time" content="2018-03-22T21:31:24.000Z">
+<meta property="article:author" content="darkalexwang">
+<meta property="article:tag" content="DFS">
+<meta property="article:tag" content="Backtracking">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="darkalexwang.github.io/2017/09/06/Backtracking%E6%80%BB%E7%BB%93/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>Backtracking总结 | DarkAlexWang's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">DarkAlexWang's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="darkalexwang.github.io/2017/09/06/Backtracking%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="darkalexwang">
+      <meta itemprop="description" content="Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DarkAlexWang's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Backtracking总结
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2017-09-06 23:31:24" itemprop="dateCreated datePublished" datetime="2017-09-06T23:31:24-07:00">2017-09-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2018-03-22 14:31:24" itemprop="dateModified" datetime="2018-03-22T14:31:24-07:00">2018-03-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Leetcode/" itemprop="url" rel="index"><span itemprop="name">Leetcode</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="BackingTracking系列"><a href="#BackingTracking系列" class="headerlink" title="BackingTracking系列"></a>BackingTracking系列</h1><p>4／35<br>[x] Easy<br>[x] Medium<br>[] Hard  </p>
+<h1 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h1><p>凡是含有duplicate的都需要之前sorted，才能保证没有结果中没有重复</p>
+<h2 id="经典7道题"><a href="#经典7道题" class="headerlink" title="经典7道题"></a>经典7道题</h2><h3 id="46-Permutations"><a href="#46-Permutations" class="headerlink" title="46. Permutations"></a>46. Permutations</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span><span class="number">-2</span><span class="number">-3</span></span><br><span class="line"> <span class="number">-3</span><span class="number">-2</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">backtracking</span><span class="params">(self, nums, temp, ans)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> len(nums) == len(temp): <span class="comment"># quit loop</span></span><br><span class="line">        ans.append(list(temp))</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)):</span><br><span class="line">        <span class="keyword">if</span> nums[i] <span class="keyword">in</span> temp: <span class="comment"># cut duplicate</span></span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        temp.append(nums[i])</span><br><span class="line">        self.backtracking(nums, temp, ans)</span><br><span class="line">        temp.pop()</span><br></pre></td></tr></table></figure>
+
+<h3 id="47-Permutations-II"><a href="#47-Permutations-II" class="headerlink" title="47. Permutations II"></a>47. Permutations II</h3><p>由于输入可能包含重复数字，所以就要保证去重。先排序然后创建Array记录访问过的数字，然后前面的一个数是否和自己相等，相等的时候则前面的数必须使用了，自己才能使用，这样就不会产生重复的排列了</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">backtracking</span><span class="params">(self, nums, temp, ans, used)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> len(temp) == len(nums):</span><br><span class="line">        ans.append(list(temp))</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)):</span><br><span class="line">        <span class="keyword">if</span> used[i] <span class="keyword">or</span> i&gt;<span class="number">0</span> <span class="keyword">and</span> nums[i]==nums[i<span class="number">-1</span>] <span class="keyword">and</span> <span class="keyword">not</span> used[i<span class="number">-1</span>]: <span class="comment"># 判断条件</span></span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        temp.append(nums[i])</span><br><span class="line">        used[i] = <span class="literal">True</span> <span class="comment"># 记录访问</span></span><br><span class="line">        self.backtracking(nums, temp, ans, used)</span><br><span class="line">        used[i] = <span class="literal">False</span></span><br><span class="line">        temp.pop()</span><br></pre></td></tr></table></figure>
+
+<h3 id="78-Subsets"><a href="#78-Subsets" class="headerlink" title="78. Subsets"></a>78. Subsets</h3><p>终止条件不同，因为要返回每一个set，所以每次backtracking的时候都要返回tempList；然后保证唯一性就是backtrack的时候index+1</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">backtracking</span><span class="params">(self, nums, temp, res, start)</span>:</span></span><br><span class="line">    res.append(list(temp))</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(start,len(nums)):</span><br><span class="line">        temp.append(nums[i])</span><br><span class="line">        self.backtracking(nums, temp, res, i+<span class="number">1</span>)</span><br><span class="line">        temp.pop()</span><br></pre></td></tr></table></figure>
+
+<h3 id="90-Subsets-II"><a href="#90-Subsets-II" class="headerlink" title="90. Subsets II"></a>90. Subsets II</h3><p>因为input含有duplicate，所以在进入backtracking之前需要检查</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">backtracking</span><span class="params">(self, nums, temp, res, start)</span>:</span></span><br><span class="line">    res.append(list(temp))</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(start,len(nums)):</span><br><span class="line">        <span class="keyword">if</span> i &gt; start <span class="keyword">and</span> nums[i] == nums[i<span class="number">-1</span>]:</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        temp.append(nums[i])</span><br><span class="line">        self.backtracking(nums, temp, res, i+<span class="number">1</span>)</span><br><span class="line">        temp.pop()</span><br></pre></td></tr></table></figure>
+
+<h3 id="39-Combination-Sum"><a href="#39-Combination-Sum" class="headerlink" title="39 Combination Sum"></a>39 Combination Sum</h3><p>本质上是一样的，每次传的时候target-candidates[i], 然后因为每个数字可以重复使用，所以index可以保持不变</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">backtracking</span><span class="params">(self, candidates, target, res, temp, start)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> target&lt;<span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">elif</span> target == <span class="number">0</span>:</span><br><span class="line">        res.append(list(temp))</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(start, len(candidates)):</span><br><span class="line">            temp.append(candidates[i])</span><br><span class="line">            self.backtracking(candidates, target - candidates[i], res, temp, i)</span><br><span class="line">            temp.pop()</span><br></pre></td></tr></table></figure>
+
+<h3 id="40-Combination-Sum-II"><a href="#40-Combination-Sum-II" class="headerlink" title="40 Combination Sum II"></a>40 Combination Sum II</h3><p>变化就是不可以重复利用数字，index+1</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">backtracking</span><span class="params">(self, candidates, target, res, temp, start)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> target&lt;<span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">elif</span> target == <span class="number">0</span>:</span><br><span class="line">        res.append(list(temp))</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(start, len(candidates)):</span><br><span class="line">            <span class="keyword">if</span> i &gt; start <span class="keyword">and</span> candidates[i<span class="number">-1</span>] == candidates[i]:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            temp.append(candidates[i])</span><br><span class="line">            self.backtracking(candidates, target - candidates[i], res, temp, i+<span class="number">1</span>)</span><br><span class="line">            temp.pop()</span><br></pre></td></tr></table></figure>
+
+<h3 id="216-Combination-Sum-III"><a href="#216-Combination-Sum-III" class="headerlink" title="216 Combination Sum III"></a>216 Combination Sum III</h3><p>与上一道题的区别就是，输入为[1…9] </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">combinationSum3</span><span class="params">(self, k, n)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type k: int</span></span><br><span class="line"><span class="string">        :type n: int</span></span><br><span class="line"><span class="string">        :rtype: List[List[int]]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        res = []</span><br><span class="line">        self.backtracking(k,n,[],res,<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">backtracking</span><span class="params">(self, k, target, temp, res, start)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> len(temp) &gt; k:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">elif</span> len(temp) == k <span class="keyword">and</span> target == <span class="number">0</span>:</span><br><span class="line">            res.append(list(temp))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(start, <span class="number">10</span>):</span><br><span class="line">                temp.append(i)</span><br><span class="line">                self.backtracking(k, target - i, temp, res, i+<span class="number">1</span>)</span><br><span class="line">                temp.pop()</span><br></pre></td></tr></table></figure>
+
+<h2 id="Medium"><a href="#Medium" class="headerlink" title="Medium"></a>Medium</h2><h3 id="22-Generate-Parentheses"><a href="#22-Generate-Parentheses" class="headerlink" title="22 Generate Parentheses"></a>22 Generate Parentheses</h3><p>recursion rule 就是判断left，right的count啦，直到满足right == n  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dfs</span><span class="params">(self,temp, left, right, res,n)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> left &lt; n:</span><br><span class="line">        self.dfs(temp+<span class="string">'('</span>,left+<span class="number">1</span>,right,res,n)</span><br><span class="line">    <span class="keyword">if</span> right &lt; left:</span><br><span class="line">        self.dfs(temp+<span class="string">')'</span>,left, right+<span class="number">1</span>, res,n)</span><br><span class="line">    <span class="keyword">if</span> right==n:</span><br><span class="line">        res.append(temp)</span><br></pre></td></tr></table></figure>
+
+<h3 id="320-Generalized-Abbreviation"><a href="#320-Generalized-Abbreviation" class="headerlink" title="320. Generalized Abbreviation"></a>320. Generalized Abbreviation</h3><p>这道题debug了好久，困惑于如何使得数字和字母不会在base case的时候重复导出</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">4</span><br><span class="line">3d</span><br><span class="line">2r1 2rd</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">backtrack</span><span class="params">(res, word, pos, string, count)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> pos == len(word):</span><br><span class="line">        <span class="keyword">if</span> count&gt;<span class="number">0</span>:</span><br><span class="line">            string += str(count)</span><br><span class="line">        res.append(string)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        backtrack(res,word,pos+<span class="number">1</span>,string,count+<span class="number">1</span>)</span><br><span class="line">        <span class="comment">## 这个track保证了index每次不断加1 从而在base的时候输出，然后每一次count同时加1，为了记录count</span></span><br><span class="line">        backtrack(res, word, pos+<span class="number">1</span>, string + (str(count) <span class="keyword">if</span> count&gt;<span class="number">0</span> <span class="keyword">else</span> <span class="string">""</span>)+ word[pos], <span class="number">0</span>)</span><br><span class="line">        <span class="comment">## 这个是为了退一步，先保存当前的count数字，然后因为数字不能连续，所以+word【index】，同时把count清0</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="二维backtracking"><a href="#二维backtracking" class="headerlink" title="二维backtracking"></a>二维backtracking</h3>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/DFS/" rel="tag"># DFS</a>
+              <a href="/tags/Backtracking/" rel="tag"># Backtracking</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2017/07/10/LinkedList%E7%B3%BB%E5%88%97/" rel="prev" title="LinkedList系列">
+      <i class="fa fa-chevron-left"></i> LinkedList系列
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2017/09/10/BFS-Maze%E7%B1%BB%E5%9E%8B%E6%80%BB%E7%BB%93/" rel="next" title="BFS-Board类型总结">
+      BFS-Board类型总结 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#BackingTracking系列"><span class="nav-number">1.</span> <span class="nav-text">BackingTracking系列</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tips"><span class="nav-number">2.</span> <span class="nav-text">Tips</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#经典7道题"><span class="nav-number">2.1.</span> <span class="nav-text">经典7道题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#46-Permutations"><span class="nav-number">2.1.1.</span> <span class="nav-text">46. Permutations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#47-Permutations-II"><span class="nav-number">2.1.2.</span> <span class="nav-text">47. Permutations II</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#78-Subsets"><span class="nav-number">2.1.3.</span> <span class="nav-text">78. Subsets</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#90-Subsets-II"><span class="nav-number">2.1.4.</span> <span class="nav-text">90. Subsets II</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#39-Combination-Sum"><span class="nav-number">2.1.5.</span> <span class="nav-text">39 Combination Sum</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#40-Combination-Sum-II"><span class="nav-number">2.1.6.</span> <span class="nav-text">40 Combination Sum II</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#216-Combination-Sum-III"><span class="nav-number">2.1.7.</span> <span class="nav-text">216 Combination Sum III</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Medium"><span class="nav-number">2.2.</span> <span class="nav-text">Medium</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#22-Generate-Parentheses"><span class="nav-number">2.2.1.</span> <span class="nav-text">22 Generate Parentheses</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#320-Generalized-Abbreviation"><span class="nav-number">2.2.2.</span> <span class="nav-text">320. Generalized Abbreviation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二维backtracking"><span class="nav-number">2.2.3.</span> <span class="nav-text">二维backtracking</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">darkalexwang</p>
+  <div class="site-description" itemprop="description">Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">47</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">54</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">darkalexwang</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
