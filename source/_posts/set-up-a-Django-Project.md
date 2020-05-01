@@ -3,6 +3,13 @@ title: set up a Django Project
 date: 2016-06-04 22:07:38
 tags: [Django,Tech,Project,Python]
 ---
+---
+**NOTE**
+
+搬运文章，原创作者:http://joshuablog.herokuapp.com/
+Just for study purpose, I don't hold the copyright, if this is affecting anyone, please let me know.
+
+---
 
 ## 写在前面
 

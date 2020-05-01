@@ -7,11 +7,19 @@ categories: Travel
 tags:
 ---
 
+---
+**NOTE**
+
+搬运文章，原创作者:http://joshuablog.herokuapp.com/
+Just for study purpose, I don't hold the copyright, if this is affecting anyone, please let me know.
+
+---
+
 # Map
 [Google 分享地图](https://drive.google.com/open?id=152Knr4gBuV92V9w2kVPHHHNPQZxv9jIW&usp=sharing)
 # 美国本土
 ## 东海岸
-### Haskell Free Library and Opera House  
+### Haskell Free Library and Opera House
 穿越国境的图书馆
 ### White Mountain National Forest
 新罕布什尔的红叶秋景
@@ -60,7 +68,7 @@ tags:
 
 ## 加州
 ### Mt. Shasta
-美版富士山 
+美版富士山
 
 ### Lassen Volcanic National Park
 拉森火山公园

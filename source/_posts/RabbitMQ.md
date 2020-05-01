@@ -7,6 +7,14 @@ categories: Interview
 tags: RabbitMQ
 ---
 
+---
+**NOTE**
+
+搬运文章，原创作者:http://joshuablog.herokuapp.com/
+Just for study purpose, I don't hold the copyright, if this is affecting anyone, please let me know.
+
+---
+
 # 应用场景
 - 信息的发送者和接收者如何维持这个连接，如果一方的连接中断，这期间的数据如何方式丢失？
 - 如何降低发送者和接收者的耦合度？
@@ -30,7 +38,7 @@ Client C: 也叫Consumer，数据的接收方。Consumersattach to a broker serv
 
 **Queues** are where the messages end up and are received by consumers
 
-**Bindings** are how the messages get routed from the exchange to particular queues.  
+**Bindings** are how the messages get routed from the exchange to particular queues.
 **Routing Key**： 路由关键字，exchange根据这个关键字进行消息投递。
 ## Message acknowledgment
 在实际应用中，可能会发生消费者收到Queue中的消息，但没有处理完成就宕机（或出现其他意外）的情况，这种情况下就可能会导致消息丢失。为了避免这种情况发生，我们可以要求消费者在消费完消息后发送一个回执给RabbitMQ，RabbitMQ收到消息回执（Message acknowledgment）后才将该消息从Queue中移除；如果RabbitMQ没有收到回执并检测到消费者的RabbitMQ连接断开，则RabbitMQ会将该消息发送给其他消费者（如果存在多个消费者）进行处理。

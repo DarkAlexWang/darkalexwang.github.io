@@ -5,6 +5,15 @@ date: 2017-09-10 15:13:49
 updated: 2017-09-10 15:13:49
 categories: Leetcode
 tags: [BFS, DFS]
+
+---
+**NOTE**
+
+搬运文章，原创作者:http://joshuablog.herokuapp.com/
+Just for study purpose, I don't hold the copyright, if this is affecting anyone, please let me know.
+
+---
+
 ---
 
 # Maze
@@ -21,23 +30,23 @@ while queue:
 	# 终止条件
 	if (i,j) == destination:
 		xxx
-	
+
 	# 遍历四个方向
 	for x, y in direction: # local dir
 		row = i
 		col = j
-		
+
 		while xxx and xxx : # condition
 			row += x
 			col += y
-			
+
 	if visited and not in the queue:
 		queue.append()
 ```
 <!--more-->
 ## I
-`490. The Maze  
-基本款，套用模版就好了  
+`490. The Maze
+基本款，套用模版就好了
 O(mn),O(mn)
 
 ```python
@@ -72,11 +81,11 @@ class Solution(object):
                 if maze[row][col] == 0 and [row,col] not in queue:
                     queue.append([row, col])
         return False
-        
+
 ```
 
 ## II - 求最短路径
-`505. The Maze II   
+`505. The Maze II
 可以考虑Dijkstra's algorithm，在Python使用heapq最小堆，因为每一次都要记录当前路径，所以需要记录local_count
 
 ```python
@@ -132,7 +141,7 @@ class Solution(object):
 ```
 
 ## III - 遇到洞
-`499. The Maze III  
+`499. The Maze III
 同样道理，只需要添加条件在while循环里，然后在dir里面加入dir的字符，heap的时候
 
 
@@ -179,13 +188,13 @@ class Solution(object):
                     if [row,col] == destination:
                         break
                 heapq.heappush(pq, (count+local, move+path, row, col))
-                
+
         return "impossible"
 ```
 
 # Matrix
 ## 01 Matrix
-`542. 01 Matrix  
+`542. 01 Matrix
 Given a matrix consists of 0 and 1, find the distance of the nearest 0 for each cell.
 The distance between two adjacent cells is 1
 用类似的思维，在Queue中只加入0的点，然后预设其他的点到0的距离为无穷大，这样的话，遍历的时候四个方向每次加1；遇到重复的时候取最小值就好
@@ -214,7 +223,7 @@ S O(mn)
                 if 0 <= row < len(rooms) and 0 <= col < len(rooms[0]) and rooms[row][col] > 1 + rooms[i][j]:
                     rooms[row][col] = rooms[i][j] + 1
                     queue.append((row, col))
-            
+
         return rooms
 ```
 

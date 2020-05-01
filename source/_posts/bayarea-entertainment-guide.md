@@ -7,8 +7,15 @@ categories: Travel
 tags: BayArea
 top: 10
 ---
+---
+**NOTE**
 
-> Update (2019/01) 大幅更新了本文。  
+搬运文章，原创作者:http://joshuablog.herokuapp.com/
+Just for study purpose, I don't hold the copyright, if this is affecting anyone, please let me know.
+
+---
+
+> Update (2019/01) 大幅更新了本文。
 > 本文没有考虑的：滑雪系列，开飞机跳伞潜水，海钓，露营
 
 # 郊野
@@ -51,7 +58,7 @@ top: 10
 5. [ x ] Belvedere Tiburon
 
 # 美食
-> 只推荐评价我吃过的（e.g. Napa作为大湾区米其林星级餐厅的聚集地，我一个都没吃过…）   
+> 只推荐评价我吃过的（e.g. Napa作为大湾区米其林星级餐厅的聚集地，我一个都没吃过…）
 > 另,基本上中餐对单人觅食者不友好
 
 ## Napa and North Bay

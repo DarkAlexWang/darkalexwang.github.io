@@ -6,6 +6,14 @@ updated: 2017-06-03 13:46:26
 categories: Travel
 tags:  [Maine, Park]
 ---
+---
+**NOTE**
+
+搬运文章，原创作者:http://joshuablog.herokuapp.com/
+Just for study purpose, I don't hold the copyright, if this is affecting anyone, please let me know.
+
+---
+
 > Time: 2017-05-23~05-25
 > Travel: Rental Car
 
@@ -18,7 +26,7 @@ tags:  [Maine, Park]
 多变的天气环绕了缅因，自然给予了什么我们就接受什么，缅因人的生活追随着自然，也就像标牌所示的： The Way Life Should Be
 [![IMG_4928.jpg](https://s5.postimg.org/ucy5clohz/IMG_4928.jpg)](https://postimg.org/image/kseippz5v/)
 [![IMG_3168.jpg](https://s5.postimg.org/sb29c3fwn/IMG_3168.jpg)](https://postimg.org/image/tq3u0tgzn/)
-时速80mile在缅因州的高速上  
+时速80mile在缅因州的高速上
 
 [https://youtu.be/plicXEq3aHk]()
 ## 龙虾
@@ -39,13 +47,13 @@ tags:  [Maine, Park]
 ### 感受
 Bass Harbor LightHouse
 [![SubstandardFullSizeRender 10.jpg](https://s5.postimg.org/xz3yp8uvb/Substandard_Full_Size_Render_10.jpg)](https://postimg.org/image/7e1ftoshv/)
-[![FullSizeRender 2.jpg](https://s5.postimg.org/7tlwe6t6v/Full_Size_Render_2.jpg)](https://postimg.org/image/tg0wv7rr7/)  
-如美如画的海滩  
+[![FullSizeRender 2.jpg](https://s5.postimg.org/7tlwe6t6v/Full_Size_Render_2.jpg)](https://postimg.org/image/tg0wv7rr7/)
+如美如画的海滩
 [![SubstandardFullSizeRender 9.jpg](https://s5.postimg.org/n8kxhb6mf/Substandard_Full_Size_Render_9.jpg)](https://postimg.org/image/68218mtkz/)
-明信片般的Jordan Pond House 
+明信片般的Jordan Pond House
 [![IMG_5017.jpg](https://s5.postimg.org/jl0kxi91j/IMG_5017.jpg)](https://postimg.org/image/6tmeqzz9f/)
 [![SubstandardFullSizeRender 4.jpg](https://s5.postimg.org/9b2rc08jr/Substandard_Full_Size_Render_4.jpg)](https://postimg.org/image/88sktgpqb/)
-[![IMG_2634.jpg](https://s5.postimg.org/hffguhkcn/IMG_2634.jpg)](https://postimg.org/image/dvtj4ohmr/) 
+[![IMG_2634.jpg](https://s5.postimg.org/hffguhkcn/IMG_2634.jpg)](https://postimg.org/image/dvtj4ohmr/)
 Cadillac Mountain
 [![SubstandardFullSizeRender 7.jpg](https://s5.postimg.org/rbbyge0qv/Substandard_Full_Size_Render_7.jpg)](https://postimg.org/image/bpumwfosj/)
 其他

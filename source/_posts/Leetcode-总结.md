@@ -4,38 +4,39 @@ comments: true
 date: 2018-05-14 21:36:13
 updated: 2018-07-28 21:36:13
 categories: Leetcode
-tags: 
+tags:
 top: 8
 ---
+## 搬运文章，原创作者:http://joshuablog.herokuapp.com/
 
 # 缘由
 在整个找工作的期间，每天刷一亩三分地和Leetcode，而且刷题的过程中，有一些比较有价值的网站值得参考，其中的解法分析重点需要掌握。目前在Google的Product Infrastructure组工作，可以提供内推。
 
 # 我的总结
 ## 套路
-**大部分来自天纯的pdf笔记  **  
-如果问最短，最少，BFS  如果问连通性，静态就是 DFS,BFS，动态就 UF  如果问依赖性就 topo sort  DAG 的问题就 dfs+memo  矩阵和 Array 通常都是 DP  问数量的通常都是 DP  问是否可以，也很有可能 DP  求所有解的，基本 backtracking  排序总是可以想一想的  
-万事总可以想HashMap  
+**大部分来自天纯的pdf笔记  **
+如果问最短，最少，BFS  如果问连通性，静态就是 DFS,BFS，动态就 UF  如果问依赖性就 topo sort  DAG 的问题就 dfs+memo  矩阵和 Array 通常都是 DP  问数量的通常都是 DP  问是否可以，也很有可能 DP  求所有解的，基本 backtracking  排序总是可以想一想的
+万事总可以想HashMap
 找规律试试Stack
 <!--more-->
 ## 基础数据结构
-1. [Longest Substring系列](http://joshuablog.herokuapp.com/Longest-Substring%E7%B3%BB%E5%88%97.html) 
+1. [Longest Substring系列](http://joshuablog.herokuapp.com/Longest-Substring%E7%B3%BB%E5%88%97.html)
 [Two Pointer问题总结](http://joshuablog.herokuapp.com/Two-Pointer%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93.html)
-[String总结](http://joshuablog.herokuapp.com/String%E6%80%BB%E7%BB%93.html)  
-2. [LinkedList系列](http://joshuablog.herokuapp.com/LinkedList%E7%B3%BB%E5%88%97.html)  
-3. [Stack总结](http://joshuablog.herokuapp.com/Stack%E6%80%BB%E7%BB%93.html)  
-4. [Backtracking总结](http://joshuablog.herokuapp.com/Backtracking%E6%80%BB%E7%BB%93.html)  
-5. [Heap总结](http://joshuablog.herokuapp.com/Heap%E6%80%BB%E7%BB%93.html)  
+[String总结](http://joshuablog.herokuapp.com/String%E6%80%BB%E7%BB%93.html)
+2. [LinkedList系列](http://joshuablog.herokuapp.com/LinkedList%E7%B3%BB%E5%88%97.html)
+3. [Stack总结](http://joshuablog.herokuapp.com/Stack%E6%80%BB%E7%BB%93.html)
+4. [Backtracking总结](http://joshuablog.herokuapp.com/Backtracking%E6%80%BB%E7%BB%93.html)
+5. [Heap总结](http://joshuablog.herokuapp.com/Heap%E6%80%BB%E7%BB%93.html)
 6. [BFS-Board类型总结](http://joshuablog.herokuapp.com/BFS-Maze%E7%B1%BB%E5%9E%8B%E6%80%BB%E7%BB%93.html)
 7. [DFS and Dijkstra](http://joshuablog.herokuapp.com/DFS-BFS-%E6%80%BB%E7%BB%93.html)
 8. [Tree总结](http://joshuablog.herokuapp.com/Tree%E6%80%BB%E7%BB%93.html)
 9. [DP总结](http://joshuablog.herokuapp.com/DP%E6%80%BB%E7%BB%93.html)
 
 ## 稍难数据结构
-[TopLogicalSort 总结](http://joshuablog.herokuapp.com/TopLogicalSort-%E6%80%BB%E7%BB%93.html)  
-[Trie 类型总结](http://joshuablog.herokuapp.com/Trie-%E7%B1%BB%E5%9E%8B%E6%80%BB%E7%BB%93.html)  
-[Union-Find总结](http://joshuablog.herokuapp.com/Union-Find%E6%80%BB%E7%BB%93.html)  
-[Design 问题](http://joshuablog.herokuapp.com/Design-%E9%97%AE%E9%A2%98.html)  
+[TopLogicalSort 总结](http://joshuablog.herokuapp.com/TopLogicalSort-%E6%80%BB%E7%BB%93.html)
+[Trie 类型总结](http://joshuablog.herokuapp.com/Trie-%E7%B1%BB%E5%9E%8B%E6%80%BB%E7%BB%93.html)
+[Union-Find总结](http://joshuablog.herokuapp.com/Union-Find%E6%80%BB%E7%BB%93.html)
+[Design 问题](http://joshuablog.herokuapp.com/Design-%E9%97%AE%E9%A2%98.html)
 [System Desgin](http://joshuablog.herokuapp.com/System-Desgin.html)
 
 # 参考资料
