@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"darkalexwang.github.io","root":"/","scheme":"Muse","version":"7.7.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"scrollpercent":true,"onmobile":false},"copycode":{"enable":true,"show_result":true},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="应用场景 信息的发送者和接收者如何维持这个连接，如果一方的连接中断，这期间的数据如何方式丢失？ 如何降低发送者和接收者的耦合度？ 如何让Priority高的接收者先接到数据？ 如何做到load balance？有效均衡接收者的负载？ 如何有效的将数据发送到相关的接收者？也就是说将接收者subscribe 不同的数据，如何做有效的filter。 如何做到可扩展，甚至将这个通信模块发到cluster上">
+  <meta name="description" content="NOTE 搬运文章，原创作者:http:&#x2F;&#x2F;joshuablog.herokuapp.com&#x2F;Just for study purpose, I don’t hold the copyright, if this is affecting anyone, please let me know.  应用场景 信息的发送者和接收者如何维持这个连接，如果一方的连接中断，这期间的数据如何方式丢失？ 如何">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RabbitMQ">
 <meta property="og:url" content="darkalexwang.github.io/2018/04/24/RabbitMQ/index.html">
 <meta property="og:site_name" content="DarkAlexWang&#39;s Blog">
-<meta property="og:description" content="应用场景 信息的发送者和接收者如何维持这个连接，如果一方的连接中断，这期间的数据如何方式丢失？ 如何降低发送者和接收者的耦合度？ 如何让Priority高的接收者先接到数据？ 如何做到load balance？有效均衡接收者的负载？ 如何有效的将数据发送到相关的接收者？也就是说将接收者subscribe 不同的数据，如何做有效的filter。 如何做到可扩展，甚至将这个通信模块发到cluster上">
+<meta property="og:description" content="NOTE 搬运文章，原创作者:http:&#x2F;&#x2F;joshuablog.herokuapp.com&#x2F;Just for study purpose, I don’t hold the copyright, if this is affecting anyone, please let me know.  应用场景 信息的发送者和接收者如何维持这个连接，如果一方的连接中断，这期间的数据如何方式丢失？ 如何">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/5401760-16c4239d5197c238.png">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/5401760-48523262e0628ef1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/329">
@@ -213,7 +213,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h1><ul>
+        <hr>
+<p><strong>NOTE</strong></p>
+<p>搬运文章，原创作者:<a href="http://joshuablog.herokuapp.com/" target="_blank" rel="noopener">http://joshuablog.herokuapp.com/</a><br>Just for study purpose, I don’t hold the copyright, if this is affecting anyone, please let me know.</p>
+<hr>
+<h1 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h1><ul>
 <li>信息的发送者和接收者如何维持这个连接，如果一方的连接中断，这期间的数据如何方式丢失？</li>
 <li>如何降低发送者和接收者的耦合度？</li>
 <li>如何让Priority高的接收者先接到数据？</li>
