@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"darkalexwang.github.io","root":"/","scheme":"Muse","version":"7.7.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"scrollpercent":true,"onmobile":false},"copycode":{"enable":true,"show_result":true},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"darkalexwang.github.io","root":"/","scheme":"Muse","version":"7.7.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"scrollpercent":true,"onmobile":false},"copycode":{"enable":true,"show_result":true},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.">
@@ -26,7 +26,7 @@
 <meta property="og:url" content="darkalexwang.github.io/page/2/index.html">
 <meta property="og:site_name" content="DarkAlexWang&#39;s Blog">
 <meta property="og:description" content="Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.">
-<meta property="og:locale" content="zh_CN">
+<meta property="og:locale" content="en_US">
 <meta property="article:author" content="darkalexwang">
 <meta name="twitter:card" content="summary">
 
@@ -39,7 +39,7 @@
     sidebar: "",
     isHome : true,
     isPost : false,
-    lang   : 'zh-CN'
+    lang   : 'en'
   };
 </script>
 
@@ -83,7 +83,7 @@
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
+    <div class="toggle" aria-label="Toggle navigation bar">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -112,22 +112,42 @@
   <ul id="menu" class="menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-aboutus">
+
+    <a href="/aboutus/" rel="section"><i class="fa fa-fw fa-users"></i>aboutus</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-fw fa-sitemap"></i>Sitemap</a>
 
   </li>
         <li class="menu-item menu-item-commonweal">
 
-    <a href="/404/" rel="section"><i class="fa fa-fw fa-heartbeat"></i>公益 404</a>
+    <a href="/404.html" rel="section"><i class="fa fa-fw fa-heartbeat"></i>Commonweal 404</a>
 
   </li>
   </ul>
@@ -158,7 +178,7 @@
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="darkalexwang.github.io/2018/03/11/TopLogicalSort-%E6%80%BB%E7%BB%93/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -181,22 +201,22 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">发表于</span>
+              <span class="post-meta-item-text">Posted on</span>
 
-              <time title="创建时间：2018-03-11 13:39:51" itemprop="dateCreated datePublished" datetime="2018-03-11T13:39:51-07:00">2018-03-11</time>
+              <time title="Created: 2018-03-11 13:39:51" itemprop="dateCreated datePublished" datetime="2018-03-11T13:39:51-07:00">2018-03-11</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2018-03-20 13:39:51" itemprop="dateModified" datetime="2018-03-20T13:39:51-07:00">2018-03-20</time>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2018-03-20 13:39:51" itemprop="dateModified" datetime="2018-03-20T13:39:51-07:00">2018-03-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
+              <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Leetcode/" itemprop="url" rel="index"><span itemprop="name">Leetcode</span></a>
                 </span>
@@ -219,7 +239,7 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2018/03/11/TopLogicalSort-%E6%80%BB%E7%BB%93/#more" rel="contents">
-                阅读全文 &raquo;
+                Read more &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -241,7 +261,7 @@
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="darkalexwang.github.io/2018/03/10/DFS-BFS-%E6%80%BB%E7%BB%93/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -264,22 +284,22 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">发表于</span>
+              <span class="post-meta-item-text">Posted on</span>
 
-              <time title="创建时间：2018-03-10 14:49:35" itemprop="dateCreated datePublished" datetime="2018-03-10T14:49:35-08:00">2018-03-10</time>
+              <time title="Created: 2018-03-10 14:49:35" itemprop="dateCreated datePublished" datetime="2018-03-10T14:49:35-08:00">2018-03-10</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2018-03-11 14:49:35" itemprop="dateModified" datetime="2018-03-11T14:49:35-07:00">2018-03-11</time>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2018-03-11 14:49:35" itemprop="dateModified" datetime="2018-03-11T14:49:35-07:00">2018-03-11</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
+              <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Leetcode/" itemprop="url" rel="index"><span itemprop="name">Leetcode</span></a>
                 </span>
@@ -302,7 +322,7 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2018/03/10/DFS-BFS-%E6%80%BB%E7%BB%93/#more" rel="contents">
-                阅读全文 &raquo;
+                Read more &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -324,7 +344,7 @@
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="darkalexwang.github.io/2017/10/24/Two-Pointer%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -347,22 +367,22 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">发表于</span>
+              <span class="post-meta-item-text">Posted on</span>
 
-              <time title="创建时间：2017-10-24 21:56:46" itemprop="dateCreated datePublished" datetime="2017-10-24T21:56:46-07:00">2017-10-24</time>
+              <time title="Created: 2017-10-24 21:56:46" itemprop="dateCreated datePublished" datetime="2017-10-24T21:56:46-07:00">2017-10-24</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2018-04-24 21:56:46" itemprop="dateModified" datetime="2018-04-24T21:56:46-07:00">2018-04-24</time>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2018-04-24 21:56:46" itemprop="dateModified" datetime="2018-04-24T21:56:46-07:00">2018-04-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
+              <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Leetcode/" itemprop="url" rel="index"><span itemprop="name">Leetcode</span></a>
                 </span>
@@ -389,7 +409,7 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2017/10/24/Two-Pointer%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/#more" rel="contents">
-                阅读全文 &raquo;
+                Read more &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -411,7 +431,7 @@
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="darkalexwang.github.io/2017/10/24/String%E6%80%BB%E7%BB%93/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -434,16 +454,16 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">发表于</span>
+              <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="创建时间：2017-10-24 21:53:46 / 修改时间：21:56:46" itemprop="dateCreated datePublished" datetime="2017-10-24T21:53:46-07:00">2017-10-24</time>
+              <time title="Created: 2017-10-24 21:53:46 / Modified: 21:56:46" itemprop="dateCreated datePublished" datetime="2017-10-24T21:53:46-07:00">2017-10-24</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
+              <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Leetcode/" itemprop="url" rel="index"><span itemprop="name">Leetcode</span></a>
                 </span>
@@ -482,7 +502,7 @@
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="darkalexwang.github.io/2017/10/24/Stack%E6%80%BB%E7%BB%93/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -505,22 +525,22 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">发表于</span>
+              <span class="post-meta-item-text">Posted on</span>
 
-              <time title="创建时间：2017-10-24 21:51:46" itemprop="dateCreated datePublished" datetime="2017-10-24T21:51:46-07:00">2017-10-24</time>
+              <time title="Created: 2017-10-24 21:51:46" itemprop="dateCreated datePublished" datetime="2017-10-24T21:51:46-07:00">2017-10-24</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2017-10-27 21:56:46" itemprop="dateModified" datetime="2017-10-27T21:56:46-07:00">2017-10-27</time>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2017-10-27 21:56:46" itemprop="dateModified" datetime="2017-10-27T21:56:46-07:00">2017-10-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
+              <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Leetcode/" itemprop="url" rel="index"><span itemprop="name">Leetcode</span></a>
                 </span>
@@ -544,7 +564,7 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2017/10/24/Stack%E6%80%BB%E7%BB%93/#more" rel="contents">
-                阅读全文 &raquo;
+                Read more &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -566,7 +586,7 @@
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="darkalexwang.github.io/2017/10/19/DP%E6%80%BB%E7%BB%93/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -589,15 +609,15 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">发表于</span>
+              <span class="post-meta-item-text">Posted on</span>
 
-              <time title="创建时间：2017-10-19 15:56:32" itemprop="dateCreated datePublished" datetime="2017-10-19T15:56:32-07:00">2017-10-19</time>
+              <time title="Created: 2017-10-19 15:56:32" itemprop="dateCreated datePublished" datetime="2017-10-19T15:56:32-07:00">2017-10-19</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
+              <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Leetcode/" itemprop="url" rel="index"><span itemprop="name">Leetcode</span></a>
                 </span>
@@ -633,7 +653,7 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2017/10/19/DP%E6%80%BB%E7%BB%93/#more" rel="contents">
-                阅读全文 &raquo;
+                Read more &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -655,7 +675,7 @@
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="darkalexwang.github.io/2017/10/19/Indeed%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -678,15 +698,15 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">发表于</span>
+              <span class="post-meta-item-text">Posted on</span>
 
-              <time title="创建时间：2017-10-19 13:11:15" itemprop="dateCreated datePublished" datetime="2017-10-19T13:11:15-07:00">2017-10-19</time>
+              <time title="Created: 2017-10-19 13:11:15" itemprop="dateCreated datePublished" datetime="2017-10-19T13:11:15-07:00">2017-10-19</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
+              <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Interview/" itemprop="url" rel="index"><span itemprop="name">Interview</span></a>
                 </span>
@@ -710,7 +730,7 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2017/10/19/Indeed%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/#more" rel="contents">
-                阅读全文 &raquo;
+                Read more &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -732,7 +752,7 @@
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="darkalexwang.github.io/2017/10/19/Opinion-about-Love/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -755,15 +775,15 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">发表于</span>
+              <span class="post-meta-item-text">Posted on</span>
 
-              <time title="创建时间：2017-10-19 11:46:17" itemprop="dateCreated datePublished" datetime="2017-10-19T11:46:17-07:00">2017-10-19</time>
+              <time title="Created: 2017-10-19 11:46:17" itemprop="dateCreated datePublished" datetime="2017-10-19T11:46:17-07:00">2017-10-19</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
+              <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Thinking/" itemprop="url" rel="index"><span itemprop="name">Thinking</span></a>
                 </span>
@@ -799,7 +819,7 @@
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="darkalexwang.github.io/2017/09/25/bayarea-entertainment-guide/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -822,22 +842,22 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">发表于</span>
+              <span class="post-meta-item-text">Posted on</span>
 
-              <time title="创建时间：2017-09-25 19:10:07" itemprop="dateCreated datePublished" datetime="2017-09-25T19:10:07-07:00">2017-09-25</time>
+              <time title="Created: 2017-09-25 19:10:07" itemprop="dateCreated datePublished" datetime="2017-09-25T19:10:07-07:00">2017-09-25</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-01-21 16:47:07" itemprop="dateModified" datetime="2019-01-21T16:47:07-08:00">2019-01-21</time>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-01-21 16:47:07" itemprop="dateModified" datetime="2019-01-21T16:47:07-08:00">2019-01-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
+              <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Travel/" itemprop="url" rel="index"><span itemprop="name">Travel</span></a>
                 </span>
@@ -881,7 +901,7 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2017/09/25/bayarea-entertainment-guide/#more" rel="contents">
-                阅读全文 &raquo;
+                Read more &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -903,7 +923,7 @@
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="darkalexwang.github.io/2017/09/24/Tree%E6%80%BB%E7%BB%93/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -926,22 +946,22 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">发表于</span>
+              <span class="post-meta-item-text">Posted on</span>
 
-              <time title="创建时间：2017-09-24 14:50:36" itemprop="dateCreated datePublished" datetime="2017-09-24T14:50:36-07:00">2017-09-24</time>
+              <time title="Created: 2017-09-24 14:50:36" itemprop="dateCreated datePublished" datetime="2017-09-24T14:50:36-07:00">2017-09-24</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2018-04-24 14:50:36" itemprop="dateModified" datetime="2018-04-24T14:50:36-07:00">2018-04-24</time>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2018-04-24 14:50:36" itemprop="dateModified" datetime="2018-04-24T14:50:36-07:00">2018-04-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
+              <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Leetcode/" itemprop="url" rel="index"><span itemprop="name">Leetcode</span></a>
                 </span>
@@ -963,7 +983,7 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2017/09/24/Tree%E6%80%BB%E7%BB%93/#more" rel="contents">
-                阅读全文 &raquo;
+                Read more &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -986,7 +1006,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1030,10 +1050,10 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          文章目录
+          Table of Contents
         </li>
         <li class="sidebar-nav-overview">
-          站点概览
+          Overview
         </li>
       </ul>
 
@@ -1055,19 +1075,20 @@
           <a href="/archives/">
         
           <span class="site-state-item-count">47</span>
-          <span class="site-state-item-name">日志</span>
+          <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
+          
         <span class="site-state-item-count">5</span>
-        <span class="site-state-item-name">分类</span></a>
+        <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
         <span class="site-state-item-count">54</span>
-        <span class="site-state-item-name">标签</span></a>
+        <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
 </div>
@@ -1080,9 +1101,6 @@
       </span>
       <span class="links-of-author-item">
         <a href="https://twitter.com/Dark_AlexWang" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;Dark_AlexWang" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="http://douban.com/people/Dark_Alex" title="DouBan → http:&#x2F;&#x2F;douban.com&#x2F;people&#x2F;Dark_Alex" rel="noopener" target="_blank"><i class="fa fa-fw fa-douban"></i>DouBan</a>
       </span>
   </div>
 
@@ -1165,5 +1183,4 @@
 
   
 
-</body>
-</html>
+<script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
