@@ -2,14 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>darkalexwang.github.io/about/index.html</loc>
+    <loc>darkalexwang.github.io/aboutus/index.html</loc>
     
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     
   </url>
   
   <url>
-    <loc>darkalexwang.github.io/aboutus/index.html</loc>
+    <loc>darkalexwang.github.io/about/index.html</loc>
     
     <lastmod>2020-09-01</lastmod>
     
@@ -114,14 +114,14 @@
   </url>
   
   <url>
-    <loc>darkalexwang.github.io/2014/05/30/Linux-WorkShop/</loc>
+    <loc>darkalexwang.github.io/2017/01/11/Meep-Cheat-Sheet/</loc>
     
     <lastmod>2020-05-01</lastmod>
     
   </url>
   
   <url>
-    <loc>darkalexwang.github.io/2017/01/11/Meep-Cheat-Sheet/</loc>
+    <loc>darkalexwang.github.io/2014/05/30/Linux-WorkShop/</loc>
     
     <lastmod>2020-05-01</lastmod>
     
@@ -375,7 +375,7 @@
 
   <url>
     <loc>darkalexwang.github.io</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -383,378 +383,378 @@
   
   <url>
     <loc>darkalexwang.github.io/tags/BFS/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/tags/DFS/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/tags/Backtracking/</loc>
-    <lastmod>2020-09-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>darkalexwang.github.io/tags/DP/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/tags/Git/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/tags/GitHub-Pages/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/tags/Tech/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/tags/Deploy/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/tags/Hexo/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>darkalexwang.github.io/tags/DP/</loc>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/tags/Design/</loc>
-    <lastmod>2020-09-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>darkalexwang.github.io/tags/Heap/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/tags/%E9%85%8D%E7%BD%AE/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>darkalexwang.github.io/tags/Heap/</loc>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/tags/Indeed/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/tags/LinkedList/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/tags/TwoPointer/</loc>
-    <lastmod>2020-09-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>darkalexwang.github.io/tags/Linux/</loc>
-    <lastmod>2020-09-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>darkalexwang.github.io/tags/WorkShop/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/tags/String/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/tags/SlidingWindow/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/tags/Meep/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/tags/H5topng/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>darkalexwang.github.io/tags/Linux/</loc>
+    <lastmod>2020-09-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>darkalexwang.github.io/tags/WorkShop/</loc>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/tags/Newsletter/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/tags/Product/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/tags/html/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/tags/Gist/</loc>
-    <lastmod>2020-09-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>darkalexwang.github.io/tags/Love/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/tags/Research/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/tags/Optical/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/tags/Computation/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/tags/Blog/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/tags/Quote/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>darkalexwang.github.io/tags/Love/</loc>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/tags/RabbitMQ/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/tags/stack/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/tags/System-Design/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/tags/Maine/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/tags/Park/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/tags/TopLogicalSort/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/tags/Tree/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/tags/Trie/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/tags/Union-Find/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/tags/Vim/</loc>
-    <lastmod>2020-09-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>darkalexwang.github.io/tags/Latex/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/tags/BayArea/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/tags/Tourism/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/tags/%E6%80%BB%E7%BB%93/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>darkalexwang.github.io/tags/Latex/</loc>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/tags/Python/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/tags/Django/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/tags/Project/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/tags/vimtex/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/tags/VIM/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/tags/Review/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/tags/Tools/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/tags/Mac/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/tags/IOS/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -763,35 +763,35 @@
   
   <url>
     <loc>darkalexwang.github.io/categories/Leetcode/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/categories/Technology/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/categories/Interview/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/categories/Thinking/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>darkalexwang.github.io/categories/Travel/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
