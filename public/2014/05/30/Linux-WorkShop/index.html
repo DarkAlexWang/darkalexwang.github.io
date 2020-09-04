@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hans">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -9,15 +9,17 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="true">
 
 <link rel="stylesheet" href="/css/main.css">
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"darkalexwang.github.io","root":"/","scheme":"Muse","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"darkalexwang.github.io","root":"/","scheme":"Muse","version":"7.7.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"scrollpercent":true,"onmobile":false},"copycode":{"enable":true,"show_result":true},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="class: center, middle Introduction to Linux  class: middle What is Linux Free and Open Source computer Operating System First released in 1991 by Linus Torvalds Linus was 21 years old at the time Toda">
@@ -26,6 +28,7 @@
 <meta property="og:url" content="darkalexwang.github.io/2014/05/30/Linux-WorkShop/index.html">
 <meta property="og:site_name" content="DarkAlexWang&#39;s Blog">
 <meta property="og:description" content="class: center, middle Introduction to Linux  class: middle What is Linux Free and Open Source computer Operating System First released in 1991 by Linus Torvalds Linus was 21 years old at the time Toda">
+<meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://cynapse.com/wp-content/uploads/linux-powered_0.png">
 <meta property="og:image" content="https://assets.ubuntu.com/sites/ubuntu/latest/u/img/devices/devices-family.png">
 <meta property="og:image" content="https://ryanlerch.fedorapeople.org/musique.png">
@@ -48,7 +51,7 @@
 <meta property="og:image" content="https://git-scm.com/book/en/v2/book/01-introduction/images/local.png">
 <meta property="og:image" content="http://i.kinja-img.com/gawker-media/image/upload/vkadegotlwqvivpppfb5.png">
 <meta property="article:published_time" content="2014-05-30T21:17:50.000Z">
-<meta property="article:modified_time" content="2020-03-22T03:05:27.162Z">
+<meta property="article:modified_time" content="2020-05-01T04:24:10.819Z">
 <meta property="article:author" content="darkalexwang">
 <meta property="article:tag" content="Tech">
 <meta property="article:tag" content="Linux">
@@ -65,7 +68,7 @@
     sidebar: "",
     isHome : false,
     isPost : true,
-    lang   : 'zh-Hans'
+    lang   : 'en'
   };
 </script>
 
@@ -127,6 +130,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -141,16 +145,73 @@
     <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
 
   </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-aboutus">
+
+    <a href="/aboutus/" rel="section"><i class="fa fa-fw fa-users"></i>aboutus</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
 
   </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-fw fa-sitemap"></i>Sitemap</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404.html" rel="section"><i class="fa fa-fw fa-heartbeat"></i>Commonweal 404</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
     </header>
@@ -160,6 +221,8 @@
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
 
 
     <main class="main">
@@ -174,11 +237,11 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
     <link itemprop="mainEntityOfPage" href="darkalexwang.github.io/2014/05/30/Linux-WorkShop/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://c2.staticflickr.com/8/7464/27053268555_c92b86047e_o.jpg">
       <meta itemprop="name" content="darkalexwang">
       <meta itemprop="description" content="Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.">
     </span>
@@ -205,10 +268,45 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-03-21 20:05:27" itemprop="dateModified" datetime="2020-03-21T20:05:27-07:00">2020-03-21</time>
+                <time title="Modified: 2020-04-30 21:24:10" itemprop="dateModified" datetime="2020-04-30T21:24:10-07:00">2020-04-30</time>
               </span>
 
           
+            <span id="/2014/05/30/Linux-WorkShop/" class="post-meta-item leancloud_visitors" data-flag-title="Linux WorkShop" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2014/05/30/Linux-WorkShop/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2014/05/30/Linux-WorkShop/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>21k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>19 mins.</span>
+            </span>
 
         </div>
       </header>
@@ -220,7 +318,7 @@
 
       
         <p>class: center, middle</p>
-<h1 id="Introduction-to-Linux"><a href="#Introduction-to-Linux" class="headerlink" title="Introduction to Linux"></a>Introduction to Linux</h1><p><img src="http://cynapse.com/wp-content/uploads/linux-powered_0.png" alt="img"></p>
+<h1 id="Introduction-to-Linux"><a href="#Introduction-to-Linux" class="headerlink" title="Introduction to Linux"></a>Introduction to Linux</h1><p><img data-src="http://cynapse.com/wp-content/uploads/linux-powered_0.png" alt="img"></p>
 <hr>
 <p>class: middle</p>
 <h1 id="What-is-Linux"><a href="#What-is-Linux" class="headerlink" title="What is Linux"></a>What is Linux</h1><ul>
@@ -232,36 +330,36 @@
 <hr>
 <p>class: center</p>
 <h1 id="Linux-on-Devices"><a href="#Linux-on-Devices" class="headerlink" title="Linux on Devices"></a>Linux on Devices</h1><p>TVs | PCs | Tablets | Phones (since 2013)</p>
-<p><img src="https://assets.ubuntu.com/sites/ubuntu/latest/u/img/devices/devices-family.png" alt="img"></p>
+<p><img data-src="https://assets.ubuntu.com/sites/ubuntu/latest/u/img/devices/devices-family.png" alt="img"></p>
 <hr>
 <p>class: inverse, center, middle</p>
 <h2 id="Why-use-Linux"><a href="#Why-use-Linux" class="headerlink" title="Why use Linux?"></a>Why use Linux?</h2><hr>
 <p>.left-column[</p>
 <h2 id="Innovative"><a href="#Innovative" class="headerlink" title="Innovative"></a>Innovative</h2><p>]<br>.right-column[<br>.center[<strong>Package Managers</strong> (since 1995)]</p>
-<p>.center[<img src="https://ryanlerch.fedorapeople.org/musique.png" alt="img">]<br>]</p>
+<p>.center[<img data-src="https://ryanlerch.fedorapeople.org/musique.png" alt="img">]<br>]</p>
 <hr>
 <p>.left-column[</p>
 <h2 id="Innovative-1"><a href="#Innovative-1" class="headerlink" title="Innovative"></a>Innovative</h2><p>]<br>.right-column[<br>.center[<strong>Workspaces</strong> (since 1998)]</p>
-<p>.center[<img src="http://core0.staticworld.net/images/article/2013/03/7-ubuntu-workspace-switcher-100028064-orig.png" alt="img">]<br>]</p>
+<p>.center[<img data-src="http://core0.staticworld.net/images/article/2013/03/7-ubuntu-workspace-switcher-100028064-orig.png" alt="img">]<br>]</p>
 <hr>
 <p>.left-column[</p>
 <h2 id="Innovative-2"><a href="#Innovative-2" class="headerlink" title="Innovative"></a>Innovative</h2><p>]<br>.right-column[<br>.center[<strong>Live CD</strong> (free shipping since 2006)]</p>
-<p>.center[<img src="https://bitcoinpaperwallet.com/ubuntu-linux-live-bootable-cd/ubuntu-cd.jpg" alt="img">]<br>]</p>
+<p>.center[<img data-src="https://bitcoinpaperwallet.com/ubuntu-linux-live-bootable-cd/ubuntu-cd.jpg" alt="img">]<br>]</p>
 <hr>
 <p>.left-column[</p>
 <h2 id="Innovative-3"><a href="#Innovative-3" class="headerlink" title="Innovative"></a>Innovative</h2><p>]<br>.right-column[<br>.center[<strong>Task Spread</strong> (since 2013)]</p>
-<p>.center[<img src="http://itsfoss.com/wp-content/uploads/2014/10/Windows_Spread_Linux_Gnome.jpeg" alt="img">]<br>]</p>
+<p>.center[<img data-src="http://itsfoss.com/wp-content/uploads/2014/10/Windows_Spread_Linux_Gnome.jpeg" alt="img">]<br>]</p>
 <hr>
 <p>.left-column[</p>
 <h2 id="Innovative-4"><a href="#Innovative-4" class="headerlink" title="Innovative"></a>Innovative</h2><p>]<br>.right-column[<br>.center[<strong>Convergence</strong> (since 2015)]</p>
-<p>.center[<img src="http://www.omgubuntu.co.uk/wp-content/uploads/2012/02/noname-11.jpg" alt="img">]<br>]</p>
+<p>.center[<img data-src="http://www.omgubuntu.co.uk/wp-content/uploads/2012/02/noname-11.jpg" alt="img">]<br>]</p>
 <hr>
 <p>.left-column[</p>
 <h2 id="Innovative-5"><a href="#Innovative-5" class="headerlink" title="Innovative"></a>Innovative</h2><h2 id="Adaptable"><a href="#Adaptable" class="headerlink" title="Adaptable"></a>Adaptable</h2><p>]<br>.right-column[<br>.center[<strong>Firefox OS Phone</strong>]</p>
 <ul>
 <li>Sold for $35 at launch</li>
 <li>Runs only a web renderer on the Linux kernel</li>
-<li>Feels fast, smooth, fluid<br>.center[<img src="http://cdn.gsmarena.com/vv/newsimg/13/01/firefox-os-developer-phones/gsmarena_001.jpg" alt="img">]<br>]</li>
+<li>Feels fast, smooth, fluid<br>.center[<img data-src="http://cdn.gsmarena.com/vv/newsimg/13/01/firefox-os-developer-phones/gsmarena_001.jpg" alt="img">]<br>]</li>
 </ul>
 <hr>
 <p>.left-column[</p>
@@ -270,30 +368,30 @@
 <li>First major OS to boot in under 2 seconds!</li>
 <li>Runs only a web renderer on the Linux kernel</li>
 </ul>
-<p>.center[<img src="http://image.slidesharecdn.com/chromeos-140711225857-phpapp01/95/chrome-os-the-stateless-operating-system-13-638.jpg?cb=1405119621" alt="img">]<br>]</p>
+<p>.center[<img data-src="http://image.slidesharecdn.com/chromeos-140711225857-phpapp01/95/chrome-os-the-stateless-operating-system-13-638.jpg?cb=1405119621" alt="img">]<br>]</p>
 <hr>
 <p>.left-column[</p>
 <h2 id="Innovative-7"><a href="#Innovative-7" class="headerlink" title="Innovative"></a>Innovative</h2><h2 id="Adaptable-2"><a href="#Adaptable-2" class="headerlink" title="Adaptable"></a>Adaptable</h2><h2 id="Productive"><a href="#Productive" class="headerlink" title="Productive"></a>Productive</h2><p>]<br>.right-column[<br>.center[<strong>XMonad</strong>]</p>
-<p>.center[<img src="https://wiki.haskell.org/wikiupload/a/aa/Screen-triplehead-galois.jpg" alt="img">]<br>]</p>
+<p>.center[<img data-src="https://wiki.haskell.org/wikiupload/a/aa/Screen-triplehead-galois.jpg" alt="img">]<br>]</p>
 <hr>
 <p>.left-column[</p>
 <h2 id="Innovative-8"><a href="#Innovative-8" class="headerlink" title="Innovative"></a>Innovative</h2><h2 id="Adaptable-3"><a href="#Adaptable-3" class="headerlink" title="Adaptable"></a>Adaptable</h2><h2 id="Productive-1"><a href="#Productive-1" class="headerlink" title="Productive"></a>Productive</h2><p>]<br>.right-column[<br>.center[<strong>Containers</strong>]</p>
-<p>.center[<img src="http://blog.leaseweb.com/uploads/2014/07/containers-vs-vms.jpg" alt="img">]<br>]</p>
+<p>.center[<img data-src="http://blog.leaseweb.com/uploads/2014/07/containers-vs-vms.jpg" alt="img">]<br>]</p>
 <hr>
 <p>.left-column[</p>
 <h2 id="Innovative-9"><a href="#Innovative-9" class="headerlink" title="Innovative"></a>Innovative</h2><h2 id="Adaptable-4"><a href="#Adaptable-4" class="headerlink" title="Adaptable"></a>Adaptable</h2><h2 id="Productive-2"><a href="#Productive-2" class="headerlink" title="Productive"></a>Productive</h2><p>]<br>.right-column[<br>.center[<strong>Terminal</strong>]</p>
-<p>.center[<img src="http://dotshare.it/public/images/uploads/40.png" alt="img">]<br>]</p>
+<p>.center[<img data-src="http://dotshare.it/public/images/uploads/40.png" alt="img">]<br>]</p>
 <hr>
 <p>class: inverse, center, middle</p>
 <h1 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h1><hr>
 <p>class: center</p>
-<h1 id="Linux-Architecture"><a href="#Linux-Architecture" class="headerlink" title="Linux Architecture"></a>Linux Architecture</h1><p>.center[<img src="http://www.tonypickett.com/wp-content/uploads/2013/09/arch_01.jpg" alt="img">]</p>
+<h1 id="Linux-Architecture"><a href="#Linux-Architecture" class="headerlink" title="Linux Architecture"></a>Linux Architecture</h1><p>.center[<img data-src="http://www.tonypickett.com/wp-content/uploads/2013/09/arch_01.jpg" alt="img">]</p>
 <hr>
 <p>class: center</p>
-<h1 id="Window-Managers"><a href="#Window-Managers" class="headerlink" title="Window Managers"></a>Window Managers</h1><p>.center[<img src="http://downtoearthlinux.com/wp-content/uploads/2014/03/de-vs-wm.jpg" alt="img">]</p>
+<h1 id="Window-Managers"><a href="#Window-Managers" class="headerlink" title="Window Managers"></a>Window Managers</h1><p>.center[<img data-src="http://downtoearthlinux.com/wp-content/uploads/2014/03/de-vs-wm.jpg" alt="img">]</p>
 <hr>
 <p>class: center</p>
-<h1 id="File-System-Hierarchy"><a href="#File-System-Hierarchy" class="headerlink" title="File System Hierarchy"></a>File System Hierarchy</h1><p>.center[<img src="http://media.brajeshwar.com/i/technology/linux-file-tree.jpg" alt="img">]</p>
+<h1 id="File-System-Hierarchy"><a href="#File-System-Hierarchy" class="headerlink" title="File System Hierarchy"></a>File System Hierarchy</h1><p>.center[<img data-src="http://media.brajeshwar.com/i/technology/linux-file-tree.jpg" alt="img">]</p>
 <hr>
 <p>class: inverse, center, middle</p>
 <h1 id="Basic-Navigation"><a href="#Basic-Navigation" class="headerlink" title="Basic Navigation"></a>Basic Navigation</h1><hr>
@@ -420,7 +518,7 @@
 <h1 id="Unix-Philosophy-1"><a href="#Unix-Philosophy-1" class="headerlink" title="Unix Philosophy"></a>Unix Philosophy</h1><ul>
 <li>We use pipes (the <code>|</code> character) to chain the output of one program as the input of another</li>
 </ul>
-<p>.center[<img src="https://camo.githubusercontent.com/2effeef4795b95295b726690bb0984df7d812fcd/68747470733a2f2f646f63732e676f6f676c652e636f6d2f64726177696e67732f642f3161444b397a716163677572465a537a6a704c4d5653676f64306a462d4b4648576553565f53554c387668452f7075623f773d39313626616d703b683d333534" alt="img">]</p>
+<p>.center[<img data-src="https://camo.githubusercontent.com/2effeef4795b95295b726690bb0984df7d812fcd/68747470733a2f2f646f63732e676f6f676c652e636f6d2f64726177696e67732f642f3161444b397a716163677572465a537a6a704c4d5653676f64306a462d4b4648576553565f53554c387668452f7075623f773d39313626616d703b683d333534" alt="img">]</p>
 <hr>
 <h1 id="Unix-Philosophy-2"><a href="#Unix-Philosophy-2" class="headerlink" title="Unix Philosophy"></a>Unix Philosophy</h1><p>Everything is a file.</p>
 <ul>
@@ -463,7 +561,7 @@
 <hr>
 <h1 id="Understanding-Filesystems-1"><a href="#Understanding-Filesystems-1" class="headerlink" title="Understanding Filesystems"></a>Understanding Filesystems</h1><p>Multiple pointers to the inode number may exist. These pointers are<br>called hard links. All hard links are equivalent.</p>
 <p>The alternative, is to have symbolic links, which point to the original<br>file path, and not the inode number itself.</p>
-<p>.center[<img src="http://deano.me/wp-content/uploads/2014/12/HardVsSymbolicLInks.png" alt="img">]</p>
+<p>.center[<img data-src="http://deano.me/wp-content/uploads/2014/12/HardVsSymbolicLInks.png" alt="img">]</p>
 <hr>
 <p>class: inverse, center, middle</p>
 <h1 id="Unix-Patterns"><a href="#Unix-Patterns" class="headerlink" title="Unix Patterns"></a>Unix Patterns</h1><hr>
@@ -534,10 +632,10 @@
 </ul>
 <hr>
 <h1 id="Processes-1"><a href="#Processes-1" class="headerlink" title="Processes"></a>Processes</h1><p>Threads may run in userspace, or kernel space</p>
-<p>.center[<img src="http://image.slidesharecdn.com/scheduleractivations-effectivekernelsupportfortheuser-levelmanagementofparallelism-110803044850-phpapp02/95/scheduler-activations-effective-kernel-support-for-the-userlevel-management-of-parallelism-6-728.jpg?cb=1312714637" alt="img">]</p>
+<p>.center[<img data-src="http://image.slidesharecdn.com/scheduleractivations-effectivekernelsupportfortheuser-levelmanagementofparallelism-110803044850-phpapp02/95/scheduler-activations-effective-kernel-support-for-the-userlevel-management-of-parallelism-6-728.jpg?cb=1312714637" alt="img">]</p>
 <hr>
 <h1 id="Processes-2"><a href="#Processes-2" class="headerlink" title="Processes"></a>Processes</h1><p>The OS manages theads, offloading to different hardware using different techniques.<br>You can help the OS by specifying your execution model as a programmer.</p>
-<p>.center[<img src="https://www.pgroup.com/images/insider/v2n4a1i2.png" alt="img">]</p>
+<p>.center[<img data-src="https://www.pgroup.com/images/insider/v2n4a1i2.png" alt="img">]</p>
 <hr>
 <h1 id="Processes-3"><a href="#Processes-3" class="headerlink" title="Processes"></a>Processes</h1><p>You can view running process using <code>top</code></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ top</span><br><span class="line">Tasks: 174 total, 3 running, 171 sleeping, 0 stopped</span><br><span class="line">KiB Mem: 4050604 total, 3114428 used, 936176 free</span><br><span class="line">Kib Swap: 2104476 total, 18132 used, 2086344 free</span><br><span class="line"> </span><br><span class="line"> PID USER %CPU %MEM COMMAND</span><br><span class="line">6978 ryan 3.0  21.2 firefox</span><br><span class="line">  11 root 0.3   0.0 rcu_preempt</span><br><span class="line">6601 ryan 2.0   2.4 kwin</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
@@ -783,11 +881,11 @@
 <p>class: inverse, center, middle</p>
 <h1 id="Version-Control"><a href="#Version-Control" class="headerlink" title="Version Control"></a>Version Control</h1><hr>
 <h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><p>A version control system maintains a database containing different<br>versions of the file. Useful for seeing what changed, and rolling<br>back to older revisions.</p>
-<p>.right-column[<img src="https://git-scm.com/book/en/v2/book/01-introduction/images/local.png" alt="img">]</p>
+<p>.right-column[<img data-src="https://git-scm.com/book/en/v2/book/01-introduction/images/local.png" alt="img">]</p>
 <hr>
 <p>class: inverse, center, middle</p>
 <h1 id="Advanced-Navigation"><a href="#Advanced-Navigation" class="headerlink" title="Advanced Navigation"></a>Advanced Navigation</h1><hr>
-<h1 id="Being-more-productive"><a href="#Being-more-productive" class="headerlink" title="Being more productive"></a>Being more productive</h1><p>.center[<img src="http://i.kinja-img.com/gawker-media/image/upload/vkadegotlwqvivpppfb5.png" alt="img">]</p>
+<h1 id="Being-more-productive"><a href="#Being-more-productive" class="headerlink" title="Being more productive"></a>Being more productive</h1><p>.center[<img data-src="http://i.kinja-img.com/gawker-media/image/upload/vkadegotlwqvivpppfb5.png" alt="img">]</p>
 <hr>
 <h1 id="Special-Variables"><a href="#Special-Variables" class="headerlink" title="Special Variables"></a>Special Variables</h1><ul>
 <li><code>$1, $2, $3, ...</code> are the positional parameters.</li>
@@ -904,6 +1002,7 @@
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -956,6 +1055,8 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="darkalexwang"
+      src="https://c2.staticflickr.com/8/7464/27053268555_c92b86047e_o.jpg">
   <p class="site-author-name" itemprop="name">darkalexwang</p>
   <div class="site-description" itemprop="description">Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.</div>
 </div>
@@ -964,22 +1065,35 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">47</span>
+          <span class="site-state-item-count">49</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
+          
         <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">54</span>
+          
+        <span class="site-state-item-count">55</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
 </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/darkalexwang" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;darkalexwang" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:wangzhihuan0815@gmail.com" title="E-Mail → mailto:wangzhihuan0815@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/Dark_AlexWang" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;Dark_AlexWang" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+      </span>
+  </div>
 
 
 
@@ -1001,12 +1115,17 @@
 
 <div class="copyright">
   
-  &copy; 
+  &copy; 2014 – 
   <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
-    <i class="fa fa-user"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">darkalexwang</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="Symbols count total">201k</span>
 </div>
 
         
@@ -1024,6 +1143,10 @@
 
   
   <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
@@ -1037,28 +1160,62 @@
 
 <script src="/js/next-boot.js"></script>
 
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
+<script src="/js/bookmark.js"></script>
 
 
 
 
   
 
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
   
 
-</body>
-</html>
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : '24rulLT5OhXgLsk80hCm3RvR-gzGzoHsz',
+      appKey     : 'StnUSKMeD4s0XPPzFCiSV6HN',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : 'en' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+<script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>

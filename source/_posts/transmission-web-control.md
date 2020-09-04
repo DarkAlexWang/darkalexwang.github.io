@@ -33,6 +33,7 @@ request。
  - 可按 Trackers 分组浏览；
  - 其他……
 
+<!--more-->
 ### 浏览器支持
  - 所有支持HTML5的浏览器(Chrome 15.0.874，Firefox 8.0.1，IE 9.0.8112，Opera 11.52)
 

@@ -6,6 +6,14 @@ updated: 2017-10-19 13:11:15
 categories: Interview
 tags: Indeed
 ---
+---
+**NOTE**
+
+搬运文章，原创作者:http://joshuablog.herokuapp.com/
+Just for study purpose, I don't hold the copyright, if this is affecting anyone, please let me know.
+
+---
+
 # 流程
 HR联系-> 确认电话面试时间-> 电话面试 -> 后续跟进（move on fail）
 Data Engineer
@@ -25,7 +33,7 @@ class Node(object):
 		self.len = len(self.array)
 		while len(self.array) < 5:
 			self.array.append(' ')
-		
+
 
 class LinkedList(object):
 	def __init__(self, head):
@@ -48,7 +56,7 @@ def get(head, index):
 
 def insert(head, index, char):
 	if index < 0:
-		return 
+		return
 	cur = head
 	while cur and index:
 		if index >= 5:
@@ -62,14 +70,14 @@ def insert(head, index, char):
 				length = cur.len
 				for i in range(length+1,index,-1):
 					cur.head.array[i] = cur.head.array[i-1]
-				cur.head.array[index] = char 
+				cur.head.array[index] = char
 				return cur.head.array
 			#break
 		prev = cur
 		cur = cur.next
 	if not cur:
 		node = Node([char])
-		
+
 		newlist = LinkedList(node)
 		prev.next = newlist
 		return newlist.head.array
@@ -161,8 +169,8 @@ class expireDict(object):
 			if ticks - float(timestamp) > 0:
 				del(self.ordered_dict[timestamp])
 				del(self.regular_dict[key])
-			
-		
+
+
 
 # T = expireDict()
 # T.put('A',100,1)
@@ -186,7 +194,7 @@ class expireDict(object):
 ## Find Peak Element
 
 ```python
-def findPeakElement(nums): 
+def findPeakElement(nums):
 	# O (lgN)
 	# O(1)
 	l = 0
@@ -236,7 +244,7 @@ def findLCA(node1, node2):
 	# O(V+E)
 	# visit every node and for each node needs to visit each edge
 	# O(N)
-	# create queue, each node enter 
+	# create queue, each node enter
 	if not node1 or not node2:
 		return None
 
@@ -360,7 +368,7 @@ def rangePrint(nums):
 			ori = i
 			preVal = nums[i]
 	if ori +1 != len(nums):
-		res.append(str(ori)+"->"+str(nums[-1]))	
+		res.append(str(ori)+"->"+str(nums[-1]))
 	else:
 		res.append(str(nums[-1]))
 	return res
@@ -394,12 +402,12 @@ print rangesummary2([1,2,3,4,4,5,6,8])
 
 ## Rearrange Lists
 
-```python 
+```python
 # ["a", "b", "c", "a", "a", "b"] -> [ ["a", "b", "c"], ["a", "b"], ["a"] ]
 # This is not a unique solution; [ ["a", "b"], ["a", "b"], ["a", "c"] ] would also be a valid output. You only need to return one valid output.
 # Order does not matter in any way for either the input or the output.
-# Your solution should minimize the number of inner lists. 
-# For example: 
+# Your solution should minimize the number of inner lists.
+# For example:
 # [ ["a"], ["a"], ["b"] ] would not be a correct solution for ["a", "a", "b"].
 # The correct solution would be [ ["a", "b"], ["a"] ]
 
@@ -418,7 +426,7 @@ def func(s):
 		res[index[ord(char) - 97]].append(char)
 		index[ord(char) - 97] += 1
 
-	
+
 	return res
 print func(["a", "a", "b"])
 ```
@@ -430,7 +438,7 @@ def reverse_a_string_more_slowly(a_string):
     new_strings = []
     index = len(a_string)
     while index:
-        index -= 1                       
+        index -= 1
         new_strings.append(a_string[index])
     return ''.join(new_strings)
 
@@ -462,7 +470,7 @@ print reverseWords('  a  b ')
 
 ```python
 class Solution(object):
-    
+
 
     def shortestDistance1(self, words, word1, word2):
         """
@@ -484,7 +492,7 @@ class Solution(object):
                 temp = abs(p1-p2)
                 res = min(res, temp)
         return res
-        
+
     def shortestWordDistance3(self, words, word1, word2):
         """
         :type words: List[str]
@@ -510,8 +518,8 @@ class Solution(object):
                     res = min(res, abs(p1 - i))
                     p1 = i
         return res
-        
- 
+
+
 from collections import defaultdict
 class WordDistance(object):
 
@@ -546,7 +554,7 @@ class WordDistance(object):
             else:
                 p2 += 1
         return res
-        
+
 
 
 # Your WordDistance object will be instantiated and called as such:

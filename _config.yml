@@ -7,7 +7,7 @@ title: DarkAlexWang's Blog
 subtitle:
 description: Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.
 author: darkalexwang
-language: zh-Hans
+language: en 
 timezone:
 
 # URL
@@ -63,13 +63,88 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: next
+theme: next-reloaded
+word_count: true
 
 # Avatar
-avatar: https://c2.staticflickr.com/8/7464/27053268555_c92b86047e_o.jpg
+#avatar: https://c2.staticflickr.com/8/7464/27053268555_c92b86047e_o.jpg
+
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
+
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
   repository: https://github.com/DarkAlexWang/darkalexwang.github.io.git
   branch: master
+
+# Social links
+#social:
+  #GitHub: https://www.github.com/DarkAlexWang
+  #Linkedin: https://www.linkedin.com/in/zhihuan-wang
+  #微博: http://www.weibo.com/youhusky
+  #豆瓣: https://www.douban.com/people/1098945/
+  #知乎: http://www.zhihu.com/people/Joshua_husky
+
+sitemap:
+  path: sitemap.xml
+# baidusitemap:
+  # path: baidusitemap.xml
+
+symbols_count_time:
+  symbols: true
+  time: true
+  total_symbols: true
+  total_time: false
+
+# Security
+encrypt:
+  enable: true
+
+# offline config passed to sw-precache.
+service_worker:
+  maximumFileSizeToCacheInBytes: 5242880
+  staticFileGlobs:
+  - public/about/index.html
+  - public/favicon.ico
+  - public/manifest.json
+  stripPrefix: public
+  verbose: false
+  runtimeCaching:
+    - urlPattern: /**/*
+      handler: cacheFirst
+      options:
+        origin: darkalexwang.github.io
+
+#filter_optimize:
+#  enable: true
+#  # remove static resource query string
+#  #   - like `?v=1.0.0`
+#  remove_query_string: true
+#  # remove the surrounding comments in each of the bundled files
+#  remove_comments: false
+#  css:
+#    enable: false
+#    # bundle loaded css file into the one
+#    bundle: true
+#    # use a script block to load css elements dynamically
+#    delivery: true
+#    # make specific css content inline into the html page
+#    #   - only support the full path
+#    #   - default is ['css/main.css']
+#    inlines:
+#    excludes:
+#  js:
+#    # bundle loaded js file into the one
+#    bundle: true
+#    excludes:
+#  # set the priority of this plugin,
+#  # lower means it will be executed first, default is 10
+#  priority: 12
+# 
+#fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css

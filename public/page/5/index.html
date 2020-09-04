@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hans">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -9,15 +9,17 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="true">
 
 <link rel="stylesheet" href="/css/main.css">
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"darkalexwang.github.io","root":"/","scheme":"Muse","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"darkalexwang.github.io","root":"/","scheme":"Muse","version":"7.7.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"scrollpercent":true,"onmobile":false},"copycode":{"enable":true,"show_result":true},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.">
@@ -26,6 +28,7 @@
 <meta property="og:url" content="darkalexwang.github.io/page/5/index.html">
 <meta property="og:site_name" content="DarkAlexWang&#39;s Blog">
 <meta property="og:description" content="Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.">
+<meta property="og:locale" content="en_US">
 <meta property="article:author" content="darkalexwang">
 <meta name="twitter:card" content="summary">
 
@@ -38,7 +41,7 @@
     sidebar: "",
     isHome : true,
     isPost : false,
-    lang   : 'zh-Hans'
+    lang   : 'en'
   };
 </script>
 
@@ -100,6 +103,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -114,16 +118,73 @@
     <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
 
   </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-aboutus">
+
+    <a href="/aboutus/" rel="section"><i class="fa fa-fw fa-users"></i>aboutus</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
 
   </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-fw fa-sitemap"></i>Sitemap</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404.html" rel="section"><i class="fa fa-fw fa-heartbeat"></i>Commonweal 404</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
     </header>
@@ -133,6 +194,8 @@
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
 
 
     <main class="main">
@@ -147,11 +210,237 @@
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="darkalexwang.github.io/2016/05/15/How-to-merge-old-post/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://c2.staticflickr.com/8/7464/27053268555_c92b86047e_o.jpg">
+      <meta itemprop="name" content="darkalexwang">
+      <meta itemprop="description" content="Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DarkAlexWang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2016/05/15/How-to-merge-old-post/" class="post-title-link" itemprop="url">How to merge old post</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2016-05-15 23:13:33" itemprop="dateCreated datePublished" datetime="2016-05-15T23:13:33-07:00">2016-05-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-04-30 21:24:10" itemprop="dateModified" datetime="2020-04-30T21:24:10-07:00">2020-04-30</time>
+              </span>
+
+          
+            <span id="/2016/05/15/How-to-merge-old-post/" class="post-meta-item leancloud_visitors" data-flag-title="How to merge old post" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2016/05/15/How-to-merge-old-post/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2016/05/15/How-to-merge-old-post/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>0</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="darkalexwang.github.io/2016/03/13/Vim-Cheatsheet/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://c2.staticflickr.com/8/7464/27053268555_c92b86047e_o.jpg">
+      <meta itemprop="name" content="darkalexwang">
+      <meta itemprop="description" content="Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DarkAlexWang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2016/03/13/Vim-Cheatsheet/" class="post-title-link" itemprop="url">Vim Cheatsheet</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2016-03-13 10:08:01" itemprop="dateCreated datePublished" datetime="2016-03-13T10:08:01-07:00">2016-03-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-04-30 21:24:10" itemprop="dateModified" datetime="2020-04-30T21:24:10-07:00">2020-04-30</time>
+              </span>
+
+          
+            <span id="/2016/03/13/Vim-Cheatsheet/" class="post-meta-item leancloud_visitors" data-flag-title="Vim Cheatsheet" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2016/03/13/Vim-Cheatsheet/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2016/03/13/Vim-Cheatsheet/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>4.4k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>4 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Vim-Cheatsheet"><a href="#Vim-Cheatsheet" class="headerlink" title="Vim Cheatsheet"></a>Vim Cheatsheet</h1><blockquote>
+<p>Note: The original post is from <a href="https://github.com/hackjutsu/vim-cheatsheet/blob/master/README.md" target="_blank" rel="noopener">github</a>.</p>
+</blockquote>
+<h2 id="Global"><a href="#Global" class="headerlink" title="Global"></a>Global</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">:<span class="built_in">help</span> keyword <span class="comment"># open help for keyword</span></span><br><span class="line">:o file       <span class="comment"># open file</span></span><br><span class="line">:saveas file  <span class="comment"># save file as</span></span><br><span class="line">:close        <span class="comment"># close current pane</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Cursor-movement"><a href="#Cursor-movement" class="headerlink" title="Cursor movement"></a>Cursor movement</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">h        <span class="comment"># move cursor left</span></span><br><span class="line">j        <span class="comment"># move cursor down</span></span><br><span class="line">k        <span class="comment"># move cursor up</span></span><br><span class="line">l        <span class="comment"># move cursor right</span></span><br><span class="line">H        <span class="comment"># move to top of screen</span></span><br><span class="line">M        <span class="comment"># move to middle of screen</span></span><br><span class="line">L        <span class="comment"># move to bottom of screen</span></span><br><span class="line">w        <span class="comment"># jump forwards to the start of a word</span></span><br><span class="line">W        <span class="comment"># jump forwards to the start of a word (words can contain punctuation)</span></span><br><span class="line">e        <span class="comment"># jump forwards to the end of a word</span></span><br><span class="line">E        <span class="comment"># jump forwards to the end of a word (words can contain punctuation)</span></span><br><span class="line">b        <span class="comment"># jump backwards to the start of a word</span></span><br><span class="line">B        <span class="comment"># jump backwards to the start of a word (words can contain punctuation)</span></span><br><span class="line">0        <span class="comment"># jump to the start of the line</span></span><br><span class="line">^        <span class="comment"># jump to the first non-blank character of the line</span></span><br><span class="line">$        <span class="comment"># jump to the end of the line</span></span><br><span class="line">g_       <span class="comment"># jump to the last non-blank character of the line</span></span><br><span class="line">gg       <span class="comment"># go to the first line of the document</span></span><br><span class="line">G        <span class="comment"># go to the last line of the document</span></span><br><span class="line">5G       <span class="comment"># go to line 5</span></span><br><span class="line">fx       <span class="comment"># jump to next occurrence of character x</span></span><br><span class="line">tx       <span class="comment"># jump to before next occurrence of character x</span></span><br><span class="line">&#125;        <span class="comment"># jump to next paragraph (or function/block, when editing code)</span></span><br><span class="line">&#123;        <span class="comment"># jump to previous paragraph (or function/block, when editing code)</span></span><br><span class="line">zz       <span class="comment"># center cursor on screen</span></span><br><span class="line">Ctrl + b <span class="comment"># move back one full screen</span></span><br><span class="line">Ctrl + f <span class="comment"># move forward one full screen</span></span><br><span class="line">Ctrl + d <span class="comment"># move forward 1/2 a screen</span></span><br><span class="line">Ctrl + u <span class="comment"># move back 1/2 a screen</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Insert-mode-inserting-appending-text"><a href="#Insert-mode-inserting-appending-text" class="headerlink" title="Insert mode - inserting/appending text"></a>Insert mode - inserting/appending text</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">i        <span class="comment"># insert before the cursor</span></span><br><span class="line">I        <span class="comment"># insert at the beginning of the line</span></span><br><span class="line">a        <span class="comment"># insert (append) after the cursor</span></span><br><span class="line">A        <span class="comment"># insert (append) at the end of the line</span></span><br><span class="line">o        <span class="comment"># append (open) a new line below the current line</span></span><br><span class="line">O        <span class="comment"># append (open) a new line above the current line</span></span><br><span class="line">ea       <span class="comment"># insert (append) at the end of the word</span></span><br><span class="line">Esc      <span class="comment"># exit insert mode</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Editing"><a href="#Editing" class="headerlink" title="Editing"></a>Editing</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">r        <span class="comment"># replace a single character</span></span><br><span class="line">J        <span class="comment"># join line below to the current one</span></span><br><span class="line">cc       <span class="comment"># change (replace) entire line</span></span><br><span class="line">cw       <span class="comment"># change (replace) to the end of the word</span></span><br><span class="line">c$       <span class="comment"># change (replace) to the end of the line</span></span><br><span class="line">s        <span class="comment"># delete character and substitute text</span></span><br><span class="line">S        <span class="comment"># delete line and substitute text (same as cc)</span></span><br><span class="line">xp       <span class="comment"># transpose two letters (delete and paste)</span></span><br><span class="line">.        <span class="comment"># repeat last command</span></span><br><span class="line">u        <span class="comment"># undo</span></span><br><span class="line">Ctrl + r <span class="comment"># redo</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Marking-text-visual-mode"><a href="#Marking-text-visual-mode" class="headerlink" title="Marking text (visual mode)"></a>Marking text (visual mode)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">v        <span class="comment"># start visual mode, mark lines, then do a command (like y-yank)</span></span><br><span class="line">V        <span class="comment"># start linewise visual mode</span></span><br><span class="line">o        <span class="comment"># move to other end of marked area</span></span><br><span class="line">O        <span class="comment"># move to other corner of block</span></span><br><span class="line">aw       <span class="comment"># mark a word</span></span><br><span class="line">ab       <span class="comment"># a block with ()</span></span><br><span class="line">aB       <span class="comment"># a block with &#123;&#125;</span></span><br><span class="line">ib       <span class="comment"># inner block with ()</span></span><br><span class="line">iB       <span class="comment"># inner block with &#123;&#125;</span></span><br><span class="line">Esc      <span class="comment"># exit visual mode</span></span><br><span class="line">Ctrl + v <span class="comment"># start visual block mode</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Visual-commands"><a href="#Visual-commands" class="headerlink" title="Visual commands"></a>Visual commands</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;       <span class="comment"># shift text right</span></span><br><span class="line">&lt;       <span class="comment"># shift text left</span></span><br><span class="line">y       <span class="comment"># yank (copy) marked text</span></span><br><span class="line">d       <span class="comment"># delete marked text</span></span><br><span class="line">~       <span class="comment"># switch case</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Cut-and-paste"><a href="#Cut-and-paste" class="headerlink" title="Cut and paste"></a>Cut and paste</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">yy       <span class="comment"># yank (copy) a line</span></span><br><span class="line">2yy      <span class="comment"># yank (copy) 2 lines</span></span><br><span class="line">yw       <span class="comment"># yank (copy) the characters of the word from the cursor position to the start of the next word</span></span><br><span class="line">y$       <span class="comment"># yank (copy) to end of line</span></span><br><span class="line">p        <span class="comment"># put (paste) the clipboard after cursor</span></span><br><span class="line">P        <span class="comment"># put (paste) before cursor</span></span><br><span class="line">dd       <span class="comment"># delete (cut) a line</span></span><br><span class="line">2dd      <span class="comment"># delete (cut) 2 lines</span></span><br><span class="line">dw       <span class="comment"># delete (cut) the characters of the word from the cursor position to the start of the next word</span></span><br><span class="line">D        <span class="comment"># delete (cut) to the end of the line</span></span><br><span class="line">d$       <span class="comment"># delete (cut) to the end of the line</span></span><br><span class="line">x        <span class="comment"># delete (cut) character</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Search-and-replace"><a href="#Search-and-replace" class="headerlink" title="Search and replace"></a>Search and replace</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/pattern       <span class="comment"># search for pattern</span></span><br><span class="line">?pattern       <span class="comment"># search backward for pattern</span></span><br><span class="line">\vpattern      <span class="comment"># 'very magic' pattern: non-alphanumeric characters are interpreted as special regex symbols (no escaping needed)</span></span><br><span class="line">n              <span class="comment"># repeat search in same direction</span></span><br><span class="line">N              <span class="comment"># repeat search in opposite direction</span></span><br><span class="line">:%s/old/new/g  <span class="comment"># replace all old with new throughout file</span></span><br><span class="line">:%s/old/new/gc <span class="comment"># replace all old with new throughout file with confirmations</span></span><br><span class="line">:noh           <span class="comment"># remove highlighting of search matches</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Search-in-multiple-files"><a href="#Search-in-multiple-files" class="headerlink" title="Search in multiple files"></a>Search in multiple files</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">:vimgrep /pattern/ &#123;file&#125; <span class="comment"># search for pattern in multiple files</span></span><br><span class="line">:cn                       <span class="comment"># jump to the next match</span></span><br><span class="line">:cp                       <span class="comment"># jump to the previous match</span></span><br><span class="line">:copen                    <span class="comment"># open a window containing the list of matches</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Exiting"><a href="#Exiting" class="headerlink" title="Exiting"></a>Exiting</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">:w              <span class="comment"># write (save) the file, but don't exit</span></span><br><span class="line">:w !sudo tee %  <span class="comment"># write out the current file using sudo</span></span><br><span class="line">:wq or :x or ZZ <span class="comment"># write (save) and quit</span></span><br><span class="line">:q              <span class="comment"># quit (fails if there are unsaved changes)</span></span><br><span class="line">:q! or ZQ       <span class="comment"># quit and throw away unsaved changes</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Working-with-multiple-files"><a href="#Working-with-multiple-files" class="headerlink" title="Working with multiple files"></a>Working with multiple files</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">:e file       <span class="comment"># edit a file in a new buffer</span></span><br><span class="line">:bnext or :bn <span class="comment"># go to the next buffer</span></span><br><span class="line">:bprev or :bp <span class="comment"># go to the previous buffer</span></span><br><span class="line">:bd           <span class="comment"># delete a buffer (close a file)</span></span><br><span class="line">:ls           <span class="comment"># list all open buffers</span></span><br><span class="line">:sp file      <span class="comment"># open a file in a new buffer and split window</span></span><br><span class="line">:vsp file     <span class="comment"># open a file in a new buffer and vertically split window</span></span><br><span class="line">Ctrl + ws     <span class="comment"># split window</span></span><br><span class="line">Ctrl + ww     <span class="comment"># switch windows</span></span><br><span class="line">Ctrl + wq     <span class="comment"># quit a window</span></span><br><span class="line">Ctrl + wv     <span class="comment"># split window vertically</span></span><br><span class="line">Ctrl + wh     <span class="comment"># move cursor to the left window (vertical split)</span></span><br><span class="line">Ctrl + wl     <span class="comment"># move cursor to the right window (vertical split)</span></span><br><span class="line">Ctrl + wj     <span class="comment"># move cursor to the window below (horizontal split)</span></span><br><span class="line">Ctrl + wk     <span class="comment"># move cursor to the window above (horizontal split)</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Tabs"><a href="#Tabs" class="headerlink" title="Tabs"></a>Tabs</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">:tabnew or :tabnew file <span class="comment"># open a file in a new tab</span></span><br><span class="line">Ctrl + wT               <span class="comment"># move the current split window into its own tab</span></span><br><span class="line">gt or :tabnext or :tabn <span class="comment"># move to the next tab</span></span><br><span class="line">gT or :tabprev or :tabp <span class="comment"># move to the previous tab</span></span><br><span class="line">&lt;number&gt;gt              <span class="comment"># move to tab &lt;number&gt;</span></span><br><span class="line">:tabmove &lt;number&gt;       <span class="comment"># move current tab to the &lt;number&gt;th position (indexed from 0)</span></span><br><span class="line">:tabclose or :tabc      <span class="comment"># close the current tab and all its windows</span></span><br><span class="line">:tabonly or :tabo       <span class="comment"># close all tabs except for the current one</span></span><br><span class="line">:tabdo <span class="built_in">command</span>          <span class="comment"># run the command on all tabs (e.g. :tabdo q - closes all opened tabs)</span></span><br></pre></td></tr></table></figure>
+
+<p><img data-src="https://cdn.shopify.com/s/files/1/0165/4168/files/preview.png" alt="Vim Cheat Map" title="Vim Cheat Map"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="darkalexwang.github.io/2015/06/04/Deploy-Hexo-MD-Files-on-GitHub/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://c2.staticflickr.com/8/7464/27053268555_c92b86047e_o.jpg">
       <meta itemprop="name" content="darkalexwang">
       <meta itemprop="description" content="Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.">
     </span>
@@ -179,10 +468,45 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-03-21 20:05:27" itemprop="dateModified" datetime="2020-03-21T20:05:27-07:00">2020-03-21</time>
+                <time title="Modified: 2020-04-30 21:24:10" itemprop="dateModified" datetime="2020-04-30T21:24:10-07:00">2020-04-30</time>
               </span>
 
           
+            <span id="/2015/06/04/Deploy-Hexo-MD-Files-on-GitHub/" class="post-meta-item leancloud_visitors" data-flag-title="Deploy Hexo MD Files on GitHub" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2015/06/04/Deploy-Hexo-MD-Files-on-GitHub/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2015/06/04/Deploy-Hexo-MD-Files-on-GitHub/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>3.3k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>3 mins.</span>
+            </span>
 
         </div>
       </header>
@@ -266,11 +590,11 @@
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="darkalexwang.github.io/2015/05/17/Vim-and-latex-tips/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://c2.staticflickr.com/8/7464/27053268555_c92b86047e_o.jpg">
       <meta itemprop="name" content="darkalexwang">
       <meta itemprop="description" content="Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.">
     </span>
@@ -298,10 +622,45 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-03-21 20:05:27" itemprop="dateModified" datetime="2020-03-21T20:05:27-07:00">2020-03-21</time>
+                <time title="Modified: 2020-04-30 21:24:10" itemprop="dateModified" datetime="2020-04-30T21:24:10-07:00">2020-04-30</time>
               </span>
 
           
+            <span id="/2015/05/17/Vim-and-latex-tips/" class="post-meta-item leancloud_visitors" data-flag-title="用 Vim 高效地编辑 LaTeX 文档" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2015/05/17/Vim-and-latex-tips/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2015/05/17/Vim-and-latex-tips/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>2.4k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>2 mins.</span>
+            </span>
 
         </div>
       </header>
@@ -374,11 +733,11 @@ License.</code></p>
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="darkalexwang.github.io/2014/08/16/archetype-plugin/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://c2.staticflickr.com/8/7464/27053268555_c92b86047e_o.jpg">
       <meta itemprop="name" content="darkalexwang">
       <meta itemprop="description" content="Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.">
     </span>
@@ -406,10 +765,45 @@ License.</code></p>
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-03-21 20:05:27" itemprop="dateModified" datetime="2020-03-21T20:05:27-07:00">2020-03-21</time>
+                <time title="Modified: 2020-04-30 21:24:10" itemprop="dateModified" datetime="2020-04-30T21:24:10-07:00">2020-04-30</time>
               </span>
 
           
+            <span id="/2014/08/16/archetype-plugin/" class="post-meta-item leancloud_visitors" data-flag-title="archetype plugin" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2014/08/16/archetype-plugin/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2014/08/16/archetype-plugin/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>180</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>1 mins.</span>
+            </span>
 
         </div>
       </header>
@@ -442,11 +836,11 @@ mvn archetype:generate -DgroupId=&lt;your-groupId&gt; -DartifactId=&lt;your-arti
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="darkalexwang.github.io/2014/07/16/Vim-command-map/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://c2.staticflickr.com/8/7464/27053268555_c92b86047e_o.jpg">
       <meta itemprop="name" content="darkalexwang">
       <meta itemprop="description" content="Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.">
     </span>
@@ -474,10 +868,45 @@ mvn archetype:generate -DgroupId=&lt;your-groupId&gt; -DartifactId=&lt;your-arti
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-03-21 20:05:27" itemprop="dateModified" datetime="2020-03-21T20:05:27-07:00">2020-03-21</time>
+                <time title="Modified: 2020-04-30 21:24:10" itemprop="dateModified" datetime="2020-04-30T21:24:10-07:00">2020-04-30</time>
               </span>
 
           
+            <span id="/2014/07/16/Vim-command-map/" class="post-meta-item leancloud_visitors" data-flag-title="Vim command map" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2014/07/16/Vim-command-map/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2014/07/16/Vim-command-map/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>0</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>1 mins.</span>
+            </span>
 
         </div>
       </header>
@@ -488,7 +917,7 @@ mvn archetype:generate -DgroupId=&lt;your-groupId&gt; -DartifactId=&lt;your-arti
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><img src="https://c2.staticflickr.com/2/1524/25323931442_6bed1f3402_h.jpg" alt="Vim command map" title="vim command map"></p>
+          <p><img data-src="https://c2.staticflickr.com/2/1524/25323931442_6bed1f3402_h.jpg" alt="Vim command map" title="vim command map"></p>
 
       
     </div>
@@ -507,11 +936,11 @@ mvn archetype:generate -DgroupId=&lt;your-groupId&gt; -DartifactId=&lt;your-arti
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="darkalexwang.github.io/2014/06/16/Quick-Markdown-Example/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://c2.staticflickr.com/8/7464/27053268555_c92b86047e_o.jpg">
       <meta itemprop="name" content="darkalexwang">
       <meta itemprop="description" content="Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.">
     </span>
@@ -539,10 +968,45 @@ mvn archetype:generate -DgroupId=&lt;your-groupId&gt; -DartifactId=&lt;your-arti
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-03-21 20:05:27" itemprop="dateModified" datetime="2020-03-21T20:05:27-07:00">2020-03-21</time>
+                <time title="Modified: 2020-04-30 21:24:10" itemprop="dateModified" datetime="2020-04-30T21:24:10-07:00">2020-04-30</time>
               </span>
 
           
+            <span id="/2014/06/16/Quick-Markdown-Example/" class="post-meta-item leancloud_visitors" data-flag-title="Quick Markdown Example" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2014/06/16/Quick-Markdown-Example/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2014/06/16/Quick-Markdown-Example/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>2.3k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>2 mins.</span>
+            </span>
 
         </div>
       </header>
@@ -626,7 +1090,7 @@ goto first step (or shut off burner when done)</code></pre><p>Do not bump wooden
 <p>Here’s a “line block”:</p>
 <p>| Line one<br>|   Line too<br>| Line tree</p>
 <p>and images can be specified like so:</p>
-<p><img src="https://github.com/scrooloose/syntastic/raw/master/_assets/screenshot_1.png" alt="example image" title="An exemplary image"></p>
+<p><img data-src="https://github.com/scrooloose/syntastic/raw/master/_assets/screenshot_1.png" alt="example image" title="An exemplary image"></p>
 <p>Inline math equations go in like so: $\omega = d\phi / dt$. Display<br>math should get its own line and be put in in double-dollarsigns:</p>
 <p>$$I = \int \rho R^{2} dV$$</p>
 <p>And note that you can backslash-escape any punctuation characters<br>which you wish to be displayed literally, ex.: `foo`, *bar*, etc.–</p>
@@ -648,11 +1112,11 @@ goto first step (or shut off burner when done)</code></pre><p>Do not bump wooden
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="darkalexwang.github.io/2014/05/30/Linux-WorkShop/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://c2.staticflickr.com/8/7464/27053268555_c92b86047e_o.jpg">
       <meta itemprop="name" content="darkalexwang">
       <meta itemprop="description" content="Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.">
     </span>
@@ -680,10 +1144,45 @@ goto first step (or shut off burner when done)</code></pre><p>Do not bump wooden
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-03-21 20:05:27" itemprop="dateModified" datetime="2020-03-21T20:05:27-07:00">2020-03-21</time>
+                <time title="Modified: 2020-04-30 21:24:10" itemprop="dateModified" datetime="2020-04-30T21:24:10-07:00">2020-04-30</time>
               </span>
 
           
+            <span id="/2014/05/30/Linux-WorkShop/" class="post-meta-item leancloud_visitors" data-flag-title="Linux WorkShop" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2014/05/30/Linux-WorkShop/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2014/05/30/Linux-WorkShop/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>21k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>19 mins.</span>
+            </span>
 
         </div>
       </header>
@@ -695,7 +1194,7 @@ goto first step (or shut off burner when done)</code></pre><p>Do not bump wooden
 
       
           <p>class: center, middle</p>
-<h1 id="Introduction-to-Linux"><a href="#Introduction-to-Linux" class="headerlink" title="Introduction to Linux"></a>Introduction to Linux</h1><p><img src="http://cynapse.com/wp-content/uploads/linux-powered_0.png" alt="img"></p>
+<h1 id="Introduction-to-Linux"><a href="#Introduction-to-Linux" class="headerlink" title="Introduction to Linux"></a>Introduction to Linux</h1><p><img data-src="http://cynapse.com/wp-content/uploads/linux-powered_0.png" alt="img"></p>
 <hr>
 <p>class: middle</p>
 <h1 id="What-is-Linux"><a href="#What-is-Linux" class="headerlink" title="What is Linux"></a>What is Linux</h1><ul>
@@ -707,36 +1206,36 @@ goto first step (or shut off burner when done)</code></pre><p>Do not bump wooden
 <hr>
 <p>class: center</p>
 <h1 id="Linux-on-Devices"><a href="#Linux-on-Devices" class="headerlink" title="Linux on Devices"></a>Linux on Devices</h1><p>TVs | PCs | Tablets | Phones (since 2013)</p>
-<p><img src="https://assets.ubuntu.com/sites/ubuntu/latest/u/img/devices/devices-family.png" alt="img"></p>
+<p><img data-src="https://assets.ubuntu.com/sites/ubuntu/latest/u/img/devices/devices-family.png" alt="img"></p>
 <hr>
 <p>class: inverse, center, middle</p>
 <h2 id="Why-use-Linux"><a href="#Why-use-Linux" class="headerlink" title="Why use Linux?"></a>Why use Linux?</h2><hr>
 <p>.left-column[</p>
 <h2 id="Innovative"><a href="#Innovative" class="headerlink" title="Innovative"></a>Innovative</h2><p>]<br>.right-column[<br>.center[<strong>Package Managers</strong> (since 1995)]</p>
-<p>.center[<img src="https://ryanlerch.fedorapeople.org/musique.png" alt="img">]<br>]</p>
+<p>.center[<img data-src="https://ryanlerch.fedorapeople.org/musique.png" alt="img">]<br>]</p>
 <hr>
 <p>.left-column[</p>
 <h2 id="Innovative-1"><a href="#Innovative-1" class="headerlink" title="Innovative"></a>Innovative</h2><p>]<br>.right-column[<br>.center[<strong>Workspaces</strong> (since 1998)]</p>
-<p>.center[<img src="http://core0.staticworld.net/images/article/2013/03/7-ubuntu-workspace-switcher-100028064-orig.png" alt="img">]<br>]</p>
+<p>.center[<img data-src="http://core0.staticworld.net/images/article/2013/03/7-ubuntu-workspace-switcher-100028064-orig.png" alt="img">]<br>]</p>
 <hr>
 <p>.left-column[</p>
 <h2 id="Innovative-2"><a href="#Innovative-2" class="headerlink" title="Innovative"></a>Innovative</h2><p>]<br>.right-column[<br>.center[<strong>Live CD</strong> (free shipping since 2006)]</p>
-<p>.center[<img src="https://bitcoinpaperwallet.com/ubuntu-linux-live-bootable-cd/ubuntu-cd.jpg" alt="img">]<br>]</p>
+<p>.center[<img data-src="https://bitcoinpaperwallet.com/ubuntu-linux-live-bootable-cd/ubuntu-cd.jpg" alt="img">]<br>]</p>
 <hr>
 <p>.left-column[</p>
 <h2 id="Innovative-3"><a href="#Innovative-3" class="headerlink" title="Innovative"></a>Innovative</h2><p>]<br>.right-column[<br>.center[<strong>Task Spread</strong> (since 2013)]</p>
-<p>.center[<img src="http://itsfoss.com/wp-content/uploads/2014/10/Windows_Spread_Linux_Gnome.jpeg" alt="img">]<br>]</p>
+<p>.center[<img data-src="http://itsfoss.com/wp-content/uploads/2014/10/Windows_Spread_Linux_Gnome.jpeg" alt="img">]<br>]</p>
 <hr>
 <p>.left-column[</p>
 <h2 id="Innovative-4"><a href="#Innovative-4" class="headerlink" title="Innovative"></a>Innovative</h2><p>]<br>.right-column[<br>.center[<strong>Convergence</strong> (since 2015)]</p>
-<p>.center[<img src="http://www.omgubuntu.co.uk/wp-content/uploads/2012/02/noname-11.jpg" alt="img">]<br>]</p>
+<p>.center[<img data-src="http://www.omgubuntu.co.uk/wp-content/uploads/2012/02/noname-11.jpg" alt="img">]<br>]</p>
 <hr>
 <p>.left-column[</p>
 <h2 id="Innovative-5"><a href="#Innovative-5" class="headerlink" title="Innovative"></a>Innovative</h2><h2 id="Adaptable"><a href="#Adaptable" class="headerlink" title="Adaptable"></a>Adaptable</h2><p>]<br>.right-column[<br>.center[<strong>Firefox OS Phone</strong>]</p>
 <ul>
 <li>Sold for $35 at launch</li>
 <li>Runs only a web renderer on the Linux kernel</li>
-<li>Feels fast, smooth, fluid<br>.center[<img src="http://cdn.gsmarena.com/vv/newsimg/13/01/firefox-os-developer-phones/gsmarena_001.jpg" alt="img">]<br>]</li>
+<li>Feels fast, smooth, fluid<br>.center[<img data-src="http://cdn.gsmarena.com/vv/newsimg/13/01/firefox-os-developer-phones/gsmarena_001.jpg" alt="img">]<br>]</li>
 </ul>
 <hr>
 <p>.left-column[</p>
@@ -745,30 +1244,30 @@ goto first step (or shut off burner when done)</code></pre><p>Do not bump wooden
 <li>First major OS to boot in under 2 seconds!</li>
 <li>Runs only a web renderer on the Linux kernel</li>
 </ul>
-<p>.center[<img src="http://image.slidesharecdn.com/chromeos-140711225857-phpapp01/95/chrome-os-the-stateless-operating-system-13-638.jpg?cb=1405119621" alt="img">]<br>]</p>
+<p>.center[<img data-src="http://image.slidesharecdn.com/chromeos-140711225857-phpapp01/95/chrome-os-the-stateless-operating-system-13-638.jpg?cb=1405119621" alt="img">]<br>]</p>
 <hr>
 <p>.left-column[</p>
 <h2 id="Innovative-7"><a href="#Innovative-7" class="headerlink" title="Innovative"></a>Innovative</h2><h2 id="Adaptable-2"><a href="#Adaptable-2" class="headerlink" title="Adaptable"></a>Adaptable</h2><h2 id="Productive"><a href="#Productive" class="headerlink" title="Productive"></a>Productive</h2><p>]<br>.right-column[<br>.center[<strong>XMonad</strong>]</p>
-<p>.center[<img src="https://wiki.haskell.org/wikiupload/a/aa/Screen-triplehead-galois.jpg" alt="img">]<br>]</p>
+<p>.center[<img data-src="https://wiki.haskell.org/wikiupload/a/aa/Screen-triplehead-galois.jpg" alt="img">]<br>]</p>
 <hr>
 <p>.left-column[</p>
 <h2 id="Innovative-8"><a href="#Innovative-8" class="headerlink" title="Innovative"></a>Innovative</h2><h2 id="Adaptable-3"><a href="#Adaptable-3" class="headerlink" title="Adaptable"></a>Adaptable</h2><h2 id="Productive-1"><a href="#Productive-1" class="headerlink" title="Productive"></a>Productive</h2><p>]<br>.right-column[<br>.center[<strong>Containers</strong>]</p>
-<p>.center[<img src="http://blog.leaseweb.com/uploads/2014/07/containers-vs-vms.jpg" alt="img">]<br>]</p>
+<p>.center[<img data-src="http://blog.leaseweb.com/uploads/2014/07/containers-vs-vms.jpg" alt="img">]<br>]</p>
 <hr>
 <p>.left-column[</p>
 <h2 id="Innovative-9"><a href="#Innovative-9" class="headerlink" title="Innovative"></a>Innovative</h2><h2 id="Adaptable-4"><a href="#Adaptable-4" class="headerlink" title="Adaptable"></a>Adaptable</h2><h2 id="Productive-2"><a href="#Productive-2" class="headerlink" title="Productive"></a>Productive</h2><p>]<br>.right-column[<br>.center[<strong>Terminal</strong>]</p>
-<p>.center[<img src="http://dotshare.it/public/images/uploads/40.png" alt="img">]<br>]</p>
+<p>.center[<img data-src="http://dotshare.it/public/images/uploads/40.png" alt="img">]<br>]</p>
 <hr>
 <p>class: inverse, center, middle</p>
 <h1 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h1><hr>
 <p>class: center</p>
-<h1 id="Linux-Architecture"><a href="#Linux-Architecture" class="headerlink" title="Linux Architecture"></a>Linux Architecture</h1><p>.center[<img src="http://www.tonypickett.com/wp-content/uploads/2013/09/arch_01.jpg" alt="img">]</p>
+<h1 id="Linux-Architecture"><a href="#Linux-Architecture" class="headerlink" title="Linux Architecture"></a>Linux Architecture</h1><p>.center[<img data-src="http://www.tonypickett.com/wp-content/uploads/2013/09/arch_01.jpg" alt="img">]</p>
 <hr>
 <p>class: center</p>
-<h1 id="Window-Managers"><a href="#Window-Managers" class="headerlink" title="Window Managers"></a>Window Managers</h1><p>.center[<img src="http://downtoearthlinux.com/wp-content/uploads/2014/03/de-vs-wm.jpg" alt="img">]</p>
+<h1 id="Window-Managers"><a href="#Window-Managers" class="headerlink" title="Window Managers"></a>Window Managers</h1><p>.center[<img data-src="http://downtoearthlinux.com/wp-content/uploads/2014/03/de-vs-wm.jpg" alt="img">]</p>
 <hr>
 <p>class: center</p>
-<h1 id="File-System-Hierarchy"><a href="#File-System-Hierarchy" class="headerlink" title="File System Hierarchy"></a>File System Hierarchy</h1><p>.center[<img src="http://media.brajeshwar.com/i/technology/linux-file-tree.jpg" alt="img">]</p>
+<h1 id="File-System-Hierarchy"><a href="#File-System-Hierarchy" class="headerlink" title="File System Hierarchy"></a>File System Hierarchy</h1><p>.center[<img data-src="http://media.brajeshwar.com/i/technology/linux-file-tree.jpg" alt="img">]</p>
 <hr>
 <p>class: inverse, center, middle</p>
 <h1 id="Basic-Navigation"><a href="#Basic-Navigation" class="headerlink" title="Basic Navigation"></a>Basic Navigation</h1><hr>
@@ -895,7 +1394,7 @@ goto first step (or shut off burner when done)</code></pre><p>Do not bump wooden
 <h1 id="Unix-Philosophy-1"><a href="#Unix-Philosophy-1" class="headerlink" title="Unix Philosophy"></a>Unix Philosophy</h1><ul>
 <li>We use pipes (the <code>|</code> character) to chain the output of one program as the input of another</li>
 </ul>
-<p>.center[<img src="https://camo.githubusercontent.com/2effeef4795b95295b726690bb0984df7d812fcd/68747470733a2f2f646f63732e676f6f676c652e636f6d2f64726177696e67732f642f3161444b397a716163677572465a537a6a704c4d5653676f64306a462d4b4648576553565f53554c387668452f7075623f773d39313626616d703b683d333534" alt="img">]</p>
+<p>.center[<img data-src="https://camo.githubusercontent.com/2effeef4795b95295b726690bb0984df7d812fcd/68747470733a2f2f646f63732e676f6f676c652e636f6d2f64726177696e67732f642f3161444b397a716163677572465a537a6a704c4d5653676f64306a462d4b4648576553565f53554c387668452f7075623f773d39313626616d703b683d333534" alt="img">]</p>
 <hr>
 <h1 id="Unix-Philosophy-2"><a href="#Unix-Philosophy-2" class="headerlink" title="Unix Philosophy"></a>Unix Philosophy</h1><p>Everything is a file.</p>
 <ul>
@@ -938,7 +1437,7 @@ goto first step (or shut off burner when done)</code></pre><p>Do not bump wooden
 <hr>
 <h1 id="Understanding-Filesystems-1"><a href="#Understanding-Filesystems-1" class="headerlink" title="Understanding Filesystems"></a>Understanding Filesystems</h1><p>Multiple pointers to the inode number may exist. These pointers are<br>called hard links. All hard links are equivalent.</p>
 <p>The alternative, is to have symbolic links, which point to the original<br>file path, and not the inode number itself.</p>
-<p>.center[<img src="http://deano.me/wp-content/uploads/2014/12/HardVsSymbolicLInks.png" alt="img">]</p>
+<p>.center[<img data-src="http://deano.me/wp-content/uploads/2014/12/HardVsSymbolicLInks.png" alt="img">]</p>
 <hr>
 <p>class: inverse, center, middle</p>
 <h1 id="Unix-Patterns"><a href="#Unix-Patterns" class="headerlink" title="Unix Patterns"></a>Unix Patterns</h1><hr>
@@ -1009,10 +1508,10 @@ goto first step (or shut off burner when done)</code></pre><p>Do not bump wooden
 </ul>
 <hr>
 <h1 id="Processes-1"><a href="#Processes-1" class="headerlink" title="Processes"></a>Processes</h1><p>Threads may run in userspace, or kernel space</p>
-<p>.center[<img src="http://image.slidesharecdn.com/scheduleractivations-effectivekernelsupportfortheuser-levelmanagementofparallelism-110803044850-phpapp02/95/scheduler-activations-effective-kernel-support-for-the-userlevel-management-of-parallelism-6-728.jpg?cb=1312714637" alt="img">]</p>
+<p>.center[<img data-src="http://image.slidesharecdn.com/scheduleractivations-effectivekernelsupportfortheuser-levelmanagementofparallelism-110803044850-phpapp02/95/scheduler-activations-effective-kernel-support-for-the-userlevel-management-of-parallelism-6-728.jpg?cb=1312714637" alt="img">]</p>
 <hr>
 <h1 id="Processes-2"><a href="#Processes-2" class="headerlink" title="Processes"></a>Processes</h1><p>The OS manages theads, offloading to different hardware using different techniques.<br>You can help the OS by specifying your execution model as a programmer.</p>
-<p>.center[<img src="https://www.pgroup.com/images/insider/v2n4a1i2.png" alt="img">]</p>
+<p>.center[<img data-src="https://www.pgroup.com/images/insider/v2n4a1i2.png" alt="img">]</p>
 <hr>
 <h1 id="Processes-3"><a href="#Processes-3" class="headerlink" title="Processes"></a>Processes</h1><p>You can view running process using <code>top</code></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ top</span><br><span class="line">Tasks: 174 total, 3 running, 171 sleeping, 0 stopped</span><br><span class="line">KiB Mem: 4050604 total, 3114428 used, 936176 free</span><br><span class="line">Kib Swap: 2104476 total, 18132 used, 2086344 free</span><br><span class="line"> </span><br><span class="line"> PID USER %CPU %MEM COMMAND</span><br><span class="line">6978 ryan 3.0  21.2 firefox</span><br><span class="line">  11 root 0.3   0.0 rcu_preempt</span><br><span class="line">6601 ryan 2.0   2.4 kwin</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
@@ -1258,11 +1757,11 @@ goto first step (or shut off burner when done)</code></pre><p>Do not bump wooden
 <p>class: inverse, center, middle</p>
 <h1 id="Version-Control"><a href="#Version-Control" class="headerlink" title="Version Control"></a>Version Control</h1><hr>
 <h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><p>A version control system maintains a database containing different<br>versions of the file. Useful for seeing what changed, and rolling<br>back to older revisions.</p>
-<p>.right-column[<img src="https://git-scm.com/book/en/v2/book/01-introduction/images/local.png" alt="img">]</p>
+<p>.right-column[<img data-src="https://git-scm.com/book/en/v2/book/01-introduction/images/local.png" alt="img">]</p>
 <hr>
 <p>class: inverse, center, middle</p>
 <h1 id="Advanced-Navigation"><a href="#Advanced-Navigation" class="headerlink" title="Advanced Navigation"></a>Advanced Navigation</h1><hr>
-<h1 id="Being-more-productive"><a href="#Being-more-productive" class="headerlink" title="Being more productive"></a>Being more productive</h1><p>.center[<img src="http://i.kinja-img.com/gawker-media/image/upload/vkadegotlwqvivpppfb5.png" alt="img">]</p>
+<h1 id="Being-more-productive"><a href="#Being-more-productive" class="headerlink" title="Being more productive"></a>Being more productive</h1><p>.center[<img data-src="http://i.kinja-img.com/gawker-media/image/upload/vkadegotlwqvivpppfb5.png" alt="img">]</p>
 <hr>
 <h1 id="Special-Variables"><a href="#Special-Variables" class="headerlink" title="Special Variables"></a>Special Variables</h1><ul>
 <li><code>$1, $2, $3, ...</code> are the positional parameters.</li>
@@ -1357,11 +1856,11 @@ goto first step (or shut off burner when done)</code></pre><p>Do not bump wooden
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="darkalexwang.github.io/2014/05/16/Hexo-command-memo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://c2.staticflickr.com/8/7464/27053268555_c92b86047e_o.jpg">
       <meta itemprop="name" content="darkalexwang">
       <meta itemprop="description" content="Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.">
     </span>
@@ -1389,10 +1888,45 @@ goto first step (or shut off burner when done)</code></pre><p>Do not bump wooden
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-03-21 20:05:27" itemprop="dateModified" datetime="2020-03-21T20:05:27-07:00">2020-03-21</time>
+                <time title="Modified: 2020-04-30 21:24:10" itemprop="dateModified" datetime="2020-04-30T21:24:10-07:00">2020-04-30</time>
               </span>
 
           
+            <span id="/2014/05/16/Hexo-command-memo/" class="post-meta-item leancloud_visitors" data-flag-title="Hexo command memo" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2014/05/16/Hexo-command-memo/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2014/05/16/Hexo-command-memo/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>199</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>1 mins.</span>
+            </span>
 
         </div>
       </header>
@@ -1492,6 +2026,8 @@ goto first step (or shut off burner when done)</code></pre><p>Do not bump wooden
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="darkalexwang"
+      src="https://c2.staticflickr.com/8/7464/27053268555_c92b86047e_o.jpg">
   <p class="site-author-name" itemprop="name">darkalexwang</p>
   <div class="site-description" itemprop="description">Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.</div>
 </div>
@@ -1500,22 +2036,35 @@ goto first step (or shut off burner when done)</code></pre><p>Do not bump wooden
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">47</span>
+          <span class="site-state-item-count">49</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
+          
         <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">54</span>
+          
+        <span class="site-state-item-count">55</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
 </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/darkalexwang" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;darkalexwang" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:wangzhihuan0815@gmail.com" title="E-Mail → mailto:wangzhihuan0815@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/Dark_AlexWang" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;Dark_AlexWang" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+      </span>
+  </div>
 
 
 
@@ -1537,12 +2086,17 @@ goto first step (or shut off burner when done)</code></pre><p>Do not bump wooden
 
 <div class="copyright">
   
-  &copy; 
+  &copy; 2014 – 
   <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
-    <i class="fa fa-user"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">darkalexwang</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="Symbols count total">201k</span>
 </div>
 
         
@@ -1560,6 +2114,10 @@ goto first step (or shut off burner when done)</code></pre><p>Do not bump wooden
 
   
   <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
@@ -1573,28 +2131,62 @@ goto first step (or shut off burner when done)</code></pre><p>Do not bump wooden
 
 <script src="/js/next-boot.js"></script>
 
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
+<script src="/js/bookmark.js"></script>
 
 
 
 
   
 
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
   
 
-</body>
-</html>
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : '24rulLT5OhXgLsk80hCm3RvR-gzGzoHsz',
+      appKey     : 'StnUSKMeD4s0XPPzFCiSV6HN',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : 'en' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+<script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>

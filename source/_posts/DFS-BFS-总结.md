@@ -6,7 +6,14 @@ updated: 2018-03-11 14:49:35
 categories: Leetcode
 tags: [DFS, BFS]
 ---
-# DFS 
+---
+**NOTE**
+
+搬运文章，原创作者:http://joshuablog.herokuapp.com/
+Just for study purpose, I don't hold the copyright, if this is affecting anyone, please let me know.
+
+---
+# DFS
 ## Matrix
 ### 介绍
 对于不是Tree下面的DFS题来说，一直是我的一个弱点（不知道为什么），所以现在特意开贴来总结常见的题型
@@ -17,13 +24,13 @@ tags: [DFS, BFS]
 def dfs(i,j,matrix):
 	if i < 0 or j < 0 or i >= len(matrix) or j >= len(matrix) or matrix[i][j] == X:
 		return
-		
+
 	# set visited
 	matrix[i][j] = X
 	dfs(i+1, j, matrix)
 	dfs(i-1, j, matrix)
 	...
-	
+
 ```
 <!--more-->
 ### 733. Flood Fill
@@ -45,7 +52,7 @@ class Solution(object):
         if color != newColor:
             self.dfs(sr, sc,image,color,newColor)
         return image
-    
+
     def dfs(self, i, j,image,color,newColor):
         if i < 0 or j < 0 or i >= len(image) or j >= len(image[0]) or image[i][j] != color:
             return
@@ -76,14 +83,14 @@ class Solution(object):
                 if (i == 0 or j == 0 or i == m-1 or j == n -1) and board[i][j] == 'O':
                     board[i][j] == 'M'
                     self.dfs(i,j,board)
-        
+
         for i in range(m):
             for j in range(n):
                 if board[i][j] == 'O':
                     board[i][j] = 'X'
                 elif board[i][j] == 'M':
                     board[i][j] = 'O'
-    
+
     def dfs(self, r, c, board):
         if r < 0 or c < 0 or r >= len(board) or c >= len(board[0]) or board[r][c] == 'X' or board[r][c] == 'M':
             return
@@ -115,12 +122,12 @@ class Solution(object):
                     count += 1
                     self.dfs(i,j,grid)
         return count
-    
+
     def dfs(self, r, c, grid):
         if r < 0 or c < 0 or r >= len(grid) or c >= len(grid[0]) or grid[r][c] == '0':
             return
         grid[r][c] = '0'
-        
+
         self.dfs(r+1,c,  grid)
         self.dfs(r-1, c, grid)
         self.dfs(r, c-1, grid)
@@ -149,7 +156,7 @@ class Solution(object):
                 if matrix[i][j] == 0:
                     self.dfs(i,j,matrix,0)
         return matrix
-    
+
     def dfs(self, i, j, matrix, d):
         if i < 0 or j < 0 or i >= len(matrix) or j >= len(matrix[0]) or matrix[i][j] < d:
             return
@@ -178,7 +185,7 @@ class Solution(object):
                 # start
                 if rooms[i][j] == 0:
                     self.dfs(i, j, rooms, 0)
-        
+
     def dfs(self, r, c, rooms, d):
         if r < 0 or c < 0 or r >= len(rooms) or c >= len(rooms[0]) or rooms[r][c] < d:
             return
@@ -203,18 +210,18 @@ class Solution(object):
         """
         if not matrix or not matrix[0]:
             return 0
-        
+
         m = len(matrix)
         n = len(matrix[0])
-        
+
         cache = [[0 for _ in range(n)] for _ in range(m)]
-        
+
         ans = 0
         for i in range(m):
             for j in range(n):
                 ans = max(ans, self.dfs(i,j,cache, matrix))
         return ans
-    
+
     def dfs(self, i, j, cache, matrix):
         # find cache
         if cache[i][j] != 0:
@@ -228,7 +235,7 @@ class Solution(object):
         # self (i,j) + 1
         cache[i][j] += 1
         return cache[i][j]
-        
+
 ```
 ### 695. Max Area of Island
 另外一种思路
@@ -240,7 +247,7 @@ class Solution:
         :type grid: List[List[int]]
         :rtype: int
         """
-        seen = set()  # function scope var 
+        seen = set()  # function scope var
         res = 0
         for row in range(len(grid)):
             for col in range(len(grid[0])):
@@ -259,7 +266,7 @@ class Solution:
                 return 0                         # not valid point return 0
 
 ```
-        
+
 ### 417. Pacific Atlantic Water Flow
 这道题要从两方面来判断，太平洋和大西洋
 
@@ -270,24 +277,24 @@ class Solution(object):
         :type matrix: List[List[int]]
         :rtype: List[List[int]]
         """
-        # O(MN) 
+        # O(MN)
         # need to write more
         if not matrix or not matrix[0]:
             return []
-        
+
         m = len(matrix)
         n = len(matrix[0])
-        
+
         p_visited = [[False for _ in range(n)] for _ in range(m)]
         a_visited = [[False for _ in range(n)] for _ in range(m)]
-        
+
         res = []
         for i in range(m):
             # left and right
-            
+
             self.dfs(i, 0, p_visited, m, n, matrix)
             self.dfs(i, n-1, a_visited, m, n, matrix)
-            
+
         for j in range(n):
             # up and down
             self.dfs(0, j, p_visited, m, n, matrix)
@@ -298,7 +305,7 @@ class Solution(object):
                 if p_visited[i][j] and a_visited[i][j]:
                     res.append([i,j])
         return res
-    
+
     def dfs(self, i, j, visited, m, n, matrix):
         visited[i][j] = True
         direction = [(0,1),(0,-1),(1,0),(-1,0)]
@@ -311,7 +318,7 @@ class Solution(object):
 
 # BFS
 ## 普通的
-参见之前写过的BFS-border总结  
+参见之前写过的BFS-border总结
 [BFS-Maze总结](http://joshuablog.herokuapp.com/2017/09/10/BFS-Maze%E7%B1%BB%E5%9E%8B%E6%80%BB%E7%BB%93/)
 ### 490
 ### 499
@@ -320,7 +327,7 @@ class Solution(object):
 ### 286
 
 ## 狄杰斯特拉算法
-求有缘路径的最短距离  
+求有缘路径的最短距离
 算法导论的经典例子
 ### 743. Network Delay Time
 使用heap操作，每次添加最短的路径cost
@@ -341,12 +348,12 @@ class Solution(object):
         graph = collections.defaultdict(list)
         for u,v,w in times:
             graph[u].append([v,w])
-            
-        dic = dict()  
+
+        dic = dict()
         # len(pq) ~ V
         while pq:
             distance, node = heapq.heappop(pq)
-            
+
             #visited
             if node in dic:
                 continue
@@ -375,7 +382,7 @@ class Solution(object):
         f = collections.defaultdict(dict)
         for a, b, p in flights:
             f[a][b] = p
-        
+
         heap = [(0, src, k + 1)]
         while heap:
             p, i, k = heapq.heappop(heap)

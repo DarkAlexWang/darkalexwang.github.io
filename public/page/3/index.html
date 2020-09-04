@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hans">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -9,15 +9,17 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="true">
 
 <link rel="stylesheet" href="/css/main.css">
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"darkalexwang.github.io","root":"/","scheme":"Muse","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"darkalexwang.github.io","root":"/","scheme":"Muse","version":"7.7.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"scrollpercent":true,"onmobile":false},"copycode":{"enable":true,"show_result":true},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.">
@@ -26,6 +28,7 @@
 <meta property="og:url" content="darkalexwang.github.io/page/3/index.html">
 <meta property="og:site_name" content="DarkAlexWang&#39;s Blog">
 <meta property="og:description" content="Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.">
+<meta property="og:locale" content="en_US">
 <meta property="article:author" content="darkalexwang">
 <meta name="twitter:card" content="summary">
 
@@ -38,7 +41,7 @@
     sidebar: "",
     isHome : true,
     isPost : false,
-    lang   : 'zh-Hans'
+    lang   : 'en'
   };
 </script>
 
@@ -100,6 +103,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -114,16 +118,73 @@
     <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
 
   </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-aboutus">
+
+    <a href="/aboutus/" rel="section"><i class="fa fa-fw fa-users"></i>aboutus</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
 
   </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-fw fa-sitemap"></i>Sitemap</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404.html" rel="section"><i class="fa fa-fw fa-heartbeat"></i>Commonweal 404</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
     </header>
@@ -133,6 +194,8 @@
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
 
 
     <main class="main">
@@ -147,11 +210,267 @@
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="darkalexwang.github.io/2017/09/25/bayarea-entertainment-guide/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://c2.staticflickr.com/8/7464/27053268555_c92b86047e_o.jpg">
+      <meta itemprop="name" content="darkalexwang">
+      <meta itemprop="description" content="Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DarkAlexWang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/09/25/bayarea-entertainment-guide/" class="post-title-link" itemprop="url">湾区吃喝玩乐推荐</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2017-09-25 19:10:07" itemprop="dateCreated datePublished" datetime="2017-09-25T19:10:07-07:00">2017-09-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-01-21 16:47:07" itemprop="dateModified" datetime="2019-01-21T16:47:07-08:00">2019-01-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Travel/" itemprop="url" rel="index"><span itemprop="name">Travel</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2017/09/25/bayarea-entertainment-guide/" class="post-meta-item leancloud_visitors" data-flag-title="湾区吃喝玩乐推荐" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2017/09/25/bayarea-entertainment-guide/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2017/09/25/bayarea-entertainment-guide/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>2.1k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>2 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <hr>
+<p><strong>NOTE</strong></p>
+<p>搬运文章，原创作者:<a href="http://joshuablog.herokuapp.com/" target="_blank" rel="noopener">http://joshuablog.herokuapp.com/</a><br>Just for study purpose, I don’t hold the copyright, if this is affecting anyone, please let me know.</p>
+<hr>
+<blockquote>
+<p>Update (2019/01) 大幅更新了本文。<br>本文没有考虑的：滑雪系列，开飞机跳伞潜水，海钓，露营</p>
+</blockquote>
+<h1 id="郊野"><a href="#郊野" class="headerlink" title="郊野"></a>郊野</h1><h2 id="赏花"><a href="#赏花" class="headerlink" title="赏花"></a>赏花</h2><ol>
+<li>[   ] <a href="https://filoli.org/" target="_blank" rel="noopener">Filoli Garden</a> (位于Woodside，以🌷出名，推荐时节：三月)</li>
+<li>[   ] <a href="http://http://goblossomtrail.com/" target="_blank" rel="noopener">Blossom trail</a> (位于Fresno，displays of blooming fruit trees &amp; wildflowers. 推荐时节：2～3月)</li>
+</ol>
+<h2 id="Hiking"><a href="#Hiking" class="headerlink" title="Hiking"></a>Hiking</h2><ol>
+<li>[ x ] <a href="https://www.travelyosemite.com/" target="_blank" rel="noopener"><strong>Yosemite</strong></a> (瀑布观赏时节 5月至10月)</li>
+<li>[ x ] Skyline Blvd （适合自驾观赏）</li>
+<li>[ x ] Muir Woods National Monument (从18年起，需要提前注册车辆并且乘坐shuttle门口)</li>
+<li>[ x ] Lick Observatory (在CA-130，Mt Hamilton的山顶上，需要至少45分钟的盘山路）</li>
+<li>[ x ] Mt Diablo</li>
+<li>[ x ] Sierra Vista Point</li>
+<li>[   ] CA-120 Mono Lake （CA-120会有半年的大雪封山状况）</li>
+<li>[ x ] Big Basin Redwoods State Park (多种多样的路线)</li>
+<li>[ x ] Lassen National Forest (火山公园)</li>
+<li>[   ] Kings Canyon National Park</li>
+<li>[   ] Death Valley National Park</li>
+</ol>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/09/25/bayarea-entertainment-guide/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="darkalexwang.github.io/2017/09/24/Tree%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://c2.staticflickr.com/8/7464/27053268555_c92b86047e_o.jpg">
+      <meta itemprop="name" content="darkalexwang">
+      <meta itemprop="description" content="Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DarkAlexWang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/09/24/Tree%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">Tree总结</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2017-09-24 14:50:36" itemprop="dateCreated datePublished" datetime="2017-09-24T14:50:36-07:00">2017-09-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2018-04-24 14:50:36" itemprop="dateModified" datetime="2018-04-24T14:50:36-07:00">2018-04-24</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Leetcode/" itemprop="url" rel="index"><span itemprop="name">Leetcode</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2017/09/24/Tree%E6%80%BB%E7%BB%93/" class="post-meta-item leancloud_visitors" data-flag-title="Tree总结" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2017/09/24/Tree%E6%80%BB%E7%BB%93/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2017/09/24/Tree%E6%80%BB%E7%BB%93/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>11k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>10 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Tree的性质"><a href="#Tree的性质" class="headerlink" title="Tree的性质"></a>Tree的性质</h1><h2 id="Divide-and-Conquer模版"><a href="#Divide-and-Conquer模版" class="headerlink" title="Divide and Conquer模版"></a>Divide and Conquer模版</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">traversal</span><span class="params">(root)</span>:</span></span><br><span class="line">	<span class="comment"># none or leaf</span></span><br><span class="line">	<span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">		<span class="comment"># do sth</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment"># divide</span></span><br><span class="line">	left = traversal(root.left)</span><br><span class="line">	right = traversal(root.right)</span><br><span class="line">	</span><br><span class="line">	<span class="comment"># Conquer</span></span><br><span class="line">	res = <span class="comment"># merge </span></span><br><span class="line">	<span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+<h2 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h2><p>T O(n) 一般是遍历所有点<br>S O(h) 用堆栈来做的话是遍历所有点<br>  O(n) 用队列实现遍历所有点</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/09/24/Tree%E6%80%BB%E7%BB%93/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="darkalexwang.github.io/2017/09/20/Heap%E6%80%BB%E7%BB%93/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://c2.staticflickr.com/8/7464/27053268555_c92b86047e_o.jpg">
       <meta itemprop="name" content="darkalexwang">
       <meta itemprop="description" content="Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.">
     </span>
@@ -192,6 +511,41 @@
             </span>
 
           
+            <span id="/2017/09/20/Heap%E6%80%BB%E7%BB%93/" class="post-meta-item leancloud_visitors" data-flag-title="Heap总结" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2017/09/20/Heap%E6%80%BB%E7%BB%93/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2017/09/20/Heap%E6%80%BB%E7%BB%93/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>2.3k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>2 mins.</span>
+            </span>
 
         </div>
       </header>
@@ -232,11 +586,11 @@ for all k, counting elements from zero.</code><br>我们可以这样理解：<br
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="darkalexwang.github.io/2017/09/18/Union-Find%E6%80%BB%E7%BB%93/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://c2.staticflickr.com/8/7464/27053268555_c92b86047e_o.jpg">
       <meta itemprop="name" content="darkalexwang">
       <meta itemprop="description" content="Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.">
     </span>
@@ -270,6 +624,41 @@ for all k, counting elements from zero.</code><br>我们可以这样理解：<br
             </span>
 
           
+            <span id="/2017/09/18/Union-Find%E6%80%BB%E7%BB%93/" class="post-meta-item leancloud_visitors" data-flag-title="Union-Find总结" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2017/09/18/Union-Find%E6%80%BB%E7%BB%93/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2017/09/18/Union-Find%E6%80%BB%E7%BB%93/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>5.1k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>5 mins.</span>
+            </span>
 
         </div>
       </header>
@@ -308,11 +697,11 @@ for all k, counting elements from zero.</code><br>我们可以这样理解：<br
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="darkalexwang.github.io/2017/09/10/BFS-Maze%E7%B1%BB%E5%9E%8B%E6%80%BB%E7%BB%93/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://c2.staticflickr.com/8/7464/27053268555_c92b86047e_o.jpg">
       <meta itemprop="name" content="darkalexwang">
       <meta itemprop="description" content="Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.">
     </span>
@@ -346,6 +735,41 @@ for all k, counting elements from zero.</code><br>我们可以这样理解：<br
             </span>
 
           
+            <span id="/2017/09/10/BFS-Maze%E7%B1%BB%E5%9E%8B%E6%80%BB%E7%BB%93/" class="post-meta-item leancloud_visitors" data-flag-title="BFS-Board类型总结" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2017/09/10/BFS-Maze%E7%B1%BB%E5%9E%8B%E6%80%BB%E7%BB%93/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2017/09/10/BFS-Maze%E7%B1%BB%E5%9E%8B%E6%80%BB%E7%BB%93/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>4.1k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>4 mins.</span>
+            </span>
 
         </div>
       </header>
@@ -356,8 +780,12 @@ for all k, counting elements from zero.</code><br>我们可以这样理解：<br
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Maze"><a href="#Maze" class="headerlink" title="Maze"></a>Maze</h1><p>这一系列题目的要求是小球滚动直到遇到障碍才停止，最后找到出口，求出valid，shorest，shortest的变种；所以用BFS可以比较简洁的解决这一系列的问题。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">queue = [start]</span><br><span class="line"></span><br><span class="line">direction = [(<span class="number">1</span>,<span class="number">0</span>),(<span class="number">-1</span>,<span class="number">0</span>),(<span class="number">0</span>,<span class="number">1</span>),(<span class="number">0</span>,<span class="number">-1</span>)]</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> queue:</span><br><span class="line">	i, j = queue.pop(<span class="number">0</span>) <span class="comment"># python 用List模仿实现Queue</span></span><br><span class="line">	maze[i][j] = <span class="number">-1</span> <span class="comment"># visited</span></span><br><span class="line">	<span class="comment"># 终止条件</span></span><br><span class="line">	<span class="keyword">if</span> (i,j) == destination:</span><br><span class="line">		xxx</span><br><span class="line">	</span><br><span class="line">	<span class="comment"># 遍历四个方向</span></span><br><span class="line">	<span class="keyword">for</span> x, y <span class="keyword">in</span> direction: <span class="comment"># local dir</span></span><br><span class="line">		row = i</span><br><span class="line">		col = j</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">while</span> xxx <span class="keyword">and</span> xxx : <span class="comment"># condition</span></span><br><span class="line">			row += x</span><br><span class="line">			col += y</span><br><span class="line">			</span><br><span class="line">	<span class="keyword">if</span> visited <span class="keyword">and</span> <span class="keyword">not</span> <span class="keyword">in</span> the queue:</span><br><span class="line">		queue.append()</span><br></pre></td></tr></table></figure>
+          <p><strong>NOTE</strong></p>
+<p>搬运文章，原创作者:<a href="http://joshuablog.herokuapp.com/" target="_blank" rel="noopener">http://joshuablog.herokuapp.com/</a><br>Just for study purpose, I don’t hold the copyright, if this is affecting anyone, please let me know.</p>
+<hr>
+<hr>
+<h1 id="Maze"><a href="#Maze" class="headerlink" title="Maze"></a>Maze</h1><p>这一系列题目的要求是小球滚动直到遇到障碍才停止，最后找到出口，求出valid，shorest，shortest的变种；所以用BFS可以比较简洁的解决这一系列的问题。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">queue = [start]</span><br><span class="line"></span><br><span class="line">direction = [(<span class="number">1</span>,<span class="number">0</span>),(<span class="number">-1</span>,<span class="number">0</span>),(<span class="number">0</span>,<span class="number">1</span>),(<span class="number">0</span>,<span class="number">-1</span>)]</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> queue:</span><br><span class="line">	i, j = queue.pop(<span class="number">0</span>) <span class="comment"># python 用List模仿实现Queue</span></span><br><span class="line">	maze[i][j] = <span class="number">-1</span> <span class="comment"># visited</span></span><br><span class="line">	<span class="comment"># 终止条件</span></span><br><span class="line">	<span class="keyword">if</span> (i,j) == destination:</span><br><span class="line">		xxx</span><br><span class="line"></span><br><span class="line">	<span class="comment"># 遍历四个方向</span></span><br><span class="line">	<span class="keyword">for</span> x, y <span class="keyword">in</span> direction: <span class="comment"># local dir</span></span><br><span class="line">		row = i</span><br><span class="line">		col = j</span><br><span class="line"></span><br><span class="line">		<span class="keyword">while</span> xxx <span class="keyword">and</span> xxx : <span class="comment"># condition</span></span><br><span class="line">			row += x</span><br><span class="line">			col += y</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> visited <span class="keyword">and</span> <span class="keyword">not</span> <span class="keyword">in</span> the queue:</span><br><span class="line">		queue.append()</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2017/09/10/BFS-Maze%E7%B1%BB%E5%9E%8B%E6%80%BB%E7%BB%93/#more" rel="contents">
@@ -383,11 +811,11 @@ for all k, counting elements from zero.</code><br>我们可以这样理解：<br
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="darkalexwang.github.io/2017/09/06/Backtracking%E6%80%BB%E7%BB%93/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://c2.staticflickr.com/8/7464/27053268555_c92b86047e_o.jpg">
       <meta itemprop="name" content="darkalexwang">
       <meta itemprop="description" content="Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.">
     </span>
@@ -428,6 +856,41 @@ for all k, counting elements from zero.</code><br>我们可以这样理解：<br
             </span>
 
           
+            <span id="/2017/09/06/Backtracking%E6%80%BB%E7%BB%93/" class="post-meta-item leancloud_visitors" data-flag-title="Backtracking总结" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2017/09/06/Backtracking%E6%80%BB%E7%BB%93/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2017/09/06/Backtracking%E6%80%BB%E7%BB%93/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>3.2k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>3 mins.</span>
+            </span>
 
         </div>
       </header>
@@ -438,7 +901,11 @@ for all k, counting elements from zero.</code><br>我们可以这样理解：<br
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="BackingTracking系列"><a href="#BackingTracking系列" class="headerlink" title="BackingTracking系列"></a>BackingTracking系列</h1><p>4／35<br>[x] Easy<br>[x] Medium<br>[] Hard  </p>
+          <hr>
+<p><strong>NOTE</strong></p>
+<p>搬运文章，原创作者:<a href="http://joshuablog.herokuapp.com/" target="_blank" rel="noopener">http://joshuablog.herokuapp.com/</a><br>Just for study purpose, I don’t hold the copyright, if this is affecting anyone, please let me know.</p>
+<hr>
+<h1 id="BackingTracking系列"><a href="#BackingTracking系列" class="headerlink" title="BackingTracking系列"></a>BackingTracking系列</h1><p>4／35<br>[x] Easy<br>[x] Medium<br>[] Hard</p>
 <h1 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h1><p>凡是含有duplicate的都需要之前sorted，才能保证没有结果中没有重复</p>
 <h2 id="经典7道题"><a href="#经典7道题" class="headerlink" title="经典7道题"></a>经典7道题</h2><h3 id="46-Permutations"><a href="#46-Permutations" class="headerlink" title="46. Permutations"></a>46. Permutations</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span><span class="number">-2</span><span class="number">-3</span></span><br><span class="line"> <span class="number">-3</span><span class="number">-2</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">backtracking</span><span class="params">(self, nums, temp, ans)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> len(nums) == len(temp): <span class="comment"># quit loop</span></span><br><span class="line">        ans.append(list(temp))</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)):</span><br><span class="line">        <span class="keyword">if</span> nums[i] <span class="keyword">in</span> temp: <span class="comment"># cut duplicate</span></span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        temp.append(nums[i])</span><br><span class="line">        self.backtracking(nums, temp, ans)</span><br><span class="line">        temp.pop()</span><br></pre></td></tr></table></figure>
 
@@ -457,10 +924,10 @@ for all k, counting elements from zero.</code><br>我们可以这样理解：<br
 <h3 id="40-Combination-Sum-II"><a href="#40-Combination-Sum-II" class="headerlink" title="40 Combination Sum II"></a>40 Combination Sum II</h3><p>变化就是不可以重复利用数字，index+1</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">backtracking</span><span class="params">(self, candidates, target, res, temp, start)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> target&lt;<span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">elif</span> target == <span class="number">0</span>:</span><br><span class="line">        res.append(list(temp))</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(start, len(candidates)):</span><br><span class="line">            <span class="keyword">if</span> i &gt; start <span class="keyword">and</span> candidates[i<span class="number">-1</span>] == candidates[i]:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            temp.append(candidates[i])</span><br><span class="line">            self.backtracking(candidates, target - candidates[i], res, temp, i+<span class="number">1</span>)</span><br><span class="line">            temp.pop()</span><br></pre></td></tr></table></figure>
 
-<h3 id="216-Combination-Sum-III"><a href="#216-Combination-Sum-III" class="headerlink" title="216 Combination Sum III"></a>216 Combination Sum III</h3><p>与上一道题的区别就是，输入为[1…9] </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">combinationSum3</span><span class="params">(self, k, n)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type k: int</span></span><br><span class="line"><span class="string">        :type n: int</span></span><br><span class="line"><span class="string">        :rtype: List[List[int]]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        res = []</span><br><span class="line">        self.backtracking(k,n,[],res,<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">backtracking</span><span class="params">(self, k, target, temp, res, start)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> len(temp) &gt; k:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">elif</span> len(temp) == k <span class="keyword">and</span> target == <span class="number">0</span>:</span><br><span class="line">            res.append(list(temp))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(start, <span class="number">10</span>):</span><br><span class="line">                temp.append(i)</span><br><span class="line">                self.backtracking(k, target - i, temp, res, i+<span class="number">1</span>)</span><br><span class="line">                temp.pop()</span><br></pre></td></tr></table></figure>
+<h3 id="216-Combination-Sum-III"><a href="#216-Combination-Sum-III" class="headerlink" title="216 Combination Sum III"></a>216 Combination Sum III</h3><p>与上一道题的区别就是，输入为[1…9]</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">combinationSum3</span><span class="params">(self, k, n)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type k: int</span></span><br><span class="line"><span class="string">        :type n: int</span></span><br><span class="line"><span class="string">        :rtype: List[List[int]]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        res = []</span><br><span class="line">        self.backtracking(k,n,[],res,<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">backtracking</span><span class="params">(self, k, target, temp, res, start)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> len(temp) &gt; k:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">elif</span> len(temp) == k <span class="keyword">and</span> target == <span class="number">0</span>:</span><br><span class="line">            res.append(list(temp))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(start, <span class="number">10</span>):</span><br><span class="line">                temp.append(i)</span><br><span class="line">                self.backtracking(k, target - i, temp, res, i+<span class="number">1</span>)</span><br><span class="line">                temp.pop()</span><br></pre></td></tr></table></figure>
 
-<h2 id="Medium"><a href="#Medium" class="headerlink" title="Medium"></a>Medium</h2><h3 id="22-Generate-Parentheses"><a href="#22-Generate-Parentheses" class="headerlink" title="22 Generate Parentheses"></a>22 Generate Parentheses</h3><p>recursion rule 就是判断left，right的count啦，直到满足right == n  </p>
+<h2 id="Medium"><a href="#Medium" class="headerlink" title="Medium"></a>Medium</h2><h3 id="22-Generate-Parentheses"><a href="#22-Generate-Parentheses" class="headerlink" title="22 Generate Parentheses"></a>22 Generate Parentheses</h3><p>recursion rule 就是判断left，right的count啦，直到满足right == n</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dfs</span><span class="params">(self,temp, left, right, res,n)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> left &lt; n:</span><br><span class="line">        self.dfs(temp+<span class="string">'('</span>,left+<span class="number">1</span>,right,res,n)</span><br><span class="line">    <span class="keyword">if</span> right &lt; left:</span><br><span class="line">        self.dfs(temp+<span class="string">')'</span>,left, right+<span class="number">1</span>, res,n)</span><br><span class="line">    <span class="keyword">if</span> right==n:</span><br><span class="line">        res.append(temp)</span><br></pre></td></tr></table></figure>
 
 <h3 id="320-Generalized-Abbreviation"><a href="#320-Generalized-Abbreviation" class="headerlink" title="320. Generalized Abbreviation"></a>320. Generalized Abbreviation</h3><p>这道题debug了好久，困惑于如何使得数字和字母不会在base case的时候重复导出</p>
@@ -486,11 +953,11 @@ for all k, counting elements from zero.</code><br>我们可以这样理解：<br
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="darkalexwang.github.io/2017/07/10/LinkedList%E7%B3%BB%E5%88%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://c2.staticflickr.com/8/7464/27053268555_c92b86047e_o.jpg">
       <meta itemprop="name" content="darkalexwang">
       <meta itemprop="description" content="Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.">
     </span>
@@ -531,6 +998,41 @@ for all k, counting elements from zero.</code><br>我们可以这样理解：<br
             </span>
 
           
+            <span id="/2017/07/10/LinkedList%E7%B3%BB%E5%88%97/" class="post-meta-item leancloud_visitors" data-flag-title="LinkedList系列" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2017/07/10/LinkedList%E7%B3%BB%E5%88%97/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2017/07/10/LinkedList%E7%B3%BB%E5%88%97/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>3.7k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>3 mins.</span>
+            </span>
 
         </div>
       </header>
@@ -541,7 +1043,11 @@ for all k, counting elements from zero.</code><br>我们可以这样理解：<br
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="LinkedList系列总结"><a href="#LinkedList系列总结" class="headerlink" title="LinkedList系列总结"></a>LinkedList系列总结</h1><p>24/27<br>[x] Easy<br>[x] Medium<br>[x] Hard<br>这种题，多画图，一步步来，确定哪个node指向哪个node就会好一点,之后把图放上来，会更容易复习！</p>
+          <hr>
+<p><strong>NOTE</strong></p>
+<p>搬运文章，原创作者:<a href="http://joshuablog.herokuapp.com/" target="_blank" rel="noopener">http://joshuablog.herokuapp.com/</a><br>Just for study purpose, I don’t hold the copyright, if this is affecting anyone, please let me know.</p>
+<hr>
+<h1 id="LinkedList系列总结"><a href="#LinkedList系列总结" class="headerlink" title="LinkedList系列总结"></a>LinkedList系列总结</h1><p>24/27<br>[x] Easy<br>[x] Medium<br>[x] Hard<br>这种题，多画图，一步步来，确定哪个node指向哪个node就会好一点,之后把图放上来，会更容易复习！</p>
 <h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><h3 id="dummyNode"><a href="#dummyNode" class="headerlink" title="dummyNode"></a>dummyNode</h3><p>适用于头节点需要进行操作，增删改，亦或者保存头节点，不被后续操作改变</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dummy = ListNode(<span class="number">0</span>)</span><br><span class="line">dummy.next = head</span><br><span class="line">curr = head</span><br></pre></td></tr></table></figure>
 
@@ -578,11 +1084,11 @@ for all k, counting elements from zero.</code><br>我们可以这样理解：<br
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="darkalexwang.github.io/2017/07/07/Longest-Substring%E7%B3%BB%E5%88%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://c2.staticflickr.com/8/7464/27053268555_c92b86047e_o.jpg">
       <meta itemprop="name" content="darkalexwang">
       <meta itemprop="description" content="Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.">
     </span>
@@ -623,6 +1129,41 @@ for all k, counting elements from zero.</code><br>我们可以这样理解：<br
             </span>
 
           
+            <span id="/2017/07/07/Longest-Substring%E7%B3%BB%E5%88%97/" class="post-meta-item leancloud_visitors" data-flag-title="Longest Substring系列" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2017/07/07/Longest-Substring%E7%B3%BB%E5%88%97/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2017/07/07/Longest-Substring%E7%B3%BB%E5%88%97/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>1.5k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>1 mins.</span>
+            </span>
 
         </div>
       </header>
@@ -663,11 +1204,11 @@ for all k, counting elements from zero.</code><br>我们可以这样理解：<br
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="darkalexwang.github.io/2017/06/03/TEST/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://c2.staticflickr.com/8/7464/27053268555_c92b86047e_o.jpg">
       <meta itemprop="name" content="darkalexwang">
       <meta itemprop="description" content="Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.">
     </span>
@@ -701,6 +1242,41 @@ for all k, counting elements from zero.</code><br>我们可以这样理解：<br
             </span>
 
           
+            <span id="/2017/06/03/TEST/" class="post-meta-item leancloud_visitors" data-flag-title="Joshua美东探索III--Maine & Acadia National Park" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2017/06/03/TEST/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2017/06/03/TEST/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>1.2k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>1 mins.</span>
+            </span>
 
         </div>
       </header>
@@ -711,7 +1287,11 @@ for all k, counting elements from zero.</code><br>我们可以这样理解：<br
     <div class="post-body" itemprop="articleBody">
 
       
-          <blockquote>
+          <hr>
+<p><strong>NOTE</strong></p>
+<p>搬运文章，原创作者:<a href="http://joshuablog.herokuapp.com/" target="_blank" rel="noopener">http://joshuablog.herokuapp.com/</a><br>Just for study purpose, I don’t hold the copyright, if this is affecting anyone, please let me know.</p>
+<hr>
+<blockquote>
 <p>Time: 2017-05-23~05-25<br>Travel: Rental Car</p>
 </blockquote>
 <h1 id="北境"><a href="#北境" class="headerlink" title="北境"></a>北境</h1><p>平潭清秀的阿卡迪亚是密西西比河以东第一个国家公园，没有黄石的奇幻与优胜美地的 俊俏，这里更像是百科全书：港口，沙滩，悬崖，海岛，灯塔，峡湾，山岭，湖泊–一切的户外活动几乎无所不能。平淡中展现的生活恰似远离了中国游客的旋绕。</p>
@@ -740,11 +1320,11 @@ for all k, counting elements from zero.</code><br>我们可以这样理解：<br
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="darkalexwang.github.io/2017/05/03/Quote-John-Adams-Education/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://c2.staticflickr.com/8/7464/27053268555_c92b86047e_o.jpg">
       <meta itemprop="name" content="darkalexwang">
       <meta itemprop="description" content="Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.">
     </span>
@@ -778,6 +1358,41 @@ for all k, counting elements from zero.</code><br>我们可以这样理解：<br
             </span>
 
           
+            <span id="/2017/05/03/Quote-John-Adams-Education/" class="post-meta-item leancloud_visitors" data-flag-title="Quote John Adams--Education" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2017/05/03/Quote-John-Adams-Education/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2017/05/03/Quote-John-Adams-Education/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>351</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>1 mins.</span>
+            </span>
 
         </div>
       </header>
@@ -793,174 +1408,6 @@ for all k, counting elements from zero.</code><br>我们可以这样理解：<br
 <p>I must study politics and war that my sons may have liberty to study mathematics and philosophy. My sons ought to study mathematics and philosophy, geography, natural history, naval architecture, navigation, commerce, and agriculture, in order to give their children a right to study painting, poetry, music, architecture, statuary, tapestry, and porcelain.</p>
 </blockquote>
 
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="darkalexwang.github.io/2017/04/20/%E7%94%9F%E4%BA%A7%E5%8A%9B%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%80%A7%E5%B7%A5%E5%85%B7/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="darkalexwang">
-      <meta itemprop="description" content="Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="DarkAlexWang's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2017/04/20/%E7%94%9F%E4%BA%A7%E5%8A%9B%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%80%A7%E5%B7%A5%E5%85%B7/" class="post-title-link" itemprop="url">生产力与实用性工具</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2017-04-20 22:46:51" itemprop="dateCreated datePublished" datetime="2017-04-20T22:46:51-07:00">2017-04-20</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2017-04-22 17:47:52" itemprop="dateModified" datetime="2017-04-22T17:47:52-07:00">2017-04-22</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Technology/" itemprop="url" rel="index"><span itemprop="name">Technology</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="生产力工具"><a href="#生产力工具" class="headerlink" title="生产力工具"></a>生产力工具</h1><h2 id="编程类"><a href="#编程类" class="headerlink" title="编程类"></a>编程类</h2><ol>
-<li><a href="https://brew.sh/" target="_blank" rel="noopener">Homebrew</a><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></span><br></pre></td></tr></table></figure></li>
-<li><a href="https://www.jetbrains.com" target="_blank" rel="noopener">JetBrains系列</a>(可以使用学生优惠)<ul>
-<li><a href="https://www.jetbrains.com/idea" target="_blank" rel="noopener">IntelliJ</a></li>
-<li><a href="https://www.jetbrains.com/pycharm" target="_blank" rel="noopener">PyCharm</a></li>
-<li><a href="https://www.jetbrains.com/webstorm" target="_blank" rel="noopener">WebStorm</a></li>
-<li><a href="https://www.jetbrains.com/ruby" target="_blank" rel="noopener">RubyMine</a></li>
-<li><a href="https://www.jetbrains.com/objc" target="_blank" rel="noopener">AppCode</a>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2017/04/20/%E7%94%9F%E4%BA%A7%E5%8A%9B%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%80%A7%E5%B7%A5%E5%85%B7/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="darkalexwang.github.io/2017/04/20/NewsLetter-Make-a-product/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="darkalexwang">
-      <meta itemprop="description" content="Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="DarkAlexWang's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2017/04/20/NewsLetter-Make-a-product/" class="post-title-link" itemprop="url">NewsLetter Make a product</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2017-04-20 21:32:54 / Modified: 21:32:55" itemprop="dateCreated datePublished" datetime="2017-04-20T21:32:54-07:00">2017-04-20</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Thinking/" itemprop="url" rel="index"><span itemprop="name">Thinking</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Lesson-1-Find-a-problem-not-a-Solution"><a href="#Lesson-1-Find-a-problem-not-a-Solution" class="headerlink" title="Lesson 1: Find a problem, not a Solution"></a>Lesson 1: Find a problem, not a Solution</h1><p>The first step to building something is determining what you are going to build.  But this isn’t as simple as many may think. The idea you choose to pursue will account for a large part of the success or failure of your product.</p>
-<p>Right this second, I want everyone to kill any idea they came into this program with.  Why?  Because starting with an idea is a huge red flag and despite what many people say - having an idea is not the first step.</p>
-<p>The first thing that everyone must complete is to think of a problem.  By starting with a problem and not a potential solution, you will be much less likely to build something that doesn’t really serve a purpose or that may solve a problem but that problem may be so minuscule that you have trouble getting people to convert.</p>
-<p>Thinking of an idea comes later: when you know a problem that you are going to solve and when you know the reasons why that problem is a problem in the first place.</p>
-<p>Your assignment for the next four days is simple, I want you to make a list of problems that you are passionate about solving.  Use a Google Sheet with two columns, in the first list all of the problems you can think of that you are passionate about solving.  In the second column rate each problem on a scale of 1(not that passionate) to 10 (the purpose of my life is to solve this problem).</p>
-<p>That’s all for now.  Feel free to share your list of problems with me, I would love to see what people are coming up with.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2017/04/20/NewsLetter-Make-a-product/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
       
     </div>
 
@@ -1037,6 +1484,8 @@ for all k, counting elements from zero.</code><br>我们可以这样理解：<br
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="darkalexwang"
+      src="https://c2.staticflickr.com/8/7464/27053268555_c92b86047e_o.jpg">
   <p class="site-author-name" itemprop="name">darkalexwang</p>
   <div class="site-description" itemprop="description">Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.</div>
 </div>
@@ -1045,22 +1494,35 @@ for all k, counting elements from zero.</code><br>我们可以这样理解：<br
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">47</span>
+          <span class="site-state-item-count">49</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
+          
         <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">54</span>
+          
+        <span class="site-state-item-count">55</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
 </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/darkalexwang" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;darkalexwang" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:wangzhihuan0815@gmail.com" title="E-Mail → mailto:wangzhihuan0815@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/Dark_AlexWang" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;Dark_AlexWang" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+      </span>
+  </div>
 
 
 
@@ -1082,12 +1544,17 @@ for all k, counting elements from zero.</code><br>我们可以这样理解：<br
 
 <div class="copyright">
   
-  &copy; 
+  &copy; 2014 – 
   <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
-    <i class="fa fa-user"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">darkalexwang</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="Symbols count total">201k</span>
 </div>
 
         
@@ -1105,6 +1572,10 @@ for all k, counting elements from zero.</code><br>我们可以这样理解：<br
 
   
   <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
@@ -1118,28 +1589,62 @@ for all k, counting elements from zero.</code><br>我们可以这样理解：<br
 
 <script src="/js/next-boot.js"></script>
 
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
+<script src="/js/bookmark.js"></script>
 
 
 
 
   
 
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
   
 
-</body>
-</html>
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : '24rulLT5OhXgLsk80hCm3RvR-gzGzoHsz',
+      appKey     : 'StnUSKMeD4s0XPPzFCiSV6HN',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : 'en' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+<script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
