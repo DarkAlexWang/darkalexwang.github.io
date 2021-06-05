@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -25,7 +25,7 @@
   <meta name="description" content="NOTE 搬运文章，原创作者:http:&#x2F;&#x2F;joshuablog.herokuapp.com&#x2F;Just for study purpose, I don’t hold the copyright, if this is affecting anyone, please let me know.  概念动态规划是通过拆分问题，定义问题状态和状态之间的关系，使得问题能够以递推（或者说分治）的方式去解">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DP总结">
-<meta property="og:url" content="darkalexwang.github.io/2017/10/19/DP%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:url" content="http://darkalexwang.github.io/2017/10/19/DP%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="DarkAlexWang&#39;s Blog">
 <meta property="og:description" content="NOTE 搬运文章，原创作者:http:&#x2F;&#x2F;joshuablog.herokuapp.com&#x2F;Just for study purpose, I don’t hold the copyright, if this is affecting anyone, please let me know.  概念动态规划是通过拆分问题，定义问题状态和状态之间的关系，使得问题能够以递推（或者说分治）的方式去解">
 <meta property="og:locale" content="en_US">
@@ -37,7 +37,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://user-images.githubusercontent.com/10191895/31799214-a436210a-b4ed-11e7-8f79-5c0c1cf489d9.JPG">
 
-<link rel="canonical" href="darkalexwang.github.io/2017/10/19/DP%E6%80%BB%E7%BB%93/">
+<link rel="canonical" href="http://darkalexwang.github.io/2017/10/19/DP%E6%80%BB%E7%BB%93/">
 
 
 <script id="page-configurations">
@@ -211,7 +211,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
-    <link itemprop="mainEntityOfPage" href="darkalexwang.github.io/2017/10/19/DP%E6%80%BB%E7%BB%93/">
+    <link itemprop="mainEntityOfPage" href="http://darkalexwang.github.io/2017/10/19/DP%E6%80%BB%E7%BB%93/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://c2.staticflickr.com/8/7464/27053268555_c92b86047e_o.jpg">
@@ -469,7 +469,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概念"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#适用场景"><span class="nav-number">1.1.</span> <span class="nav-text">适用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#考虑"><span class="nav-number">1.2.</span> <span class="nav-text">考虑</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#单序列问题"><span class="nav-number">2.</span> <span class="nav-text">单序列问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Warm-Up"><span class="nav-number">2.1.</span> <span class="nav-text">Warm Up</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#爬梯子"><span class="nav-number">2.1.1.</span> <span class="nav-text">爬梯子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#53-Maximum-Subarray"><span class="nav-number">2.1.2.</span> <span class="nav-text">53. Maximum Subarray</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#300-Longest-Increasing-Subsequence"><span class="nav-number">2.1.3.</span> <span class="nav-text">300. Longest Increasing Subsequence</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#139-Word-Break"><span class="nav-number">2.1.4.</span> <span class="nav-text">139.Word Break</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#198-House-Robber"><span class="nav-number">2.1.5.</span> <span class="nav-text">198. House Robber</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#303-Range-Sum-Query-Immutable"><span class="nav-number">2.1.6.</span> <span class="nav-text">303. Range Sum Query - Immutable</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Medium"><span class="nav-number">2.2.</span> <span class="nav-text">Medium</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#368-Largest-Divisible-Subset"><span class="nav-number">2.2.1.</span> <span class="nav-text">368. Largest Divisible Subset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#338-Counting-Bits"><span class="nav-number">2.2.2.</span> <span class="nav-text">338. Counting Bits</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#264-Ugly-Number-II"><span class="nav-number">2.2.3.</span> <span class="nav-text">264. Ugly Number II</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#673-Number-of-Longest-Increasing-Subsequence"><span class="nav-number">2.2.4.</span> <span class="nav-text">673. Number of Longest Increasing Subsequence</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#309-Best-Time-to-Buy-and-Sell-Stock-with-Cooldown"><span class="nav-number">2.2.5.</span> <span class="nav-text">309. Best Time to Buy and Sell Stock with Cooldown</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#矩阵DP"><span class="nav-number">3.</span> <span class="nav-text">矩阵DP</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Warm-Up-1"><span class="nav-number">3.1.</span> <span class="nav-text">Warm Up</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#62-Unique-Paths"><span class="nav-number">3.1.1.</span> <span class="nav-text">62. Unique Paths</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#63-Unique-Paths-II"><span class="nav-number">3.1.2.</span> <span class="nav-text">63.Unique Paths II</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#64-Minimum-Path-Sum"><span class="nav-number">3.1.3.</span> <span class="nav-text">64. Minimum Path Sum</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#256-Paint-House"><span class="nav-number">3.1.4.</span> <span class="nav-text">256. Paint House</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#276-Paint-Fence"><span class="nav-number">3.1.5.</span> <span class="nav-text">276. Paint Fence</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#174-Dungeon-Game"><span class="nav-number">3.1.6.</span> <span class="nav-text">174. Dungeon Game</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Medium-1"><span class="nav-number">3.2.</span> <span class="nav-text">Medium</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#651-4-Keys-Keyboard"><span class="nav-number">3.2.1.</span> <span class="nav-text">651. 4 Keys Keyboard</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#304-Range-Sum-Query-2D-Immutable"><span class="nav-number">3.2.2.</span> <span class="nav-text">304. Range Sum Query 2D - Immutable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#221-Maximal-Square"><span class="nav-number">3.2.3.</span> <span class="nav-text">221. Maximal Square</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二维DP"><span class="nav-number">3.3.</span> <span class="nav-text">二维DP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#72-Edit-Distance"><span class="nav-number">3.3.1.</span> <span class="nav-text">72. Edit Distance</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%82%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">1.1.</span> <span class="nav-text">适用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%80%83%E8%99%91"><span class="nav-number">1.2.</span> <span class="nav-text">考虑</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%95%E5%BA%8F%E5%88%97%E9%97%AE%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">单序列问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Warm-Up"><span class="nav-number">2.1.</span> <span class="nav-text">Warm Up</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%88%AC%E6%A2%AF%E5%AD%90"><span class="nav-number">2.1.1.</span> <span class="nav-text">爬梯子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#53-Maximum-Subarray"><span class="nav-number">2.1.2.</span> <span class="nav-text">53. Maximum Subarray</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#300-Longest-Increasing-Subsequence"><span class="nav-number">2.1.3.</span> <span class="nav-text">300. Longest Increasing Subsequence</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#139-Word-Break"><span class="nav-number">2.1.4.</span> <span class="nav-text">139.Word Break</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#198-House-Robber"><span class="nav-number">2.1.5.</span> <span class="nav-text">198. House Robber</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#303-Range-Sum-Query-Immutable"><span class="nav-number">2.1.6.</span> <span class="nav-text">303. Range Sum Query - Immutable</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Medium"><span class="nav-number">2.2.</span> <span class="nav-text">Medium</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#368-Largest-Divisible-Subset"><span class="nav-number">2.2.1.</span> <span class="nav-text">368. Largest Divisible Subset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#338-Counting-Bits"><span class="nav-number">2.2.2.</span> <span class="nav-text">338. Counting Bits</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#264-Ugly-Number-II"><span class="nav-number">2.2.3.</span> <span class="nav-text">264. Ugly Number II</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#673-Number-of-Longest-Increasing-Subsequence"><span class="nav-number">2.2.4.</span> <span class="nav-text">673. Number of Longest Increasing Subsequence</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#309-Best-Time-to-Buy-and-Sell-Stock-with-Cooldown"><span class="nav-number">2.2.5.</span> <span class="nav-text">309. Best Time to Buy and Sell Stock with Cooldown</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5DP"><span class="nav-number">3.</span> <span class="nav-text">矩阵DP</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Warm-Up-1"><span class="nav-number">3.1.</span> <span class="nav-text">Warm Up</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#62-Unique-Paths"><span class="nav-number">3.1.1.</span> <span class="nav-text">62. Unique Paths</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#63-Unique-Paths-II"><span class="nav-number">3.1.2.</span> <span class="nav-text">63.Unique Paths II</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#64-Minimum-Path-Sum"><span class="nav-number">3.1.3.</span> <span class="nav-text">64. Minimum Path Sum</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#256-Paint-House"><span class="nav-number">3.1.4.</span> <span class="nav-text">256. Paint House</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#276-Paint-Fence"><span class="nav-number">3.1.5.</span> <span class="nav-text">276. Paint Fence</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#174-Dungeon-Game"><span class="nav-number">3.1.6.</span> <span class="nav-text">174. Dungeon Game</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Medium-1"><span class="nav-number">3.2.</span> <span class="nav-text">Medium</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#651-4-Keys-Keyboard"><span class="nav-number">3.2.1.</span> <span class="nav-text">651. 4 Keys Keyboard</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#304-Range-Sum-Query-2D-Immutable"><span class="nav-number">3.2.2.</span> <span class="nav-text">304. Range Sum Query 2D - Immutable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#221-Maximal-Square"><span class="nav-number">3.2.3.</span> <span class="nav-text">221. Maximal Square</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E7%BB%B4DP"><span class="nav-number">3.3.</span> <span class="nav-text">二维DP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#72-Edit-Distance"><span class="nav-number">3.3.1.</span> <span class="nav-text">72. Edit Distance</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -485,7 +485,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">49</span>
+          <span class="site-state-item-count">50</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -498,7 +498,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">55</span>
+        <span class="site-state-item-count">56</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -536,7 +536,7 @@
 <div class="copyright">
   
   &copy; 2014 – 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -545,7 +545,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">201k</span>
+    <span title="Symbols count total">202k</span>
 </div>
 
         

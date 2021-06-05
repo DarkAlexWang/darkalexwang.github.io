@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -25,7 +25,7 @@
   <meta name="description" content="NOTE 搬运文章，原创作者:http:&#x2F;&#x2F;joshuablog.herokuapp.com&#x2F;Just for study purpose, I don’t hold the copyright, if this is affecting anyone, please let me know.  DFSMatrix介绍对于不是Tree下面的DFS题来说，一直是我的一个弱点（不知道为什么），所以现">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DFS-BFS 总结">
-<meta property="og:url" content="darkalexwang.github.io/2018/03/10/DFS-BFS-%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:url" content="http://darkalexwang.github.io/2018/03/10/DFS-BFS-%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="DarkAlexWang&#39;s Blog">
 <meta property="og:description" content="NOTE 搬运文章，原创作者:http:&#x2F;&#x2F;joshuablog.herokuapp.com&#x2F;Just for study purpose, I don’t hold the copyright, if this is affecting anyone, please let me know.  DFSMatrix介绍对于不是Tree下面的DFS题来说，一直是我的一个弱点（不知道为什么），所以现">
 <meta property="og:locale" content="en_US">
@@ -36,7 +36,7 @@
 <meta property="article:tag" content="DFS">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="darkalexwang.github.io/2018/03/10/DFS-BFS-%E6%80%BB%E7%BB%93/">
+<link rel="canonical" href="http://darkalexwang.github.io/2018/03/10/DFS-BFS-%E6%80%BB%E7%BB%93/">
 
 
 <script id="page-configurations">
@@ -210,7 +210,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
-    <link itemprop="mainEntityOfPage" href="darkalexwang.github.io/2018/03/10/DFS-BFS-%E6%80%BB%E7%BB%93/">
+    <link itemprop="mainEntityOfPage" href="http://darkalexwang.github.io/2018/03/10/DFS-BFS-%E6%80%BB%E7%BB%93/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://c2.staticflickr.com/8/7464/27053268555_c92b86047e_o.jpg">
@@ -419,7 +419,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#DFS"><span class="nav-number">1.</span> <span class="nav-text">DFS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Matrix"><span class="nav-number">1.1.</span> <span class="nav-text">Matrix</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#介绍"><span class="nav-number">1.1.1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#733-Flood-Fill"><span class="nav-number">1.1.2.</span> <span class="nav-text">733. Flood Fill</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#130-Surrounded-Regions"><span class="nav-number">1.1.3.</span> <span class="nav-text">130. Surrounded Regions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#200-Number-of-Islands"><span class="nav-number">1.1.4.</span> <span class="nav-text">200. Number of Islands</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#542-01-Matrix"><span class="nav-number">1.1.5.</span> <span class="nav-text">542    01 Matrix</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#286-Walls-and-Gates"><span class="nav-number">1.1.6.</span> <span class="nav-text">286    Walls and Gates</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Matrix-2"><span class="nav-number">1.2.</span> <span class="nav-text">Matrix 2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#329-Longest-Increasing-Path-in-a-Matrix"><span class="nav-number">1.2.1.</span> <span class="nav-text">329. Longest Increasing Path in a Matrix</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#695-Max-Area-of-Island"><span class="nav-number">1.2.2.</span> <span class="nav-text">695. Max Area of Island</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#417-Pacific-Atlantic-Water-Flow"><span class="nav-number">1.2.3.</span> <span class="nav-text">417. Pacific Atlantic Water Flow</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BFS"><span class="nav-number">2.</span> <span class="nav-text">BFS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#普通的"><span class="nav-number">2.1.</span> <span class="nav-text">普通的</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#490"><span class="nav-number">2.1.1.</span> <span class="nav-text">490</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#499"><span class="nav-number">2.1.2.</span> <span class="nav-text">499</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#505"><span class="nav-number">2.1.3.</span> <span class="nav-text">505</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#542"><span class="nav-number">2.1.4.</span> <span class="nav-text">542</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#286"><span class="nav-number">2.1.5.</span> <span class="nav-text">286</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#狄杰斯特拉算法"><span class="nav-number">2.2.</span> <span class="nav-text">狄杰斯特拉算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#743-Network-Delay-Time"><span class="nav-number">2.2.1.</span> <span class="nav-text">743. Network Delay Time</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#787-Cheapest-Flights-Within-K-Stops"><span class="nav-number">2.2.2.</span> <span class="nav-text">787. Cheapest Flights Within K Stops</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#DFS"><span class="nav-number">1.</span> <span class="nav-text">DFS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Matrix"><span class="nav-number">1.1.</span> <span class="nav-text">Matrix</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.1.1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#733-Flood-Fill"><span class="nav-number">1.1.2.</span> <span class="nav-text">733. Flood Fill</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#130-Surrounded-Regions"><span class="nav-number">1.1.3.</span> <span class="nav-text">130. Surrounded Regions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#200-Number-of-Islands"><span class="nav-number">1.1.4.</span> <span class="nav-text">200. Number of Islands</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#542-01-Matrix"><span class="nav-number">1.1.5.</span> <span class="nav-text">542    01 Matrix</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#286-Walls-and-Gates"><span class="nav-number">1.1.6.</span> <span class="nav-text">286    Walls and Gates</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Matrix-2"><span class="nav-number">1.2.</span> <span class="nav-text">Matrix 2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#329-Longest-Increasing-Path-in-a-Matrix"><span class="nav-number">1.2.1.</span> <span class="nav-text">329. Longest Increasing Path in a Matrix</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#695-Max-Area-of-Island"><span class="nav-number">1.2.2.</span> <span class="nav-text">695. Max Area of Island</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#417-Pacific-Atlantic-Water-Flow"><span class="nav-number">1.2.3.</span> <span class="nav-text">417. Pacific Atlantic Water Flow</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BFS"><span class="nav-number">2.</span> <span class="nav-text">BFS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%99%AE%E9%80%9A%E7%9A%84"><span class="nav-number">2.1.</span> <span class="nav-text">普通的</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#490"><span class="nav-number">2.1.1.</span> <span class="nav-text">490</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#499"><span class="nav-number">2.1.2.</span> <span class="nav-text">499</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#505"><span class="nav-number">2.1.3.</span> <span class="nav-text">505</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#542"><span class="nav-number">2.1.4.</span> <span class="nav-text">542</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#286"><span class="nav-number">2.1.5.</span> <span class="nav-text">286</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8B%84%E6%9D%B0%E6%96%AF%E7%89%B9%E6%8B%89%E7%AE%97%E6%B3%95"><span class="nav-number">2.2.</span> <span class="nav-text">狄杰斯特拉算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#743-Network-Delay-Time"><span class="nav-number">2.2.1.</span> <span class="nav-text">743. Network Delay Time</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#787-Cheapest-Flights-Within-K-Stops"><span class="nav-number">2.2.2.</span> <span class="nav-text">787. Cheapest Flights Within K Stops</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -435,7 +435,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">49</span>
+          <span class="site-state-item-count">50</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -448,7 +448,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">55</span>
+        <span class="site-state-item-count">56</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -486,7 +486,7 @@
 <div class="copyright">
   
   &copy; 2014 – 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -495,7 +495,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">201k</span>
+    <span title="Symbols count total">202k</span>
 </div>
 
         
