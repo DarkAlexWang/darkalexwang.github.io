@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="true">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"darkalexwang.github.io","root":"/","scheme":"Muse","version":"7.7.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"scrollpercent":true,"onmobile":false},"copycode":{"enable":true,"show_result":true},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Android Event ReporterBusiness Design To design a LBS based Android app for users to report events and search nearby events.  General Function Instruction Login and register: each user can register an">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Event-Reporter">
+<meta property="og:url" content="darkalexwang.github.io/2020/09/04/Event-Reporter/index.html">
+<meta property="og:site_name" content="DarkAlexWang&#39;s Blog">
+<meta property="og:description" content="Android Event ReporterBusiness Design To design a LBS based Android app for users to report events and search nearby events.  General Function Instruction Login and register: each user can register an">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/DarkAlexWang/EventReporter/master/doc/Infrastructure.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/DarkAlexWang/EventReporter/master/doc/users.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/DarkAlexWang/EventReporter/master/doc/events.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/DarkAlexWang/EventReporter/master/doc/comments.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/DarkAlexWang/EventReporter/master/doc/login.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/DarkAlexWang/EventReporter/master/doc/eventlist.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/DarkAlexWang/EventReporter/master/doc/comment.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/DarkAlexWang/EventReporter/master/doc/report.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/DarkAlexWang/EventReporter/master/doc/map.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/DarkAlexWang/EventReporter/master/doc/notification.png">
+<meta property="article:published_time" content="2020-09-04T08:04:17.000Z">
+<meta property="article:modified_time" content="2022-01-12T06:36:48.748Z">
+<meta property="article:author" content="darkalexwang">
+<meta property="article:tag" content="Projects">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/DarkAlexWang/EventReporter/master/doc/Infrastructure.png">
+
+<link rel="canonical" href="darkalexwang.github.io/2020/09/04/Event-Reporter/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Event-Reporter | DarkAlexWang's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">DarkAlexWang's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-fw fa-sitemap"></i>Sitemap</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404.html" rel="section"><i class="fa fa-fw fa-heartbeat"></i>Commonweal 404</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="darkalexwang.github.io/2020/09/04/Event-Reporter/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://c2.staticflickr.com/8/7464/27053268555_c92b86047e_o.jpg">
+      <meta itemprop="name" content="darkalexwang">
+      <meta itemprop="description" content="Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DarkAlexWang's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Event-Reporter
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-09-04 01:04:17" itemprop="dateCreated datePublished" datetime="2020-09-04T01:04:17-07:00">2020-09-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-01-11 22:36:48" itemprop="dateModified" datetime="2022-01-11T22:36:48-08:00">2022-01-11</time>
+              </span>
+
+          
+            <span id="/2020/09/04/Event-Reporter/" class="post-meta-item leancloud_visitors" data-flag-title="Event-Reporter" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2020/09/04/Event-Reporter/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/09/04/Event-Reporter/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>3.8k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>3 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Android-Event-Reporter"><a href="#Android-Event-Reporter" class="headerlink" title="Android Event Reporter"></a>Android Event Reporter</h1><h2 id="Business-Design"><a href="#Business-Design" class="headerlink" title="Business Design"></a>Business Design</h2><ul>
+<li>To design a LBS based Android app for users to report events and search nearby events.</li>
+</ul>
+<h2 id="General-Function-Instruction"><a href="#General-Function-Instruction" class="headerlink" title="General Function Instruction"></a>General Function Instruction</h2><ul>
+<li>Login and register: each user can register an account with a unique username and login in to enjoy the app.</li>
+<li>Designed a view to list all events in database according to report time.</li>
+<li>Integrated <strong>Google Map API</strong> to track current user’s location and display nearby hot events as well as navigating to the event.</li>
+<li>Developed a view to show details of the clicked event and make comment or like to it.</li>
+<li>Provided a view to report new event with title, description, image and location.</li>
+<li>Other supported features:<ul>
+<li>Used <strong>Google Firebase (Database and Storage)</strong> to store and manage UGC including comments, images, descriptions, title, geolocations, etc.</li>
+<li>Integrated in-app advertising (<strong>Google AdMob</strong>) to display Google advertisers and interact with users.</li>
+</ul>
+</li>
+</ul>
+<a id="more"></a>
+<h2 id="Infrastructure-Design"><a href="#Infrastructure-Design" class="headerlink" title="Infrastructure Design"></a>Infrastructure Design</h2><p><img data-src="https://raw.githubusercontent.com/DarkAlexWang/EventReporter/master/doc/Infrastructure.png" alt="infrastructure design"></p>
+<blockquote>
+<p>Activity and Fragment design</p>
+</blockquote>
+<ul>
+<li><code>MainActivity</code>: for login and register.</li>
+<li><code>EventActivity</code>: show events in two ways, one for all events list, the other for nearby hot events in Google Map.</li>
+<li><code>EventsFragment</code>: show all events in list view.</li>
+<li><code>EventListAdapter</code>: get data of events and ads, and distribute them to corresponding positions in RecyclerView.</li>
+<li><code>EventMapFragment</code>: show nearby hot events in Google Map with markers and navigate to the event.</li>
+<li><code>CommentActivity</code>: show detail information of each specific event clicked by users, including title, username, time, description, comments, etc. and also make new comment on it.</li>
+<li><code>CommentAdapter</code>: get data of event and comments, and distribute them to corresponding positions in RecyclerView.</li>
+<li><code>EventReportActivity</code>: report new event with title, description, location, image, etc.</li>
+<li><code>User</code>: create instance when registering with attributes of each user.</li>
+<li><code>Event</code>: create instance when reporting a new event with attributes like title, like, comment, etc.</li>
+<li><code>Comment</code>: create instance when making comments to a specific event with attributes like description, username, eventId, like, etc.</li>
+<li><code>Utils</code>: some helper method like encryption of password, calculation of distance between two locations, time transformation, etc.</li>
+<li><code>LocationTracker</code>: get permission from users to use Android system GPS or network to get current location.</li>
+</ul>
+<h2 id="Database-Design"><a href="#Database-Design" class="headerlink" title="Database Design"></a>Database Design</h2><p>Use Google Firebase Database to store and manage UGC:</p>
+<h3 id="users"><a href="#users" class="headerlink" title="users"></a>users</h3><img data-src="https://raw.githubusercontent.com/DarkAlexWang/EventReporter/master/doc/users.png" width="577px" height="277px" alt="users collection design">
+
+<blockquote>
+<p>users collection design</p>
+</blockquote>
+<h3 id="events"><a href="#events" class="headerlink" title="events"></a>events</h3><img data-src="https://raw.githubusercontent.com/DarkAlexWang/EventReporter/master/doc/events.png" width="577px" height="669px" alt="events collection design">
+
+<blockquote>
+<p>events collection design</p>
+</blockquote>
+<h3 id="comments"><a href="#comments" class="headerlink" title="comments"></a>comments</h3><img data-src="https://raw.githubusercontent.com/DarkAlexWang/EventReporter/master/doc/comments.png" width="577px" height="750px" alt="comments collection design">
+
+<blockquote>
+<p>comments collection design</p>
+</blockquote>
+<h2 id="Implementation-Details"><a href="#Implementation-Details" class="headerlink" title="Implementation Details"></a>Implementation Details</h2><ul>
+<li>About <strong>ANR (application not responding)</strong>: Image and string information of events should be stored <strong>separately in cloud storage(Firebase Storage) and database(only store image link/url)</strong> respectively. When loading events in events list, first loading string information in database like title, username, descriptions…then use <code>AsyncTask</code> to download image from cloud storage located by image url in database (in <strong>backend thread</strong>), after finishing downloading, showing the image in <strong>UI thread</strong>.</li>
+<li>How to design <strong>event activity</strong>?<ul>
+<li>Show all events in list view –&gt; <code>Fragment</code></li>
+<li>Show nearby events in map with markers –&gt; <code>Fragment</code></li>
+<li>Comment on specific event –&gt; <code>Activity</code></li>
+<li><strong>First and second features</strong> are two parallel functions of events showing, also they should be presented <strong>independently and also fast loading</strong>, so it’s appropriate to <strong>use two independent fragments</strong> attached on EventActivity.</li>
+<li>Since <strong>comments are related to specific event</strong>, and they are not independent, so we should use another <strong>activity to show detail information of a specific event</strong> with title, username, description, time, comments, and in the same time, making comment to it.</li>
+</ul>
+</li>
+<li>Design EventsFragment and CommentActivity with <strong>RecyclerView</strong><ul>
+<li><code>EventsFragment</code>: to let users scroll up and down all events and ads together, we need to use RecyclerView instead of a layout (static without function scrollbar)</li>
+<li><code>CommentActivity</code>: to let users scroll up and down event and all comments together, we need to use RecyclerView instead of a layout (static without function scrollbar, and the size is fixed which may cause users can only see a few comments one time)</li>
+</ul>
+</li>
+<li>Design pattern<ul>
+<li><strong>Singleton</strong>: Firebase database uses singleton pattern so that the whole app share one database instance and the same data</li>
+</ul>
+</li>
+</ul>
+<h2 id="Application-Screenshot"><a href="#Application-Screenshot" class="headerlink" title="Application Screenshot"></a>Application Screenshot</h2><h3 id="Login-and-register"><a href="#Login-and-register" class="headerlink" title="Login and register"></a>Login and register</h3><img data-src="https://raw.githubusercontent.com/DarkAlexWang/EventReporter/master/doc/login.png" width="480px" height="853px" alt="login and register activity">
+
+<blockquote>
+<p>login and register activity</p>
+</blockquote>
+<h3 id="Show-all-events"><a href="#Show-all-events" class="headerlink" title="Show all events"></a>Show all events</h3><img data-src="https://raw.githubusercontent.com/DarkAlexWang/EventReporter/master/doc/eventlist.png" width="480px" height="853px" alt="events fragment">
+
+<blockquote>
+<p>events fragment</p>
+</blockquote>
+<h3 id="Event-details-and-make-comments"><a href="#Event-details-and-make-comments" class="headerlink" title="Event details and make comments"></a>Event details and make comments</h3><img data-src="https://raw.githubusercontent.com/DarkAlexWang/EventReporter/master/doc/comment.png" width="480px" height="853px" alt="comment activity">
+
+<blockquote>
+<p>comment activity</p>
+</blockquote>
+<h3 id="Report-new-event"><a href="#Report-new-event" class="headerlink" title="Report new event"></a>Report new event</h3><img data-src="https://raw.githubusercontent.com/DarkAlexWang/EventReporter/master/doc/report.png" width="480px" height="853px" alt="event report activity">
+
+<blockquote>
+<p>event report activity</p>
+</blockquote>
+<h3 id="Show-nearby-events-in-Google-Map"><a href="#Show-nearby-events-in-Google-Map" class="headerlink" title="Show nearby events in Google Map"></a>Show nearby events in Google Map</h3><img data-src="https://raw.githubusercontent.com/DarkAlexWang/EventReporter/master/doc/map.png" width="480px" height="853px" alt="event map fragment">
+
+<blockquote>
+<p>event map fragment</p>
+</blockquote>
+<h3 id="Show-Notification-Locally"><a href="#Show-Notification-Locally" class="headerlink" title="Show Notification Locally"></a>Show Notification Locally</h3><img data-src="https://raw.githubusercontent.com/DarkAlexWang/EventReporter/master/doc/notification.png" width="480px" height="853px" alt="FCM Messaging fragment">
+
+<blockquote>
+<p>event map fragment</p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Projects/" rel="tag"># Projects</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/07/15/bayarea-sightseeing/" rel="prev" title="湾区 接待攻略">
+      <i class="fa fa-chevron-left"></i> 湾区 接待攻略
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/09/04/Event-Recommendation-Web-Service/" rel="next" title="Event-Recommendation-Web-Service">
+      Event-Recommendation-Web-Service <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Android-Event-Reporter"><span class="nav-number">1.</span> <span class="nav-text">Android Event Reporter</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Business-Design"><span class="nav-number">1.1.</span> <span class="nav-text">Business Design</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#General-Function-Instruction"><span class="nav-number">1.2.</span> <span class="nav-text">General Function Instruction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Infrastructure-Design"><span class="nav-number">1.3.</span> <span class="nav-text">Infrastructure Design</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Database-Design"><span class="nav-number">1.4.</span> <span class="nav-text">Database Design</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#users"><span class="nav-number">1.4.1.</span> <span class="nav-text">users</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#events"><span class="nav-number">1.4.2.</span> <span class="nav-text">events</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#comments"><span class="nav-number">1.4.3.</span> <span class="nav-text">comments</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Implementation-Details"><span class="nav-number">1.5.</span> <span class="nav-text">Implementation Details</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Application-Screenshot"><span class="nav-number">1.6.</span> <span class="nav-text">Application Screenshot</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Login-and-register"><span class="nav-number">1.6.1.</span> <span class="nav-text">Login and register</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Show-all-events"><span class="nav-number">1.6.2.</span> <span class="nav-text">Show all events</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Event-details-and-make-comments"><span class="nav-number">1.6.3.</span> <span class="nav-text">Event details and make comments</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Report-new-event"><span class="nav-number">1.6.4.</span> <span class="nav-text">Report new event</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Show-nearby-events-in-Google-Map"><span class="nav-number">1.6.5.</span> <span class="nav-text">Show nearby events in Google Map</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Show-Notification-Locally"><span class="nav-number">1.6.6.</span> <span class="nav-text">Show Notification Locally</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="darkalexwang"
+      src="https://c2.staticflickr.com/8/7464/27053268555_c92b86047e_o.jpg">
+  <p class="site-author-name" itemprop="name">darkalexwang</p>
+  <div class="site-description" itemprop="description">Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">51</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">57</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/darkalexwang" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;darkalexwang" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:wangzhihuan0815@gmail.com" title="E-Mail → mailto:wangzhihuan0815@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/Dark_AlexWang" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;Dark_AlexWang" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2014 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">darkalexwang</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="Symbols count total">205k</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : '24rulLT5OhXgLsk80hCm3RvR-gzGzoHsz',
+      appKey     : 'StnUSKMeD4s0XPPzFCiSV6HN',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : 'en' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+<script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>

@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="true">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"darkalexwang.github.io","root":"/","scheme":"Muse","version":"7.7.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"scrollpercent":true,"onmobile":false},"copycode":{"enable":true,"show_result":true},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="class: center, middle Introduction to Linux  class: middle What is Linux Free and Open Source computer Operating System First released in 1991 by Linus Torvalds Linus was 21 years old at the time Toda">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux WorkShop">
+<meta property="og:url" content="darkalexwang.github.io/2014/05/30/Linux-WorkShop/index.html">
+<meta property="og:site_name" content="DarkAlexWang&#39;s Blog">
+<meta property="og:description" content="class: center, middle Introduction to Linux  class: middle What is Linux Free and Open Source computer Operating System First released in 1991 by Linus Torvalds Linus was 21 years old at the time Toda">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://cynapse.com/wp-content/uploads/linux-powered_0.png">
+<meta property="og:image" content="https://assets.ubuntu.com/sites/ubuntu/latest/u/img/devices/devices-family.png">
+<meta property="og:image" content="https://ryanlerch.fedorapeople.org/musique.png">
+<meta property="og:image" content="http://core0.staticworld.net/images/article/2013/03/7-ubuntu-workspace-switcher-100028064-orig.png">
+<meta property="og:image" content="https://bitcoinpaperwallet.com/ubuntu-linux-live-bootable-cd/ubuntu-cd.jpg">
+<meta property="og:image" content="http://itsfoss.com/wp-content/uploads/2014/10/Windows_Spread_Linux_Gnome.jpeg">
+<meta property="og:image" content="http://www.omgubuntu.co.uk/wp-content/uploads/2012/02/noname-11.jpg">
+<meta property="og:image" content="http://cdn.gsmarena.com/vv/newsimg/13/01/firefox-os-developer-phones/gsmarena_001.jpg">
+<meta property="og:image" content="http://image.slidesharecdn.com/chromeos-140711225857-phpapp01/95/chrome-os-the-stateless-operating-system-13-638.jpg?cb=1405119621">
+<meta property="og:image" content="https://wiki.haskell.org/wikiupload/a/aa/Screen-triplehead-galois.jpg">
+<meta property="og:image" content="http://blog.leaseweb.com/uploads/2014/07/containers-vs-vms.jpg">
+<meta property="og:image" content="http://dotshare.it/public/images/uploads/40.png">
+<meta property="og:image" content="http://www.tonypickett.com/wp-content/uploads/2013/09/arch_01.jpg">
+<meta property="og:image" content="http://downtoearthlinux.com/wp-content/uploads/2014/03/de-vs-wm.jpg">
+<meta property="og:image" content="http://media.brajeshwar.com/i/technology/linux-file-tree.jpg">
+<meta property="og:image" content="https://camo.githubusercontent.com/2effeef4795b95295b726690bb0984df7d812fcd/68747470733a2f2f646f63732e676f6f676c652e636f6d2f64726177696e67732f642f3161444b397a716163677572465a537a6a704c4d5653676f64306a462d4b4648576553565f53554c387668452f7075623f773d39313626616d703b683d333534">
+<meta property="og:image" content="http://deano.me/wp-content/uploads/2014/12/HardVsSymbolicLInks.png">
+<meta property="og:image" content="http://image.slidesharecdn.com/scheduleractivations-effectivekernelsupportfortheuser-levelmanagementofparallelism-110803044850-phpapp02/95/scheduler-activations-effective-kernel-support-for-the-userlevel-management-of-parallelism-6-728.jpg?cb=1312714637">
+<meta property="og:image" content="https://www.pgroup.com/images/insider/v2n4a1i2.png">
+<meta property="og:image" content="https://git-scm.com/book/en/v2/book/01-introduction/images/local.png">
+<meta property="og:image" content="http://i.kinja-img.com/gawker-media/image/upload/vkadegotlwqvivpppfb5.png">
+<meta property="article:published_time" content="2014-05-30T21:17:50.000Z">
+<meta property="article:modified_time" content="2022-01-12T06:36:48.750Z">
+<meta property="article:author" content="darkalexwang">
+<meta property="article:tag" content="Tech">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="WorkShop">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://cynapse.com/wp-content/uploads/linux-powered_0.png">
+
+<link rel="canonical" href="darkalexwang.github.io/2014/05/30/Linux-WorkShop/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Linux WorkShop | DarkAlexWang's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">DarkAlexWang's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-fw fa-sitemap"></i>Sitemap</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404.html" rel="section"><i class="fa fa-fw fa-heartbeat"></i>Commonweal 404</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="darkalexwang.github.io/2014/05/30/Linux-WorkShop/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://c2.staticflickr.com/8/7464/27053268555_c92b86047e_o.jpg">
+      <meta itemprop="name" content="darkalexwang">
+      <meta itemprop="description" content="Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DarkAlexWang's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Linux WorkShop
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2014-05-30 14:17:50" itemprop="dateCreated datePublished" datetime="2014-05-30T14:17:50-07:00">2014-05-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-01-11 22:36:48" itemprop="dateModified" datetime="2022-01-11T22:36:48-08:00">2022-01-11</time>
+              </span>
+
+          
+            <span id="/2014/05/30/Linux-WorkShop/" class="post-meta-item leancloud_visitors" data-flag-title="Linux WorkShop" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2014/05/30/Linux-WorkShop/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2014/05/30/Linux-WorkShop/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>21k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>19 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>class: center, middle</p>
+<h1 id="Introduction-to-Linux"><a href="#Introduction-to-Linux" class="headerlink" title="Introduction to Linux"></a>Introduction to Linux</h1><p><img data-src="http://cynapse.com/wp-content/uploads/linux-powered_0.png" alt="img"></p>
+<hr>
+<p>class: middle</p>
+<h1 id="What-is-Linux"><a href="#What-is-Linux" class="headerlink" title="What is Linux"></a>What is Linux</h1><ul>
+<li>Free and Open Source computer Operating System</li>
+<li>First released in 1991 by Linus Torvalds</li>
+<li>Linus was 21 years old at the time</li>
+<li>Today, Linux is found everywhere!</li>
+</ul>
+<hr>
+<p>class: center</p>
+<h1 id="Linux-on-Devices"><a href="#Linux-on-Devices" class="headerlink" title="Linux on Devices"></a>Linux on Devices</h1><p>TVs | PCs | Tablets | Phones (since 2013)</p>
+<p><img data-src="https://assets.ubuntu.com/sites/ubuntu/latest/u/img/devices/devices-family.png" alt="img"></p>
+<hr>
+<p>class: inverse, center, middle</p>
+<h2 id="Why-use-Linux"><a href="#Why-use-Linux" class="headerlink" title="Why use Linux?"></a>Why use Linux?</h2><hr>
+<p>.left-column[</p>
+<h2 id="Innovative"><a href="#Innovative" class="headerlink" title="Innovative"></a>Innovative</h2><p>]<br>.right-column[<br>.center[<strong>Package Managers</strong> (since 1995)]</p>
+<p>.center[<img data-src="https://ryanlerch.fedorapeople.org/musique.png" alt="img">]<br>]</p>
+<hr>
+<p>.left-column[</p>
+<h2 id="Innovative-1"><a href="#Innovative-1" class="headerlink" title="Innovative"></a>Innovative</h2><p>]<br>.right-column[<br>.center[<strong>Workspaces</strong> (since 1998)]</p>
+<p>.center[<img data-src="http://core0.staticworld.net/images/article/2013/03/7-ubuntu-workspace-switcher-100028064-orig.png" alt="img">]<br>]</p>
+<hr>
+<p>.left-column[</p>
+<h2 id="Innovative-2"><a href="#Innovative-2" class="headerlink" title="Innovative"></a>Innovative</h2><p>]<br>.right-column[<br>.center[<strong>Live CD</strong> (free shipping since 2006)]</p>
+<p>.center[<img data-src="https://bitcoinpaperwallet.com/ubuntu-linux-live-bootable-cd/ubuntu-cd.jpg" alt="img">]<br>]</p>
+<hr>
+<p>.left-column[</p>
+<h2 id="Innovative-3"><a href="#Innovative-3" class="headerlink" title="Innovative"></a>Innovative</h2><p>]<br>.right-column[<br>.center[<strong>Task Spread</strong> (since 2013)]</p>
+<p>.center[<img data-src="http://itsfoss.com/wp-content/uploads/2014/10/Windows_Spread_Linux_Gnome.jpeg" alt="img">]<br>]</p>
+<hr>
+<p>.left-column[</p>
+<h2 id="Innovative-4"><a href="#Innovative-4" class="headerlink" title="Innovative"></a>Innovative</h2><p>]<br>.right-column[<br>.center[<strong>Convergence</strong> (since 2015)]</p>
+<p>.center[<img data-src="http://www.omgubuntu.co.uk/wp-content/uploads/2012/02/noname-11.jpg" alt="img">]<br>]</p>
+<hr>
+<p>.left-column[</p>
+<h2 id="Innovative-5"><a href="#Innovative-5" class="headerlink" title="Innovative"></a>Innovative</h2><h2 id="Adaptable"><a href="#Adaptable" class="headerlink" title="Adaptable"></a>Adaptable</h2><p>]<br>.right-column[<br>.center[<strong>Firefox OS Phone</strong>]</p>
+<ul>
+<li>Sold for $35 at launch</li>
+<li>Runs only a web renderer on the Linux kernel</li>
+<li>Feels fast, smooth, fluid<br>.center[<img data-src="http://cdn.gsmarena.com/vv/newsimg/13/01/firefox-os-developer-phones/gsmarena_001.jpg" alt="img">]<br>]</li>
+</ul>
+<hr>
+<p>.left-column[</p>
+<h2 id="Innovative-6"><a href="#Innovative-6" class="headerlink" title="Innovative"></a>Innovative</h2><h2 id="Adaptable-1"><a href="#Adaptable-1" class="headerlink" title="Adaptable"></a>Adaptable</h2><p>]<br>.right-column[<br>.center[<strong>Chrome OS</strong>]</p>
+<ul>
+<li>First major OS to boot in under 2 seconds!</li>
+<li>Runs only a web renderer on the Linux kernel</li>
+</ul>
+<p>.center[<img data-src="http://image.slidesharecdn.com/chromeos-140711225857-phpapp01/95/chrome-os-the-stateless-operating-system-13-638.jpg?cb=1405119621" alt="img">]<br>]</p>
+<hr>
+<p>.left-column[</p>
+<h2 id="Innovative-7"><a href="#Innovative-7" class="headerlink" title="Innovative"></a>Innovative</h2><h2 id="Adaptable-2"><a href="#Adaptable-2" class="headerlink" title="Adaptable"></a>Adaptable</h2><h2 id="Productive"><a href="#Productive" class="headerlink" title="Productive"></a>Productive</h2><p>]<br>.right-column[<br>.center[<strong>XMonad</strong>]</p>
+<p>.center[<img data-src="https://wiki.haskell.org/wikiupload/a/aa/Screen-triplehead-galois.jpg" alt="img">]<br>]</p>
+<hr>
+<p>.left-column[</p>
+<h2 id="Innovative-8"><a href="#Innovative-8" class="headerlink" title="Innovative"></a>Innovative</h2><h2 id="Adaptable-3"><a href="#Adaptable-3" class="headerlink" title="Adaptable"></a>Adaptable</h2><h2 id="Productive-1"><a href="#Productive-1" class="headerlink" title="Productive"></a>Productive</h2><p>]<br>.right-column[<br>.center[<strong>Containers</strong>]</p>
+<p>.center[<img data-src="http://blog.leaseweb.com/uploads/2014/07/containers-vs-vms.jpg" alt="img">]<br>]</p>
+<hr>
+<p>.left-column[</p>
+<h2 id="Innovative-9"><a href="#Innovative-9" class="headerlink" title="Innovative"></a>Innovative</h2><h2 id="Adaptable-4"><a href="#Adaptable-4" class="headerlink" title="Adaptable"></a>Adaptable</h2><h2 id="Productive-2"><a href="#Productive-2" class="headerlink" title="Productive"></a>Productive</h2><p>]<br>.right-column[<br>.center[<strong>Terminal</strong>]</p>
+<p>.center[<img data-src="http://dotshare.it/public/images/uploads/40.png" alt="img">]<br>]</p>
+<hr>
+<p>class: inverse, center, middle</p>
+<h1 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h1><hr>
+<p>class: center</p>
+<h1 id="Linux-Architecture"><a href="#Linux-Architecture" class="headerlink" title="Linux Architecture"></a>Linux Architecture</h1><p>.center[<img data-src="http://www.tonypickett.com/wp-content/uploads/2013/09/arch_01.jpg" alt="img">]</p>
+<hr>
+<p>class: center</p>
+<h1 id="Window-Managers"><a href="#Window-Managers" class="headerlink" title="Window Managers"></a>Window Managers</h1><p>.center[<img data-src="http://downtoearthlinux.com/wp-content/uploads/2014/03/de-vs-wm.jpg" alt="img">]</p>
+<hr>
+<p>class: center</p>
+<h1 id="File-System-Hierarchy"><a href="#File-System-Hierarchy" class="headerlink" title="File System Hierarchy"></a>File System Hierarchy</h1><p>.center[<img data-src="http://media.brajeshwar.com/i/technology/linux-file-tree.jpg" alt="img">]</p>
+<hr>
+<p>class: inverse, center, middle</p>
+<h1 id="Basic-Navigation"><a href="#Basic-Navigation" class="headerlink" title="Basic Navigation"></a>Basic Navigation</h1><hr>
+<h1 id="The-Shell"><a href="#The-Shell" class="headerlink" title="The Shell"></a>The Shell</h1><p>The shell prompt will appear when the shell is ready to accept input</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[me@linuxbox /working/directory]$</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>username@hostname</li>
+<li>followed by the current working directory</li>
+<li>followed by a <code>$</code> sign</li>
+</ul>
+<p>Only the <code>$</code> sign is required for a shell.</p>
+<p>Some shells ignore the username, hostname, and working directory.</p>
+<hr>
+<h1 id="Essential-commands"><a href="#Essential-commands" class="headerlink" title="Essential commands"></a>Essential commands</h1><ul>
+<li><p><code>pwd</code> prints the current working directory</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">pwd</span></span><br><span class="line">/home/siddhu</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>mkdir</code> makes a directory</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir testdir</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>cd</code> changes the current working directory</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> testdir</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>ls</code> lists the contents of a directory</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ls /home/siddhu</span><br><span class="line">testdir</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<hr>
+<h1 id="Essential-commands-1"><a href="#Essential-commands-1" class="headerlink" title="Essential commands"></a>Essential commands</h1><ul>
+<li><p><code>man</code> gives offline documentation for commands</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ man ls</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>cp</code> copies a file</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cp <span class="built_in">source</span> destination</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>rm</code> removes a file</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rm file</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>mv</code> moves a file</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mv <span class="built_in">source</span> destination</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<hr>
+<h1 id="Essential-commands-2"><a href="#Essential-commands-2" class="headerlink" title="Essential commands"></a>Essential commands</h1><ul>
+<li><p><code>less</code> views a file, one screenful at a time</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ less file</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>cat</code> concatenates files</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat file1 file2 file3</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>nano</code> is used to edit a file</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nano file</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<hr>
+<h1 id="Essential-commands-3"><a href="#Essential-commands-3" class="headerlink" title="Essential commands"></a>Essential commands</h1><ul>
+<li><code>tree</code> displays the directory tree after the current directory<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ tree</span><br><span class="line">.</span><br><span class="line">├── dir1</span><br><span class="line">│   ├── file2</span><br><span class="line">│   └── subdir</span><br><span class="line">│       └── anotherfile</span><br><span class="line">├── dir2</span><br><span class="line">├── dir3</span><br><span class="line">│   └── subdir</span><br><span class="line">│       └── subsubdir</span><br><span class="line">└── file</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h1 id="Aliases"><a href="#Aliases" class="headerlink" title="Aliases"></a>Aliases</h1><ul>
+<li><code>~</code> is an alias for the current users’ home directory</li>
+<li><code>#</code> instead of <code>$</code> as a prompt indicates superuser privileges</li>
+<li><code>~username</code> refers to the home directory of username</li>
+<li><code>.</code> refers to the current directory</li>
+<li><code>..</code> refers to the parent directory</li>
+</ul>
+<p>Path names may be absolute or relative.</p>
+<ul>
+<li><code>cd /home/siddhu/mydir</code> uses an absolute path name</li>
+<li><code>cd mydir</code> uses a relative path name</li>
+<li><code>cd ../mydir</code> also uses a relative path name</li>
+</ul>
+<p>When you use a relative path name without <code>.</code> or <code>..</code>, the shell replaces it<br>with an absolute path name:</p>
+<p><code>cd mydir</code> -&gt; <code>cd $PWD/mydir</code></p>
+<p><code>$PWD</code> is a special variable which holds the current working directory</p>
+<hr>
+<h1 id="Cursor-Movement"><a href="#Cursor-Movement" class="headerlink" title="Cursor Movement"></a>Cursor Movement</h1><p>Basic movement:</p>
+<ul>
+<li>Up arrow goes to the previous command</li>
+<li>Down arrow goes to the next command</li>
+<li>Left/Right are used to jump characters backwards/forwards</li>
+<li>Ctrl+Left / Ctrl+Right are used to jump words backwards/forwards</li>
+</ul>
+<p>Advanced movement (Emacs bindings):</p>
+<ul>
+<li><code>Ctrl-p</code> goes to the previous command</li>
+<li><code>Ctrl-n</code> goes to the next command</li>
+<li><code>Ctrl-r</code> is used to search for a previous command</li>
+<li><code>Ctrl-s</code> is used to search for a newer command</li>
+<li><code>Ctrl-a</code> moves the cursor to the beginning of the line</li>
+<li><code>Ctrl-e</code> moves the cursor to the end of the line</li>
+<li><code>Ctrl-w</code> deletes a word backwards, while <code>Alt-w</code> deletes a line backwards</li>
+<li><code>Ctrl-d</code> deletes a character forward, while <code>Alt-d</code> deletes a word forward</li>
+<li><code>Ctrl-f</code> jumps a character forward, while <code>Alt-f</code> jumps a word forward</li>
+<li><code>Ctrl-b</code> jumps a character backward, while <code>Alt-b</code> jumps a word backward</li>
+</ul>
+<hr>
+<h1 id="Tab-Completion"><a href="#Tab-Completion" class="headerlink" title="Tab Completion"></a>Tab Completion</h1><p>Typing out long path names can become tedious. Tab completion makes it a lot easier.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> co&lt;Tab&gt;/l&lt;Tab&gt;/s&lt;Tab&gt;/com&lt;Tab&gt;</span><br><span class="line">$ <span class="built_in">cd</span> code/llvm/src/compiler</span><br></pre></td></tr></table></figure>
+
+<p>If multiple completions exist, tab completion won’t succeed. Press tab twice in such scenarios’ to view all possible completions.</p>
+<p>Pro tip: Use ZSH instead of Bash for insane tab completions</p>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> c/l/s/c&lt;Tab&gt;</span><br><span class="line">$ <span class="built_in">cd</span> code/llvm/src/compiler</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>class: inverse, center, middle</p>
+<h1 id="UNIX"><a href="#UNIX" class="headerlink" title="UNIX"></a>UNIX</h1><hr>
+<h1 id="Unix-Philosophy"><a href="#Unix-Philosophy" class="headerlink" title="Unix Philosophy"></a>Unix Philosophy</h1><ul>
+<li>Aims for minimalist, modular software development</li>
+<li>Write programs that do one thing and do it well</li>
+<li>Write programs to work together</li>
+<li>Write programs to handle text streams</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ cat localfile.txt | wc -l</span><br><span class="line"></span><br><span class="line">44</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ curl http://www.tldp.org/LDP/sag/sag.txt | wc -l</span><br><span class="line"></span><br><span class="line">  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current</span><br><span class="line">                                 Dload  Upload   Total   Spent    Left  Speed</span><br><span class="line">100 43698    0 43698    0     0   148k      0 --:--:-- --:--:-- --:--:--  217k</span><br><span class="line"></span><br><span class="line">7634</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="Unix-Philosophy-1"><a href="#Unix-Philosophy-1" class="headerlink" title="Unix Philosophy"></a>Unix Philosophy</h1><ul>
+<li>We use pipes (the <code>|</code> character) to chain the output of one program as the input of another</li>
+</ul>
+<p>.center[<img data-src="https://camo.githubusercontent.com/2effeef4795b95295b726690bb0984df7d812fcd/68747470733a2f2f646f63732e676f6f676c652e636f6d2f64726177696e67732f642f3161444b397a716163677572465a537a6a704c4d5653676f64306a462d4b4648576553565f53554c387668452f7075623f773d39313626616d703b683d333534" alt="img">]</p>
+<hr>
+<h1 id="Unix-Philosophy-2"><a href="#Unix-Philosophy-2" class="headerlink" title="Unix Philosophy"></a>Unix Philosophy</h1><p>Everything is a file.</p>
+<ul>
+<li>A text file is a file</li>
+<li>A binary file is a file</li>
+<li>A directory is a file</li>
+<li>The keyboard is a file</li>
+<li>The monitor is a file</li>
+<li>All I/O devices are files</li>
+</ul>
+<p>Files don’t need extensions. File types are determined using MIME types. MIME types are embedded in the file header (inode to be precise).</p>
+<p>Some common extensions and their corresponding MIME types are listed below:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.txt  – text/plain</span><br><span class="line">.html – text/html</span><br><span class="line">.mp3  – audio/mpeg3</span><br><span class="line">.png  – image/png</span><br><span class="line">.doc  – application/msword</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="Unix-Philosophy-3"><a href="#Unix-Philosophy-3" class="headerlink" title="Unix Philosophy"></a>Unix Philosophy</h1><p>Understanding the Unix Philosophy is key to effectively using the terminal. Consider the two equivalent ways of viewing a file with less.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ less file</span><br><span class="line">$ cat file | less</span><br></pre></td></tr></table></figure>
+
+<p>To understand the what’s going on, consider the following:</p>
+<ul>
+<li>I/O is a file</li>
+<li>stdin, stdout, and stderr are files</li>
+<li>stdout of one program can be piped to stdin of another program using <code>|</code></li>
+</ul>
+<hr>
+<h1 id="Understanding-Filesystems"><a href="#Understanding-Filesystems" class="headerlink" title="Understanding Filesystems"></a>Understanding Filesystems</h1><blockquote>
+<p><em>Have you noticed that directories take up 4096 bytes of memory?</em></p>
+</blockquote>
+<p>Files on a Linux system have an inode table. The inode table consists of:</p>
+<ul>
+<li>file size</li>
+<li>ids</li>
+<li>file mode</li>
+<li>timestamps</li>
+<li>symbolic link count</li>
+<li>pointers to the disk</li>
+</ul>
+<p>A directory is just a special file containing the inode numbers of the files<br>inside it as an array. The size of this array is usually less 4096 bytes.</p>
+<p>Filesystems in Linux are usually block aligned. 4096 bytes is a common block<br>size, and since the directory size is less than 4096 bytes, it’s aligned at<br>the 4096 byte boundary, making it’s size 4096 bytes.</p>
+<hr>
+<h1 id="Understanding-Filesystems-1"><a href="#Understanding-Filesystems-1" class="headerlink" title="Understanding Filesystems"></a>Understanding Filesystems</h1><p>Multiple pointers to the inode number may exist. These pointers are<br>called hard links. All hard links are equivalent.</p>
+<p>The alternative, is to have symbolic links, which point to the original<br>file path, and not the inode number itself.</p>
+<p>.center[<img data-src="http://deano.me/wp-content/uploads/2014/12/HardVsSymbolicLInks.png" alt="img">]</p>
+<hr>
+<p>class: inverse, center, middle</p>
+<h1 id="Unix-Patterns"><a href="#Unix-Patterns" class="headerlink" title="Unix Patterns"></a>Unix Patterns</h1><hr>
+<h1 id="Wildcards"><a href="#Wildcards" class="headerlink" title="Wildcards"></a>Wildcards</h1><p>Wildcards are patterns for searching files</p>
+<ul>
+<li><code>*</code> represents zero or more characters</li>
+<li><code>?</code> represents a single character</li>
+<li><code>[]</code> represents a range of characters</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$ ls</span><br><span class="line">blue blah blarg bar baz file example new.txt old.txt foo1 foo2 foo3</span><br><span class="line"></span><br><span class="line">$ ls b*</span><br><span class="line">blue blah blarg bar baz</span><br><span class="line"></span><br><span class="line">$ ls ba?</span><br><span class="line">bar baz</span><br><span class="line"></span><br><span class="line">$ ls *.txt</span><br><span class="line">new.txt old.txt</span><br><span class="line"></span><br><span class="line">$ ls *[0-9]*</span><br><span class="line">foo1 foo2 foo3</span><br></pre></td></tr></table></figure>
+
+<p>Under the hood, the shell auto completes wildcards before executing the command.</p>
+<hr>
+<h1 id="Permissions"><a href="#Permissions" class="headerlink" title="Permissions"></a>Permissions</h1><p>Linux has 3 permissions:</p>
+<ul>
+<li>r - read (view the file)</li>
+<li>w - write (edit the file)</li>
+<li>x - execute (run the file)</li>
+</ul>
+<p>The permissions are granted for 3 groups:</p>
+<ul>
+<li>u - owner - person who owns the file (usually the person who created it)</li>
+<li>g - group - accessible to everyone in the group</li>
+<li>o - others - accessible to everyone</li>
+</ul>
+<hr>
+<h1 id="Permissions-1"><a href="#Permissions-1" class="headerlink" title="Permissions"></a>Permissions</h1><p>Use <code>ls -l</code> to view the permissions on a file:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ touch file &amp;&amp; mkdir dir</span><br><span class="line">$ ls -l</span><br><span class="line">-rw-rw-r-- 1 siddhu siddhu    0 May 13 02:03 file</span><br><span class="line">drwxrwxr-x 2 siddhu siddhu 4096 May 13 02:04 dir</span><br></pre></td></tr></table></figure>
+
+<p>The format is:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  d         r w x   r w x   r w x</span><br><span class="line"></span><br><span class="line">  ^          ^        ^       ^</span><br><span class="line">  |          |        |       |</span><br><span class="line">directory   owner    group   others</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>A dash (<code>-</code>) indicates the absense of that field</li>
+<li><code>rwx</code> indicates read/write/execute privilege on the file</li>
+</ul>
+<hr>
+<h1 id="Permissions-2"><a href="#Permissions-2" class="headerlink" title="Permissions"></a>Permissions</h1><p>Use <code>chmod</code> to alter the permissions of a file:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ touch file</span><br><span class="line">$ chmod g+w file <span class="comment"># Give (+) group (g) write (w) privilege</span></span><br><span class="line">$ chmod o-r file <span class="comment"># Revoke (-) read (r) privilege from others (o)</span></span><br><span class="line">$ chmod a-x file <span class="comment"># Revoke execute (x) privilege from all groups (a)</span></span><br><span class="line">$ chmod u+r file <span class="comment"># Give read privilege to owner (u)</span></span><br></pre></td></tr></table></figure>
+
+<p>To set rwx permissions of all groups simultaneously, use binary representation:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ chmod 754 file <span class="comment"># 7 5 4 = 111 101 100 = rwx r-x r--</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="Piping"><a href="#Piping" class="headerlink" title="Piping"></a>Piping</h1><ul>
+<li><code>|</code> feeds the output of one command, as the input of the next</li>
+<li><code>&gt;</code> writes the stdout of one command to a file</li>
+<li><code>&gt;&gt;</code> appends the stdout of one command to a file</li>
+<li><code>2&gt;</code> writes the stderr of one command to a file</li>
+</ul>
+<hr>
+<h1 id="Processes"><a href="#Processes" class="headerlink" title="Processes"></a>Processes</h1><p>Threads:</p>
+<ul>
+<li>The number of threads is limited by the hardware</li>
+<li>The kernel can use special threads called kernel threads</li>
+<li>Kernel threads run on top of hardware threads</li>
+<li>POSIX allows multiple p-threads to run on a single thread</li>
+<li>pthreads run on top of kernel threads, they add an address space</li>
+<li>Userspace threads are called green threads</li>
+<li>Compilers may allow multiple green threads to run on a single p-thread</li>
+</ul>
+<p>Processes:</p>
+<ul>
+<li>A process is a program which may use one or more threads</li>
+<li>Processes are expensive, and should not be spawned unnecessarily</li>
+<li>Processes are isolated by process isolation</li>
+<li>Processes communicate using inter-process communication</li>
+</ul>
+<hr>
+<h1 id="Processes-1"><a href="#Processes-1" class="headerlink" title="Processes"></a>Processes</h1><p>Threads may run in userspace, or kernel space</p>
+<p>.center[<img data-src="http://image.slidesharecdn.com/scheduleractivations-effectivekernelsupportfortheuser-levelmanagementofparallelism-110803044850-phpapp02/95/scheduler-activations-effective-kernel-support-for-the-userlevel-management-of-parallelism-6-728.jpg?cb=1312714637" alt="img">]</p>
+<hr>
+<h1 id="Processes-2"><a href="#Processes-2" class="headerlink" title="Processes"></a>Processes</h1><p>The OS manages theads, offloading to different hardware using different techniques.<br>You can help the OS by specifying your execution model as a programmer.</p>
+<p>.center[<img data-src="https://www.pgroup.com/images/insider/v2n4a1i2.png" alt="img">]</p>
+<hr>
+<h1 id="Processes-3"><a href="#Processes-3" class="headerlink" title="Processes"></a>Processes</h1><p>You can view running process using <code>top</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ top</span><br><span class="line">Tasks: 174 total, 3 running, 171 sleeping, 0 stopped</span><br><span class="line">KiB Mem: 4050604 total, 3114428 used, 936176 free</span><br><span class="line">Kib Swap: 2104476 total, 18132 used, 2086344 free</span><br><span class="line"> </span><br><span class="line"> PID USER %CPU %MEM COMMAND</span><br><span class="line">6978 ryan 3.0  21.2 firefox</span><br><span class="line">  11 root 0.3   0.0 rcu_preempt</span><br><span class="line">6601 ryan 2.0   2.4 kwin</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p>If you want to output process info to stdout, use <code>ps [aux]</code>.<br>It gives a lot of output, so we use grep to filter the results.</p>
+<hr>
+<h1 id="Processes-4"><a href="#Processes-4" class="headerlink" title="Processes"></a>Processes</h1><p>To kill an existing process, use <code>kill [signal] &lt;PID&gt;</code></p>
+<p>If kill doesn’t destroy the process by itself, you can pass the<br>signal <code>-9</code> which destroys the process at the kernel level.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$ ps aux | grep <span class="string">'firefox'</span></span><br><span class="line">ryan 6978 8.8 23.5 2344096 945452 ? Sl 08:03 49:53 /usr/lib64/firefox/firefox</span><br><span class="line"></span><br><span class="line">$ <span class="built_in">kill</span> 6978</span><br><span class="line"></span><br><span class="line">$ ps aux | grep <span class="string">'firefox'</span></span><br><span class="line">ryan 6978 8.8 23.5 2344096 945452 ? Sl 08:03 49:53 /usr/lib64/firefox/firefox</span><br><span class="line"></span><br><span class="line">$ <span class="built_in">kill</span> -9 6978</span><br><span class="line"></span><br><span class="line">$ ps aux | grep <span class="string">'firefox'</span></span><br><span class="line"></span><br><span class="line">$</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="Processes-5"><a href="#Processes-5" class="headerlink" title="Processes"></a>Processes</h1><p>A process can run as a foreground or background job.</p>
+<p>To list the current background jobs, use the <code>jobs</code> command. Pressing <code>Ctrl-Z</code><br>while running a program sends it to the background. To bring a job back to the<br>foreground, use <code>fg &lt;job-number&gt;</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ sleep 15 &amp;</span><br><span class="line">[1] 21637</span><br><span class="line"></span><br><span class="line">$ sleep 10</span><br><span class="line"><span class="comment"># (you press CTRL + z, notice the prompt comes back.)</span></span><br><span class="line"></span><br><span class="line">$ <span class="built_in">jobs</span></span><br><span class="line">[1]- Running sleep 15 &amp;</span><br><span class="line">[2]+ Stopped sleep 10</span><br><span class="line"></span><br><span class="line">$ <span class="built_in">fg</span> 2</span><br><span class="line">[1] Done sleep 15</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>class: inverse, center, middle</p>
+<h1 id="Filters"><a href="#Filters" class="headerlink" title="Filters"></a>Filters</h1><hr>
+<h1 id="cat"><a href="#cat" class="headerlink" title="cat"></a>cat</h1><p>cat is used for concatenating files, but abused for printing files to stdout.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$ cat sample</span><br><span class="line">Fred apples 20</span><br><span class="line">Susy oranges 5</span><br><span class="line">Mark watermellons 12</span><br><span class="line">Robert pears 4</span><br><span class="line">Terry oranges 9</span><br><span class="line">Lisa peaches 7</span><br><span class="line">Susy oranges 12</span><br><span class="line">Mark grapes 39</span><br><span class="line">Anne mangoes 7</span><br><span class="line">Greg pineapples 3</span><br><span class="line">Oliver rockmellons 2</span><br><span class="line">Betty limes 14</span><br><span class="line">Julie bananas 30</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="head"><a href="#head" class="headerlink" title="head"></a>head</h1><p>head prints out the first n lines of it’s input. If no value for n is given, it<br>defaults to printing 10 lines.</p>
+<p><code>head -n file</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">$ head sample</span><br><span class="line">Fred apples 20</span><br><span class="line">Susy oranges 5</span><br><span class="line">Mark watermellons 12</span><br><span class="line">Robert pears 4</span><br><span class="line">Terry oranges 9</span><br><span class="line">Lisa peaches 7</span><br><span class="line">Susy oranges 12</span><br><span class="line">Mark grapes 39</span><br><span class="line">Anne mangoes 7</span><br><span class="line">Greg pineapples 3</span><br><span class="line"></span><br><span class="line">$ head -3 sample</span><br><span class="line">Fred apples 20</span><br><span class="line">Susy oranges 5</span><br><span class="line">Mark watermellons 12</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="tail"><a href="#tail" class="headerlink" title="tail"></a>tail</h1><p>tail prints out the last n lines of it’s input. If no value for n is given, it<br>defaults to printing 10 lines.</p>
+<p><code>tail -n file</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">$ tail sample</span><br><span class="line">obert pears 4</span><br><span class="line">Terry oranges 9</span><br><span class="line">Lisa peaches 7</span><br><span class="line">Susy oranges 12</span><br><span class="line">Mark grapes 39</span><br><span class="line">Anne mangoes 7</span><br><span class="line">Greg pineapples 3</span><br><span class="line">Oliver rockmellons 2</span><br><span class="line">Betty limes 14</span><br><span class="line">Julie bananas 30</span><br><span class="line"></span><br><span class="line">$ tail -3 sample</span><br><span class="line">Oliver rockmellons 2</span><br><span class="line">Betty limes 14</span><br><span class="line">Julie bananas 30</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h1><p>sort is a utility to sort the input alphabetically (though, other sorting<br>mechanisms are available)</p>
+<p><code>sort -options file</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$ sort sample</span><br><span class="line">Anne mangoes 7</span><br><span class="line">Betty limes 14</span><br><span class="line">Fred apples 20</span><br><span class="line">Greg pineapples 3</span><br><span class="line">Julie bananas 30</span><br><span class="line">Lisa peaches 7</span><br><span class="line">Mark grapes 39</span><br><span class="line">Mark watermellons 12</span><br><span class="line">Oliver rockmellons 2</span><br><span class="line">Robert pears 4</span><br><span class="line">Susy oranges 12</span><br><span class="line">Susy oranges 5</span><br><span class="line">Terry oranges 9</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="nl"><a href="#nl" class="headerlink" title="nl"></a>nl</h1><p>nl numbers the lines in the input</p>
+<p><code>nl -options file</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$ nl -w 1 -s <span class="string">'. '</span> sample</span><br><span class="line">1. Fred apples 20</span><br><span class="line">2. Susy oranges 5</span><br><span class="line">3. Mark watermellons 12</span><br><span class="line">4. Robert pears 4</span><br><span class="line">5. Terry oranges 9</span><br><span class="line">6. Lisa peaches 7</span><br><span class="line">7. Susy oranges 12</span><br><span class="line">8. Mark grapes 39</span><br><span class="line">9. Anne mangoes 7</span><br><span class="line">10. Greg pineapples 3</span><br><span class="line">11. Oliver rockmellons 2</span><br><span class="line">12. Betty limes 14</span><br><span class="line">13. Julie bananas 30</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="wc"><a href="#wc" class="headerlink" title="wc"></a>wc</h1><p>wc counts the number of words (or lines/characters) in the input</p>
+<p><code>wc -options file</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ wc sample <span class="comment"># returns lines, words, characters, filename</span></span><br><span class="line"> 13  39 214 sample</span><br><span class="line"></span><br><span class="line">$ wc -l sample <span class="comment"># returns lines, filename</span></span><br><span class="line">  13 sample</span><br><span class="line"></span><br><span class="line">$ wc -w sample <span class="comment"># returns words, filename</span></span><br><span class="line">  39 sample</span><br><span class="line"></span><br><span class="line">$ wc -lc sample <span class="comment"># returns lines, characters, filename</span></span><br><span class="line">  13 214 sample</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="cut"><a href="#cut" class="headerlink" title="cut"></a>cut</h1><p>cut is a neat utility for grabbing cloumns from a file</p>
+<p><code>cut -options path</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$ cut -f 1,3 -d <span class="string">' '</span> sample </span><br><span class="line">Fred 20</span><br><span class="line">Susy 5</span><br><span class="line">Mark 12</span><br><span class="line">Robert 4</span><br><span class="line">Terry 9</span><br><span class="line">Lisa 7</span><br><span class="line">Susy 12</span><br><span class="line">Mark 39</span><br><span class="line">Anne 7</span><br><span class="line">Greg 3</span><br><span class="line">Oliver 2</span><br><span class="line">Betty 14</span><br><span class="line">Julie 30</span><br></pre></td></tr></table></figure>
+
+<p>Common options:</p>
+<ul>
+<li><code>-f</code> for fields</li>
+<li><code>-d</code> for delimiters</li>
+</ul>
+<hr>
+<h1 id="sed"><a href="#sed" class="headerlink" title="sed"></a>sed</h1><p>sed is a stream editor, which should be used to search and replace text</p>
+<p><code>sed &lt;expression&gt; file</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$ sed <span class="string">'s/oranges/bananas/g'</span> sample</span><br><span class="line">Fred apples 20</span><br><span class="line">Susy bananas 5</span><br><span class="line">Mark watermellons 12</span><br><span class="line">Robert pears 4</span><br><span class="line">Terry bananas 9</span><br><span class="line">Lisa peaches 7</span><br><span class="line">Susy bananas 12</span><br><span class="line">Mark grapes 39</span><br><span class="line">Anne mangoes 7</span><br><span class="line">Greg pineapples 3</span><br><span class="line">Oliver rockmellons 2</span><br><span class="line">Betty limes 14</span><br><span class="line">Julie bananas 30</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="awk"><a href="#awk" class="headerlink" title="awk"></a>awk</h1><p>awk is a programming language for text manipulation</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$ awk <span class="string">'&#123;print $3&#125;'</span> sample </span><br><span class="line">20</span><br><span class="line">5</span><br><span class="line">12</span><br><span class="line">4</span><br><span class="line">9</span><br><span class="line">7</span><br><span class="line">12</span><br><span class="line">39</span><br><span class="line">7</span><br><span class="line">3</span><br><span class="line">2</span><br><span class="line">14</span><br><span class="line">30</span><br></pre></td></tr></table></figure>
+
+<p>Common options:</p>
+<ul>
+<li><code>$n</code> grabs the n-th column</li>
+<li><code>-F</code> sets the field separator</li>
+</ul>
+<hr>
+<h1 id="uniq"><a href="#uniq" class="headerlink" title="uniq"></a>uniq</h1><p>uniq removes duplicates from data</p>
+<p><code>uniq  [options] file</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ cat file</span><br><span class="line">Hello World</span><br><span class="line">Hello World</span><br><span class="line">Then end</span><br><span class="line"></span><br><span class="line">$ uniq file</span><br><span class="line">Hello World</span><br><span class="line">Then end</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="tac"><a href="#tac" class="headerlink" title="tac"></a>tac</h1><p><code>tac</code> is just cat in reverse. It prints the last line first, and first line last.</p>
+<p><code>tac file</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$ tac sample</span><br><span class="line">Julie bananas 30</span><br><span class="line">Betty limes 14</span><br><span class="line">Oliver rockmellons 2</span><br><span class="line">Greg pineapples 3</span><br><span class="line">Anne mangoes 7</span><br><span class="line">Mark grapes 39</span><br><span class="line">Susy oranges 12</span><br><span class="line">Lisa peaches 7</span><br><span class="line">Terry oranges 9</span><br><span class="line">Robert pears 4</span><br><span class="line">Mark watermellons 12</span><br><span class="line">Susy oranges 5</span><br><span class="line">Fred apples 20</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>class: inverse, center, middle</p>
+<h1 id="Scripting"><a href="#Scripting" class="headerlink" title="Scripting"></a>Scripting</h1><hr>
+<h1 id="Scripting-1"><a href="#Scripting-1" class="headerlink" title="Scripting"></a>Scripting</h1><p>A script is a document containing actions the shell can perform.</p>
+<p>Scripts are typically written using <code>sh</code>, but recently <code>python</code><br>has been replacing shell scripts.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment"># declare STRING variable</span></span><br><span class="line">STRING=<span class="string">"Hello World"</span></span><br><span class="line"><span class="comment"># print variable on a screen</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$STRING</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/bin/python</span></span><br><span class="line"><span class="comment"># declare STRING variable</span></span><br><span class="line">STRING=<span class="string">"Hello World"</span></span><br><span class="line"><span class="comment"># print variable on a screen</span></span><br><span class="line"><span class="keyword">print</span> STRING</span><br></pre></td></tr></table></figure>
+
+<p>Set execute privileges before running:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ chmod +x hello_world</span><br><span class="line">$ ./hello_world</span><br><span class="line">Hello World</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>class: inverse, center, middle</p>
+<h1 id="Development-Environments"><a href="#Development-Environments" class="headerlink" title="Development Environments"></a>Development Environments</h1><hr>
+<h1 id="Isolated-Development-Environments"><a href="#Isolated-Development-Environments" class="headerlink" title="Isolated Development Environments"></a>Isolated Development Environments</h1><p>Inspired by functional programming, isolated development environments<br>prevent mutating the global system by creating isolated containers/shells.</p>
+<p>Why?</p>
+<ul>
+<li>Packages are installed in multiple locations (<code>/bin</code>, <code>/sbin</code>, <code>/usr/bin</code>, etc.)</li>
+<li>Upgrading a package is dangerous</li>
+<li>Upgrades are not atomic</li>
+<li>Hard to install multiple versions of packages</li>
+<li>No rollbacks</li>
+<li>Difficult to understand dependencies</li>
+<li>Incomplete dependencies</li>
+<li>Root privileges required</li>
+</ul>
+<hr>
+<h1 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h1><p>Docker is a platform for building applications.</p>
+<figure class="highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> ubuntu</span><br><span class="line"><span class="keyword">MAINTAINER</span> Siddhanathan Shanmugam</span><br><span class="line"></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> apt-get update</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Servo requirements</span></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> apt-get install -y \</span></span><br><span class="line"><span class="bash">  curl freeglut3-dev \</span></span><br><span class="line"><span class="bash">  libfreetype6-dev libgl1-mesa-dri libglib2.0-dev xorg-dev \</span></span><br><span class="line"><span class="bash">  gperf g++ cmake python-virtualenv python-pip \</span></span><br><span class="line"><span class="bash">  libssl-dev libbz2-dev libosmesa6-dev libxmu6 libxmu-dev libglu1-mesa-dev</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Useful tools</span></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> apt-get install -y sudo git python-dev vim</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> useradd -m -d /home/servo -s /bin/bash servo</span></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> <span class="built_in">echo</span> <span class="string">"servo ALL=(ALL) NOPASSWD: ALL"</span> &gt; /etc/sudoers.d/servo \</span></span><br><span class="line"><span class="bash">  &amp;&amp; chmod 0440 /etc/sudoers.d/servo</span></span><br><span class="line"><span class="keyword">ENV</span> HOME /home/servo</span><br><span class="line"><span class="keyword">WORKDIR</span><span class="bash"> /home/servo</span></span><br><span class="line"><span class="keyword">USER</span> servo</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="Docker-1"><a href="#Docker-1" class="headerlink" title="Docker"></a>Docker</h1><p>You can build projects in an isolated container:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ docker build -t siddhu/servo .</span><br><span class="line">$ docker run --rm -i -t siddhu/servo /bin/bash</span><br><span class="line"></span><br><span class="line">docker$ <span class="comment"># run any commands you need</span></span><br></pre></td></tr></table></figure>
+
+<p>Good for software development since you know exactly what your dependencies are.<br>It doesn’t affect the global system at all.</p>
+<p>It’s especially useful for developing Linux applications on Mac OS X, or Windows.</p>
+<hr>
+<h1 id="Nix"><a href="#Nix" class="headerlink" title="Nix"></a>Nix</h1><p>Nix is a purely functional package manager. Nix allows creating isolated<br>development environments almost instantaneously.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ nix-shell -p cowsay</span><br><span class="line"></span><br><span class="line">nix-shell$ cowsay hi!</span><br><span class="line"> _____ </span><br><span class="line">&lt; hi! &gt;</span><br><span class="line"> ----- </span><br><span class="line">        \   ^__^</span><br><span class="line">         \  (oo)\_______</span><br><span class="line">            (__)\       )\/\</span><br><span class="line">                ||----w |</span><br><span class="line">                ||     ||</span><br></pre></td></tr></table></figure>
+
+<p>Nix shell packages are temporary, and can be deleted using:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nix-collect-garbage -d</span><br></pre></td></tr></table></figure>
+
+<p>This is super useful when you only temporarily want a package.</p>
+<hr>
+<h1 id="Nix-1"><a href="#Nix-1" class="headerlink" title="Nix"></a>Nix</h1><p>You can also write <code>shell.nix</code> files for your applications:</p>
+<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">import</span> &lt;nixpkgs&gt; &#123;&#125;; &#123;</span><br><span class="line">    <span class="attr">sdlEnv</span> = stdenv.mkDerivation &#123;</span><br><span class="line">        <span class="attr">name</span> = <span class="string">"sdl"</span>;</span><br><span class="line">        <span class="attr">buildInputs</span> = [ stdenv SDL SDL_image SDL_ttf SDL_gfx cmake SDL_net ];</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Simply cd into the directory containing <code>shell.nix</code> and type <code>nix-shell</code> to<br>enter the development environment.</p>
+<p>Unlike Docker, Nix does not provide an isolated container. It only installs<br>dependencies without polluting the global system.</p>
+<hr>
+<h1 id="Nix-2"><a href="#Nix-2" class="headerlink" title="Nix"></a>Nix</h1><p>Installing multiple versions of packages with Nix is easy:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ nix-shell -p haskell.packages.ghc784.ghc</span><br><span class="line"></span><br><span class="line">$ nix-shell -p haskell.packages.ghc7103.ghc</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>class: inverse, center, middle</p>
+<h1 id="Finding"><a href="#Finding" class="headerlink" title="Finding"></a>Finding</h1><hr>
+<h1 id="Regular-Expressions"><a href="#Regular-Expressions" class="headerlink" title="Regular Expressions"></a>Regular Expressions</h1><p>Regular expressions (regex) allow us to specify patterns</p>
+<ul>
+<li><code>.</code> (dot) - a single character.</li>
+<li><code>?</code> - the preceding character matches 0 or 1 times only.</li>
+<li><code>*</code> - the preceding character matches 0 or more times.</li>
+<li><code>+</code> - the preceding character matches 1 or more times.</li>
+<li><code>{n}</code> - the preceding character matches exactly n times.</li>
+<li><code>{n,m}</code> - the preceding character matches at least n times and not more than m times.</li>
+<li><code>[agd]</code> - the character is one of those included within the square brackets.</li>
+<li><code>[^agd]</code> - the character is not one of those included within the square brackets.</li>
+<li><code>[c-f]</code> - the dash within the square brackets operates as a range. In this case it means either the letters c, d, e or f.</li>
+<li><code>()</code> - allows us to group several characters to behave as one.</li>
+<li><code>|</code> (pipe symbol) - the logical OR operation.</li>
+<li><code>^</code> - matches the beginning of the line.</li>
+<li><code>$</code> - matches the end of the line.</li>
+</ul>
+<hr>
+<h1 id="Regular-Expressions-1"><a href="#Regular-Expressions-1" class="headerlink" title="Regular Expressions"></a>Regular Expressions</h1><p>eGrep finds matches based on regex’s and prints them</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$ egrep <span class="string">'mellons'</span> sample <span class="comment"># find mellons</span></span><br><span class="line">Mark watermellons 12</span><br><span class="line">Oliver rockmellons 2</span><br><span class="line"></span><br><span class="line">$ egrep -n <span class="string">'mellons'</span> sample <span class="comment"># display line numbers of matches</span></span><br><span class="line">3:Mark watermellons 12</span><br><span class="line">11:Oliver rockmellons 2</span><br><span class="line"></span><br><span class="line">$ egrep -c <span class="string">'mellons'</span> sample <span class="comment"># display only number of occurances</span></span><br><span class="line">2</span><br><span class="line"></span><br><span class="line">$ egrep <span class="string">'^[A-K]'</span> sample <span class="comment"># find any name that begins with A-K</span></span><br><span class="line">Fred apples 20</span><br><span class="line">Anne mangoes 7</span><br><span class="line">Greg pineapples 3</span><br><span class="line">Betty limes 14</span><br><span class="line">Julie bananas 30</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>class: inverse, center, middle</p>
+<h1 id="Makefiles"><a href="#Makefiles" class="headerlink" title="Makefiles"></a>Makefiles</h1><hr>
+<h1 id="Makefiles-1"><a href="#Makefiles-1" class="headerlink" title="Makefiles"></a>Makefiles</h1><ul>
+<li>Make your life easier</li>
+<li>Automate tasks</li>
+<li>Use their own specification language</li>
+<li>Flexible rules</li>
+<li>Imperative for distribution</li>
+</ul>
+<hr>
+<h1 id="Makefiles-2"><a href="#Makefiles-2" class="headerlink" title="Makefiles"></a>Makefiles</h1><p><u>Makefile</u>:</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">CC           = gcc</span><br><span class="line">CFLAGS       = -std=c89 -Wpedantic -Wall</span><br><span class="line">DEBUG        = -ggdb</span><br><span class="line">GRAPHITEOPTS = -ftree-vectorize -floop-interchange</span><br><span class="line">CFLAGS       += -march=native -mtune=native -Ofast $&#123;GRAPHITEOPTS&#125;</span><br><span class="line">LDFLAGS      = -s $&#123;LIBS&#125; $&#123;CFLAGS&#125;</span><br><span class="line">SOURCES      = source.c another.c</span><br><span class="line">TARGETS      = $&#123;SOURCES:.c=&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="section">all: <span class="variable">$(TARGETS)</span></span></span><br><span class="line"></span><br><span class="line"><span class="section">%.o: %.c</span></span><br><span class="line">    @<span class="variable">$(CC)</span> -c <span class="variable">$(CFLAGS)</span> <span class="variable">$(LDFLAGS)</span> <span class="variable">$&lt;</span></span><br><span class="line"></span><br><span class="line"><span class="section">clean:</span></span><br><span class="line">    rm *.o <span class="variable">$(TARGETS)</span></span><br></pre></td></tr></table></figure>
+
+<p><code>gcc -o outfile infile</code> ⇒ <code>make infile</code></p>
+<hr>
+<h1 id="Makefiles-3"><a href="#Makefiles-3" class="headerlink" title="Makefiles"></a>Makefiles</h1><h2 id="Common-targets"><a href="#Common-targets" class="headerlink" title="Common targets"></a>Common targets</h2><style>
+</style>
+<table cellpadding="5px">
+    <tr><td class="cell-target"><code>all:</code></td>
+        <td>
+            This target is mandatory. It runs by default if nothing is supplied
+            after <code>$ make</code> and usually compiles the main program.
+        </td>
+    </tr>
+    <tr>
+        <td class="cell-target"><code>clean:</code></td>
+        <td>
+            This target generally cleans all generated files so that the
+            working directory may return to its original state, barring
+            modified files.
+        </td>
+    </tr>
+    <tr>
+        <td class="cell-target"><code>install:</code></td>
+        <td>
+            This target moves compiled files to their respective directories
+            within the filesystem tree. It triggers compilation if necessary.
+        </td>
+    </tr>
+    <tr>
+</table>
+
+<hr>
+<h1 id="Kernel-Drivers"><a href="#Kernel-Drivers" class="headerlink" title="Kernel Drivers"></a>Kernel Drivers</h1><ul>
+<li>Built-in vs. modular<ul>
+<li>File system drivers?</li>
+<li>Webcam drivers?</li>
+</ul>
+</li>
+<li>Not executable</li>
+<li>May use kernel data structures</li>
+<li>Parameters</li>
+<li>Licensing</li>
+</ul>
+<hr>
+<h1 id="Kernel-Drivers-1"><a href="#Kernel-Drivers-1" class="headerlink" title="Kernel Drivers"></a>Kernel Drivers</h1><h2 id="Commands-to-interact-with-modules"><a href="#Commands-to-interact-with-modules" class="headerlink" title="Commands to interact with modules"></a>Commands to interact with modules</h2><table cellpadding="5px">
+    <tr><td class="cell-target"><code>modprobe <modulename></code></td>
+        <td>
+            Loads a kernel module.
+        </td>
+    </tr>
+    <tr>
+        <td class="cell-target"><code>rmmod <modulename></code></td>
+        <td>
+            Removes a module from the kernel.
+        </td>
+    </tr>
+    <tr>
+        <td class="cell-target"><code>lsmod</code></td>
+        <td>
+            Displays a listing of kernel modules.
+        </td>
+    </tr>
+    <tr>
+        <td class="cell-target"><code>modinfo <modname></code></td>
+        <td>
+            Displays information about a kernel module.<br/>
+        </td>
+    </tr>
+</table>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> modinfo iwlwifi | grep -E <span class="string">"filename|author|description|license"</span></span></span><br><span class="line">filename:       /lib/modules/4.4.1gentoosamus/kernel/drivers/net/</span><br><span class="line">                wireless/iwlwifi/iwlwifi.ko</span><br><span class="line">license:        GPL</span><br><span class="line">author:         Copyright(c) 2003- 2015 Intel Corporation</span><br><span class="line">                &lt;ilw@linux.intel.com&gt;</span><br><span class="line">description:    Intel(R) Wireless WiFi driver for Linux</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>class: inverse, center, middle</p>
+<h1 id="Version-Control"><a href="#Version-Control" class="headerlink" title="Version Control"></a>Version Control</h1><hr>
+<h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><p>A version control system maintains a database containing different<br>versions of the file. Useful for seeing what changed, and rolling<br>back to older revisions.</p>
+<p>.right-column[<img data-src="https://git-scm.com/book/en/v2/book/01-introduction/images/local.png" alt="img">]</p>
+<hr>
+<p>class: inverse, center, middle</p>
+<h1 id="Advanced-Navigation"><a href="#Advanced-Navigation" class="headerlink" title="Advanced Navigation"></a>Advanced Navigation</h1><hr>
+<h1 id="Being-more-productive"><a href="#Being-more-productive" class="headerlink" title="Being more productive"></a>Being more productive</h1><p>.center[<img data-src="http://i.kinja-img.com/gawker-media/image/upload/vkadegotlwqvivpppfb5.png" alt="img">]</p>
+<hr>
+<h1 id="Special-Variables"><a href="#Special-Variables" class="headerlink" title="Special Variables"></a>Special Variables</h1><ul>
+<li><code>$1, $2, $3, ...</code> are the positional parameters.</li>
+<li><code>&quot;$@&quot;</code> is an array-like construct of all positional parameters, {$1, $2, $3 …}.</li>
+<li><code>&quot;$*&quot;</code> is the IFS expansion of all positional parameters, $1 $2 $3 ….</li>
+<li><code>$#</code> is the number of positional parameters.</li>
+<li><code>$-</code> current options set for the shell.</li>
+<li><code>$$</code> pid of the current shell (not subshell).</li>
+<li><code>$_</code> most recent parameter (or the abs path of the command to start the current shell immediately after startup).</li>
+<li><code>$IFS</code> is the (input) field separator.</li>
+<li><code>$?</code> is the most recent foreground pipeline exit status.</li>
+<li><code>$!</code> is the PID of the most recent background command.</li>
+<li><code>$0</code> is the name of the shell or shell script.</li>
+</ul>
+<hr>
+<h1 id="History-Completion"><a href="#History-Completion" class="headerlink" title="History Completion"></a>History Completion</h1><ul>
+<li><code>!!</code> executes the previous command</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">"Hello, World"</span></span><br><span class="line">Hello, World</span><br><span class="line"></span><br><span class="line">$ !!</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Hello, World"</span></span><br><span class="line">Hello, World</span><br><span class="line"></span><br><span class="line">$</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="History-Completion-1"><a href="#History-Completion-1" class="headerlink" title="History Completion"></a>History Completion</h1><ul>
+<li><code>!-n</code> executes the n-th previous command</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">"World 1"</span></span><br><span class="line">World 1</span><br><span class="line"></span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">"World 2"</span></span><br><span class="line">World 2</span><br><span class="line"></span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">"World 3"</span></span><br><span class="line">World 3</span><br><span class="line"></span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">"World 4"</span></span><br><span class="line">World 4</span><br><span class="line"></span><br><span class="line">$ !-3</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"World 2"</span></span><br><span class="line">World 2</span><br><span class="line"></span><br><span class="line">$</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="History-Completion-2"><a href="#History-Completion-2" class="headerlink" title="History Completion"></a>History Completion</h1><ul>
+<li><code>!programName</code> executes the previous command that starts with programName</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ ps | grep zsh</span><br><span class="line">28618 pts/1    00:00:00 zsh</span><br><span class="line"></span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">"Hello, World"</span></span><br><span class="line"></span><br><span class="line">$ !ps</span><br><span class="line">ps | grep zsh</span><br><span class="line">28618 pts/1    00:00:00 zsh</span><br><span class="line"></span><br><span class="line">$</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="History-Completion-3"><a href="#History-Completion-3" class="headerlink" title="History Completion"></a>History Completion</h1><ul>
+<li><code>!?text</code> executes the previous command that contains the string text</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ ls /etc/cron.daily/passwd </span><br><span class="line">/etc/cron.daily/passwd</span><br><span class="line"></span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">"Hello, World"</span></span><br><span class="line">Hello, World</span><br><span class="line"></span><br><span class="line">$ !?cron</span><br><span class="line">ls /etc/cron.daily/passwd </span><br><span class="line">/etc/cron.daily/passwd</span><br><span class="line"></span><br><span class="line">$</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="History-Completion-4"><a href="#History-Completion-4" class="headerlink" title="History Completion"></a>History Completion</h1><ul>
+<li><code>^str1^str2^</code> replaces the string str1 in the previous command with str2</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$ ls -l /etc/cron.daily/passwd </span><br><span class="line">-rwxr-xr-x 1 root root 249 Feb 16  2014 /etc/cron.daily/passwd</span><br><span class="line"></span><br><span class="line">$ !!:s/ls -l/cat/</span><br><span class="line">cat /etc/cron.daily/passwd </span><br><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"><span class="built_in">cd</span> /var/backups || <span class="built_in">exit</span> 0</span><br><span class="line"></span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">"Hello, World"</span></span><br><span class="line">Hello, World</span><br><span class="line"></span><br><span class="line">$ ^ls -l^cat^</span><br><span class="line">cat /etc/cron.daily/passwd </span><br><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"><span class="built_in">cd</span> /var/backups || <span class="built_in">exit</span> 0</span><br><span class="line"></span><br><span class="line">$</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="History-Completion-5"><a href="#History-Completion-5" class="headerlink" title="History Completion"></a>History Completion</h1><ul>
+<li><code>:^</code> gets the first argument of a command</li>
+<li><code>:$</code> gets the last argument of a command</li>
+<li><code>:n</code> gets the n-th argument of a command</li>
+<li><code>:*</code> gets all arguments of a command</li>
+<li><code>:x-y</code> gets a range of arguments</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir ~/backup</span><br><span class="line"></span><br><span class="line">$ cp /etc/passwd ~/backup/</span><br><span class="line"></span><br><span class="line">$ ls -l !cp:^</span><br><span class="line">ls -l /etc/passwd</span><br><span class="line">-rw-r--r-- 1 root root 2001 Mar  1 13:38 /etc/passwd</span><br><span class="line"></span><br><span class="line">$ ls -l !cp:$</span><br><span class="line">ls -l ~/backup/</span><br><span class="line">total 4</span><br><span class="line">-rw-r--r-- 1 siddhu siddhu 2001 May 12 23:00 passwd</span><br><span class="line"></span><br><span class="line">$ ls -l !cp:2</span><br><span class="line">ls -l ~/backup/</span><br><span class="line">total 4</span><br><span class="line">-rw-r--r-- 1 siddhu siddhu 2001 May 12 23:00 passwd</span><br><span class="line"></span><br><span class="line">$</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="History-Completion-6"><a href="#History-Completion-6" class="headerlink" title="History Completion"></a>History Completion</h1><ul>
+<li><code>!%</code> gets the last searched command</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ /usr/<span class="built_in">local</span>/apache2/bin/apachectl restart</span><br><span class="line"></span><br><span class="line">$ !?apache</span><br><span class="line">/usr/<span class="built_in">local</span>/apache2/bin/apachectl restart</span><br><span class="line"></span><br><span class="line">$ !% stop</span><br><span class="line">/usr/<span class="built_in">local</span>/apache2/bin/apachectl stop</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="History-Completion-7"><a href="#History-Completion-7" class="headerlink" title="History Completion"></a>History Completion</h1><ul>
+<li><code>:p</code> completes the command without executing it</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ tar cvf old.tar a b c d</span><br><span class="line"></span><br><span class="line">$ tar cvfz new.tar !tar:3-:p</span><br><span class="line">tar cvfz new.tar a b c</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="Removing-Path-Names"><a href="#Removing-Path-Names" class="headerlink" title="Removing Path Names"></a>Removing Path Names</h1><ul>
+<li><code>:h</code> removes trailing path names</li>
+<li><code>:t</code> removes leading path names</li>
+<li><code>:r</code> removes the file extension</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">$ ls -l code/<span class="built_in">test</span>/llvm/Main.hs</span><br><span class="line">-rw-rw-r-- 1 siddhu siddhu 463 Feb 24 22:33 code/<span class="built_in">test</span>/llvm/Main.hs</span><br><span class="line"></span><br><span class="line">$ ls -l !!:$:h</span><br><span class="line">ls -l code/<span class="built_in">test</span>/llvm</span><br><span class="line">total 20</span><br><span class="line">-rw-rw-r-- 1 siddhu siddhu  908 Feb 24 22:28 Lexer.hs</span><br><span class="line">-rw-rw-r-- 1 siddhu siddhu  463 Feb 24 22:33 Main.hs</span><br><span class="line">-rw-rw-r-- 1 siddhu siddhu 1763 Feb 24 22:30 Parser.hs</span><br><span class="line">-rw-rw-r-- 1 siddhu siddhu  348 Feb 24 22:33 shell.nix</span><br><span class="line">-rw-rw-r-- 1 siddhu siddhu  284 Feb 24 22:30 Syntax.hs</span><br><span class="line"></span><br><span class="line">$ ls -l !-2:$:t</span><br><span class="line">ls -l Main.hs</span><br><span class="line">-rw-rw-r-- 1 siddhu siddhu 463 Feb 24 22:40 Main.hs</span><br><span class="line"></span><br><span class="line">$ ls -l !-3:$:r</span><br><span class="line">ls -l code/<span class="built_in">test</span>/llvm/Main</span><br><span class="line">-rw-rw-r-- 1 siddhu siddhu 463 Feb 24 22:55 Main</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>class: inverse, center, middle</p>
+<h1 id="The-End"><a href="#The-End" class="headerlink" title="The End"></a>The End</h1><h2 id="interactive-tutorials"><a href="#interactive-tutorials" class="headerlink" title="(interactive tutorials?)"></a>(interactive tutorials?)</h2>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Tech/" rel="tag"># Tech</a>
+              <a href="/tags/Linux/" rel="tag"># Linux</a>
+              <a href="/tags/WorkShop/" rel="tag"># WorkShop</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2014/05/16/Hexo-command-memo/" rel="prev" title="Hexo command memo">
+      <i class="fa fa-chevron-left"></i> Hexo command memo
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2014/06/16/Quick-Markdown-Example/" rel="next" title="Quick Markdown Example">
+      Quick Markdown Example <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction-to-Linux"><span class="nav-number">1.</span> <span class="nav-text">Introduction to Linux</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-Linux"><span class="nav-number">2.</span> <span class="nav-text">What is Linux</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux-on-Devices"><span class="nav-number">3.</span> <span class="nav-text">Linux on Devices</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Why-use-Linux"><span class="nav-number">3.1.</span> <span class="nav-text">Why use Linux?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Innovative"><span class="nav-number">3.2.</span> <span class="nav-text">Innovative</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Innovative-1"><span class="nav-number">3.3.</span> <span class="nav-text">Innovative</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Innovative-2"><span class="nav-number">3.4.</span> <span class="nav-text">Innovative</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Innovative-3"><span class="nav-number">3.5.</span> <span class="nav-text">Innovative</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Innovative-4"><span class="nav-number">3.6.</span> <span class="nav-text">Innovative</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Innovative-5"><span class="nav-number">3.7.</span> <span class="nav-text">Innovative</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Adaptable"><span class="nav-number">3.8.</span> <span class="nav-text">Adaptable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Innovative-6"><span class="nav-number">3.9.</span> <span class="nav-text">Innovative</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Adaptable-1"><span class="nav-number">3.10.</span> <span class="nav-text">Adaptable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Innovative-7"><span class="nav-number">3.11.</span> <span class="nav-text">Innovative</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Adaptable-2"><span class="nav-number">3.12.</span> <span class="nav-text">Adaptable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Productive"><span class="nav-number">3.13.</span> <span class="nav-text">Productive</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Innovative-8"><span class="nav-number">3.14.</span> <span class="nav-text">Innovative</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Adaptable-3"><span class="nav-number">3.15.</span> <span class="nav-text">Adaptable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Productive-1"><span class="nav-number">3.16.</span> <span class="nav-text">Productive</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Innovative-9"><span class="nav-number">3.17.</span> <span class="nav-text">Innovative</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Adaptable-4"><span class="nav-number">3.18.</span> <span class="nav-text">Adaptable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Productive-2"><span class="nav-number">3.19.</span> <span class="nav-text">Productive</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Architecture"><span class="nav-number">4.</span> <span class="nav-text">Architecture</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux-Architecture"><span class="nav-number">5.</span> <span class="nav-text">Linux Architecture</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Window-Managers"><span class="nav-number">6.</span> <span class="nav-text">Window Managers</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#File-System-Hierarchy"><span class="nav-number">7.</span> <span class="nav-text">File System Hierarchy</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Basic-Navigation"><span class="nav-number">8.</span> <span class="nav-text">Basic Navigation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-Shell"><span class="nav-number">9.</span> <span class="nav-text">The Shell</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Essential-commands"><span class="nav-number">10.</span> <span class="nav-text">Essential commands</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Essential-commands-1"><span class="nav-number">11.</span> <span class="nav-text">Essential commands</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Essential-commands-2"><span class="nav-number">12.</span> <span class="nav-text">Essential commands</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Essential-commands-3"><span class="nav-number">13.</span> <span class="nav-text">Essential commands</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Aliases"><span class="nav-number">14.</span> <span class="nav-text">Aliases</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cursor-Movement"><span class="nav-number">15.</span> <span class="nav-text">Cursor Movement</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tab-Completion"><span class="nav-number">16.</span> <span class="nav-text">Tab Completion</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#UNIX"><span class="nav-number">17.</span> <span class="nav-text">UNIX</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Unix-Philosophy"><span class="nav-number">18.</span> <span class="nav-text">Unix Philosophy</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Unix-Philosophy-1"><span class="nav-number">19.</span> <span class="nav-text">Unix Philosophy</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Unix-Philosophy-2"><span class="nav-number">20.</span> <span class="nav-text">Unix Philosophy</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Unix-Philosophy-3"><span class="nav-number">21.</span> <span class="nav-text">Unix Philosophy</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Understanding-Filesystems"><span class="nav-number">22.</span> <span class="nav-text">Understanding Filesystems</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Understanding-Filesystems-1"><span class="nav-number">23.</span> <span class="nav-text">Understanding Filesystems</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Unix-Patterns"><span class="nav-number">24.</span> <span class="nav-text">Unix Patterns</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Wildcards"><span class="nav-number">25.</span> <span class="nav-text">Wildcards</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Permissions"><span class="nav-number">26.</span> <span class="nav-text">Permissions</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Permissions-1"><span class="nav-number">27.</span> <span class="nav-text">Permissions</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Permissions-2"><span class="nav-number">28.</span> <span class="nav-text">Permissions</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Piping"><span class="nav-number">29.</span> <span class="nav-text">Piping</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Processes"><span class="nav-number">30.</span> <span class="nav-text">Processes</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Processes-1"><span class="nav-number">31.</span> <span class="nav-text">Processes</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Processes-2"><span class="nav-number">32.</span> <span class="nav-text">Processes</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Processes-3"><span class="nav-number">33.</span> <span class="nav-text">Processes</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Processes-4"><span class="nav-number">34.</span> <span class="nav-text">Processes</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Processes-5"><span class="nav-number">35.</span> <span class="nav-text">Processes</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Filters"><span class="nav-number">36.</span> <span class="nav-text">Filters</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#cat"><span class="nav-number">37.</span> <span class="nav-text">cat</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#head"><span class="nav-number">38.</span> <span class="nav-text">head</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#tail"><span class="nav-number">39.</span> <span class="nav-text">tail</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#sort"><span class="nav-number">40.</span> <span class="nav-text">sort</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nl"><span class="nav-number">41.</span> <span class="nav-text">nl</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#wc"><span class="nav-number">42.</span> <span class="nav-text">wc</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#cut"><span class="nav-number">43.</span> <span class="nav-text">cut</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#sed"><span class="nav-number">44.</span> <span class="nav-text">sed</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#awk"><span class="nav-number">45.</span> <span class="nav-text">awk</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#uniq"><span class="nav-number">46.</span> <span class="nav-text">uniq</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#tac"><span class="nav-number">47.</span> <span class="nav-text">tac</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Scripting"><span class="nav-number">48.</span> <span class="nav-text">Scripting</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Scripting-1"><span class="nav-number">49.</span> <span class="nav-text">Scripting</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Development-Environments"><span class="nav-number">50.</span> <span class="nav-text">Development Environments</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Isolated-Development-Environments"><span class="nav-number">51.</span> <span class="nav-text">Isolated Development Environments</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker"><span class="nav-number">52.</span> <span class="nav-text">Docker</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker-1"><span class="nav-number">53.</span> <span class="nav-text">Docker</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Nix"><span class="nav-number">54.</span> <span class="nav-text">Nix</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Nix-1"><span class="nav-number">55.</span> <span class="nav-text">Nix</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Nix-2"><span class="nav-number">56.</span> <span class="nav-text">Nix</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Finding"><span class="nav-number">57.</span> <span class="nav-text">Finding</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Regular-Expressions"><span class="nav-number">58.</span> <span class="nav-text">Regular Expressions</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Regular-Expressions-1"><span class="nav-number">59.</span> <span class="nav-text">Regular Expressions</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Makefiles"><span class="nav-number">60.</span> <span class="nav-text">Makefiles</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Makefiles-1"><span class="nav-number">61.</span> <span class="nav-text">Makefiles</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Makefiles-2"><span class="nav-number">62.</span> <span class="nav-text">Makefiles</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Makefiles-3"><span class="nav-number">63.</span> <span class="nav-text">Makefiles</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Common-targets"><span class="nav-number">63.1.</span> <span class="nav-text">Common targets</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Kernel-Drivers"><span class="nav-number">64.</span> <span class="nav-text">Kernel Drivers</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Kernel-Drivers-1"><span class="nav-number">65.</span> <span class="nav-text">Kernel Drivers</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Commands-to-interact-with-modules"><span class="nav-number">65.1.</span> <span class="nav-text">Commands to interact with modules</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Version-Control"><span class="nav-number">66.</span> <span class="nav-text">Version Control</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git"><span class="nav-number">67.</span> <span class="nav-text">Git</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Advanced-Navigation"><span class="nav-number">68.</span> <span class="nav-text">Advanced Navigation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Being-more-productive"><span class="nav-number">69.</span> <span class="nav-text">Being more productive</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Special-Variables"><span class="nav-number">70.</span> <span class="nav-text">Special Variables</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#History-Completion"><span class="nav-number">71.</span> <span class="nav-text">History Completion</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#History-Completion-1"><span class="nav-number">72.</span> <span class="nav-text">History Completion</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#History-Completion-2"><span class="nav-number">73.</span> <span class="nav-text">History Completion</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#History-Completion-3"><span class="nav-number">74.</span> <span class="nav-text">History Completion</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#History-Completion-4"><span class="nav-number">75.</span> <span class="nav-text">History Completion</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#History-Completion-5"><span class="nav-number">76.</span> <span class="nav-text">History Completion</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#History-Completion-6"><span class="nav-number">77.</span> <span class="nav-text">History Completion</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#History-Completion-7"><span class="nav-number">78.</span> <span class="nav-text">History Completion</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Removing-Path-Names"><span class="nav-number">79.</span> <span class="nav-text">Removing Path Names</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-End"><span class="nav-number">80.</span> <span class="nav-text">The End</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#interactive-tutorials"><span class="nav-number">80.1.</span> <span class="nav-text">(interactive tutorials?)</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="darkalexwang"
+      src="https://c2.staticflickr.com/8/7464/27053268555_c92b86047e_o.jpg">
+  <p class="site-author-name" itemprop="name">darkalexwang</p>
+  <div class="site-description" itemprop="description">Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">51</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">57</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/darkalexwang" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;darkalexwang" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:wangzhihuan0815@gmail.com" title="E-Mail → mailto:wangzhihuan0815@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/Dark_AlexWang" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;Dark_AlexWang" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2014 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">darkalexwang</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="Symbols count total">205k</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : '24rulLT5OhXgLsk80hCm3RvR-gzGzoHsz',
+      appKey     : 'StnUSKMeD4s0XPPzFCiSV6HN',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : 'en' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+<script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
