@@ -21,8 +21,8 @@ queue = []
 
 for i in indegree:
 	if not i:
-	queue.append(i) 
-	
+	queue.append(i)
+
 count = 0
 while queue:
 	node = queue.pop(0)
@@ -46,19 +46,19 @@ class Solution(object):
         """
         outdegree = [[] for _ in range(numCourses)]
         indegree = [0] * numCourses
-        
+
         for succ, pre in prerequisites:
             outdegree[pre].append(succ)
             indegree[succ] += 1
-           
+
         queue = []
         # find start from all course - indegree == 0
         for i in range(numCourses):
             if indegree[i] == 0:
                 queue.append(i)
-                
+
         count = 0
-        
+
         while queue:
             course = queue.pop(0)
             count += 1
@@ -66,10 +66,10 @@ class Solution(object):
                 indegree[succ] -= 1
                 if indegree[succ] == 0:
                     queue.append(succ)
-                    
+
         # if we find all course that are equal to the given course
         return count == numCourses
-        
+
 ```
 ### 210. Course Schedule II
 区别就是输出list
@@ -84,18 +84,18 @@ class Solution(object):
         """
         outdegree = [[] for _ in range(numCourses)]
         indegree = [0] * numCourses
-        
+
         for succ, pre in prerequisites:
             outdegree[pre].append(succ)
             indegree[succ] += 1
-        
+
         queue = []
         for i in range(numCourses):
             if indegree[i] == 0:
                 queue.append(i)
-                
+
         res = []
-        
+
         while queue:
             pre = queue.pop(0)
             res.append(pre)
@@ -122,12 +122,12 @@ class Solution(object):
             outdegree[i] = len(graph[i])
             for j in range(len(graph[i])):
                 indegree[graph[i][j]].append(i)
-                
+
         queue = []
         for i in range(len(outdegree)):
             if outdegree[i] == 0:
                 queue.append(i)
-        res = []   
+        res = []
         while queue:
             node = queue.pop(0)
             res.append(node)
@@ -136,7 +136,7 @@ class Solution(object):
                     outdegree[rest] -= 1
                     if outdegree[rest] == 0:
                         queue.append(rest)
-                    
+
         return sorted(res)
 ```
 ### 444. Sequence Reconstruction
@@ -152,9 +152,9 @@ class Solution(object):
         """
         indegree = collections.defaultdict(int)
         outdegree = collections.defaultdict(list)
-        
+
         st = set()
-        
+
         for seq in seqs:
             # union set
             st |= set(seq)
@@ -168,10 +168,10 @@ class Solution(object):
                 if seq[i+1] not in outdegree[seq[i]]:
                     outdegree[seq[i]].append(seq[i+1])
                     indegree[seq[i+1]] += 1
-        
+
         zero_degree = 0
         queue = []
-        
+
         for each in indegree:
             if indegree[each] == 0:
                 queue.append(each)
@@ -179,9 +179,9 @@ class Solution(object):
                 # unique
                 if zero_degree > 1:
                     return False
-        
+
         res = []
-        
+
         while queue:
             prev = queue.pop(0)
             res.append(prev)
@@ -200,7 +200,7 @@ class Solution(object):
         return res == org and set(org) == set(st)
 ```
 ### 269. Alien Dictionary
-Hard 难度，一方面是构建dictionary的时候很繁琐.  
+Hard 难度，一方面是构建dictionary的时候很繁琐.
 每次判断完后要del掉outdegree所对应pop出来的元素，直到没有出度，也就是全部遍历完了才成功。因为order的长度没有给出，所以不能用len(order) == len(origin) 来判断
 
 ```python
@@ -212,42 +212,46 @@ class Solution(object):
         """
         res = []
         indegree, outdegree = collections.defaultdict(int), collections.defaultdict(list)
-        
+
         queue = []
-        
+
         for i in range(1, len(words)):
             # consider play and playing
             if len(words[i-1]) > len(words[i]) and words[i-1][:len(words[i])] == words[i]:
                 continue
             self.buildToplogicalSort(words[i-1], words[i], indegree, outdegree)
-            
+
+        # Take care some corner cases (newly added)
+        if not outdegree and len(words) == 2 and len(words[0]) > len(words[1]):
+            return ''
+
         # build number of char
         nodes = set()
         for word in words:
             for char in word:
                 nodes.add(char)
-                
+
         for char in nodes:
             if indegree[char] == 0:
             #if char not in indegree:
                 queue.append(char)
-          
+
         while queue:
             prev = queue.pop(0)
             res.append(prev)
             # we need to check outdegree because we del outdegree if we find
-        
+
             for succ in outdegree[prev]:
                 indegree[succ] -= 1
                 if indegree[succ] == 0:
                     queue.append(succ)
             # del outdegree for this char
             del(outdegree[prev])
-         
+
         if outdegree:
             return ""
         return "".join(res)
-        
+
     def buildToplogicalSort(self, word1, word2, indegree, outdegree):
         length = min(len(word1), len(word2))
         for i in range(length):
