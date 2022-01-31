@@ -23,6 +23,7 @@ Address: 2586 Kalakaua Ave, Honolulu, HI 96815
 我们去的这家在North Shore，附近还有Matsumoto刨冰。
 听说三明治什么的很好吃，我们去太早了没吃到😂
 
+<!--more-->
 🍍Giovanni's Shrimp Truck**
 Address: 66-472 Kamehameha Hwy Haleiwa, HI 96712
 著名的蒜蓉虾，饭点会排队。那里还有几家别的food truck，有一家卖水果的可以吃各种夏威夷当地水果。
