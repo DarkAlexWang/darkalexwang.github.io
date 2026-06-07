@@ -1,0 +1,57 @@
+{%- if theme.drawio.enable %}
+{%- set drawio_uri = theme.vendors.drawio or url_for('lib/drawio_viewer.min.js') %}
+<script{{ pjax }}>
+(function () {
+  var createContainer = function (xml) {
+    var container = document.createElement('div');
+    container.className = 'mxgraph';
+    container.style = 'max-width:100%;border:1px solid transparent;';
+    var attr = {
+      highlight: '#0000ff',
+      nav: true,
+      resize: true,
+      toolbar: 'zoom layers lightbox',
+      edit: '_blank',
+      xml: xml
+    };
+    container.setAttribute('data-mxgraph', JSON.stringify(attr));
+    return container;
+  };
+
+  var fetchXml = function (src) {
+    return fetch(src).then(function (res) {
+      return res.text();
+    });
+  };
+
+  var insertDrawioGraphElement = function (src, target) {
+    return fetchXml(src).then(function (xml) {
+      var container = createContainer(xml);
+      target.parentNode.insertBefore(container, target);
+      target.parentNode.removeChild(target);
+
+      return container;
+    });
+  }
+
+  var nodes = document.querySelectorAll('.drawio-placeholder');
+
+  if (nodes.length) {
+    var jobs = Array.prototype.slice.call(nodes).map(function (node) {
+      var src = node.getAttribute('data-src');
+      return insertDrawioGraphElement(src, node);
+    });
+    NexT.utils.getScript('{{ drawio_uri }}', () => {
+      jobs.forEach(function (job) {
+        job.then(function (element) {
+          try {
+            element.innerHTML = "";
+            GraphViewer.createViewerForElement(element)
+          } catch (e) { throw element.innerHTML = e.message, e; }
+        });
+      })
+    }, window.GraphViewer);
+  }
+}())
+</script>
+{%- endif %}
