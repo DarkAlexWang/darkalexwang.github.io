@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"darkalexwang.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="NOTE 搬运文章，原创作者:http:&#x2F;&#x2F;joshuablog.herokuapp.com&#x2F;Just for study purpose, I don’t hold the copyright, if this is affecting anyone, please let me know.  DFSMatrix介绍对于不是Tree下面的DFS题来说，一直是我的一个弱点（不知道为什么），所以现">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DFS-BFS 总结">
+<meta property="og:url" content="https://darkalexwang.github.io/2018/03/10/DFS-BFS-%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="DarkAlexWang&#39;s Blog">
+<meta property="og:description" content="NOTE 搬运文章，原创作者:http:&#x2F;&#x2F;joshuablog.herokuapp.com&#x2F;Just for study purpose, I don’t hold the copyright, if this is affecting anyone, please let me know.  DFSMatrix介绍对于不是Tree下面的DFS题来说，一直是我的一个弱点（不知道为什么），所以现">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2018-03-10T06:49:35.000Z">
+<meta property="article:modified_time" content="2018-03-11T06:49:35.000Z">
+<meta property="article:author" content="darkalexwang">
+<meta property="article:tag" content="BFS">
+<meta property="article:tag" content="DFS">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://darkalexwang.github.io/2018/03/10/DFS-BFS-%E6%80%BB%E7%BB%93/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://darkalexwang.github.io/2018/03/10/DFS-BFS-%E6%80%BB%E7%BB%93/","path":"2018/03/10/DFS-BFS-总结/","title":"DFS-BFS 总结"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>DFS-BFS 总结 | DarkAlexWang's Blog</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">DarkAlexWang's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#DFS"><span class="nav-number">1.</span> <span class="nav-text">DFS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Matrix"><span class="nav-number">1.1.</span> <span class="nav-text">Matrix</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.1.1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#733-Flood-Fill"><span class="nav-number">1.1.2.</span> <span class="nav-text">733. Flood Fill</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#130-Surrounded-Regions"><span class="nav-number">1.1.3.</span> <span class="nav-text">130. Surrounded Regions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#200-Number-of-Islands"><span class="nav-number">1.1.4.</span> <span class="nav-text">200. Number of Islands</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#54201-Matrix"><span class="nav-number">1.1.5.</span> <span class="nav-text">542	01 Matrix</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#286Walls-and-Gates"><span class="nav-number">1.1.6.</span> <span class="nav-text">286	Walls and Gates</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Matrix-2"><span class="nav-number">1.2.</span> <span class="nav-text">Matrix 2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#329-Longest-Increasing-Path-in-a-Matrix"><span class="nav-number">1.2.1.</span> <span class="nav-text">329. Longest Increasing Path in a Matrix</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#695-Max-Area-of-Island"><span class="nav-number">1.2.2.</span> <span class="nav-text">695. Max Area of Island</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#417-Pacific-Atlantic-Water-Flow"><span class="nav-number">1.2.3.</span> <span class="nav-text">417. Pacific Atlantic Water Flow</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BFS"><span class="nav-number">2.</span> <span class="nav-text">BFS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%99%AE%E9%80%9A%E7%9A%84"><span class="nav-number">2.1.</span> <span class="nav-text">普通的</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#490"><span class="nav-number">2.1.1.</span> <span class="nav-text">490</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#499"><span class="nav-number">2.1.2.</span> <span class="nav-text">499</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#505"><span class="nav-number">2.1.3.</span> <span class="nav-text">505</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#542"><span class="nav-number">2.1.4.</span> <span class="nav-text">542</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#286"><span class="nav-number">2.1.5.</span> <span class="nav-text">286</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8B%84%E6%9D%B0%E6%96%AF%E7%89%B9%E6%8B%89%E7%AE%97%E6%B3%95"><span class="nav-number">2.2.</span> <span class="nav-text">狄杰斯特拉算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#743-Network-Delay-Time"><span class="nav-number">2.2.1.</span> <span class="nav-text">743. Network Delay Time</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#787-Cheapest-Flights-Within-K-Stops"><span class="nav-number">2.2.2.</span> <span class="nav-text">787. Cheapest Flights Within K Stops</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">darkalexwang</p>
+  <div class="site-description" itemprop="description">Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">62</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://darkalexwang.github.io/2018/03/10/DFS-BFS-%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="darkalexwang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DarkAlexWang's Blog">
+      <meta itemprop="description" content="Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="DFS-BFS 总结 | DarkAlexWang's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          DFS-BFS 总结
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2018-03-10 14:49:35" itemprop="dateCreated datePublished" datetime="2018-03-10T14:49:35+08:00">2018-03-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2018-03-11 14:49:35" itemprop="dateModified" datetime="2018-03-11T14:49:35+08:00">2018-03-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Leetcode/" itemprop="url" rel="index"><span itemprop="name">Leetcode</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>7.7k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>7 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <hr>
+<p><strong>NOTE</strong></p>
+<p>搬运文章，原创作者:<a href="http://joshuablog.herokuapp.com/">http://joshuablog.herokuapp.com/</a><br>Just for study purpose, I don’t hold the copyright, if this is affecting anyone, please let me know.</p>
+<hr>
+<h1 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h1><h2 id="Matrix"><a href="#Matrix" class="headerlink" title="Matrix"></a>Matrix</h2><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>对于不是Tree下面的DFS题来说，一直是我的一个弱点（不知道为什么），所以现在特意开贴来总结常见的题型</p>
+<p>大致的模版就是明确dfs函数中不合法的状态要直接return和继续dfs的情况；同时也要做好visited的标记，从而避免无限循环的错误</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">dfs</span>(<span class="params">i,j,matrix</span>):</span><br><span class="line">	<span class="keyword">if</span> i &lt; <span class="number">0</span> <span class="keyword">or</span> j &lt; <span class="number">0</span> <span class="keyword">or</span> i &gt;= <span class="built_in">len</span>(matrix) <span class="keyword">or</span> j &gt;= <span class="built_in">len</span>(matrix) <span class="keyword">or</span> matrix[i][j] == X:</span><br><span class="line">		<span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">	<span class="comment"># set visited</span></span><br><span class="line">	matrix[i][j] = X</span><br><span class="line">	dfs(i+<span class="number">1</span>, j, matrix)</span><br><span class="line">	dfs(i-<span class="number">1</span>, j, matrix)</span><br><span class="line">	...</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<h3 id="733-Flood-Fill"><a href="#733-Flood-Fill" class="headerlink" title="733. Flood Fill"></a>733. Flood Fill</h3><p>最简单的DFS版本</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">floodFill</span>(<span class="params">self, image, sr, sc, newColor</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type image: List[List[int]]</span></span><br><span class="line"><span class="string">        :type sr: int</span></span><br><span class="line"><span class="string">        :type sc: int</span></span><br><span class="line"><span class="string">        :type newColor: int</span></span><br><span class="line"><span class="string">        :rtype: List[List[int]]</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        m = <span class="built_in">len</span>(image)</span><br><span class="line">        n = <span class="built_in">len</span>(image[<span class="number">0</span>])</span><br><span class="line">        color = image[sr][sc]</span><br><span class="line">        <span class="keyword">if</span> color != newColor:</span><br><span class="line">            <span class="variable language_">self</span>.dfs(sr, sc,image,color,newColor)</span><br><span class="line">        <span class="keyword">return</span> image</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">dfs</span>(<span class="params">self, i, j,image,color,newColor</span>):</span><br><span class="line">        <span class="keyword">if</span> i &lt; <span class="number">0</span> <span class="keyword">or</span> j &lt; <span class="number">0</span> <span class="keyword">or</span> i &gt;= <span class="built_in">len</span>(image) <span class="keyword">or</span> j &gt;= <span class="built_in">len</span>(image[<span class="number">0</span>]) <span class="keyword">or</span> image[i][j] != color:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        image[i][j] = newColor</span><br><span class="line">        <span class="variable language_">self</span>.dfs(i+<span class="number">1</span>, j, image, color, newColor)</span><br><span class="line">        <span class="variable language_">self</span>.dfs(i-<span class="number">1</span>, j, image, color, newColor)</span><br><span class="line">        <span class="variable language_">self</span>.dfs(i, j+<span class="number">1</span>, image, color, newColor)</span><br><span class="line">        <span class="variable language_">self</span>.dfs(i, j-<span class="number">1</span>, image, color, newColor)</span><br></pre></td></tr></table></figure>
+
+<h3 id="130-Surrounded-Regions"><a href="#130-Surrounded-Regions" class="headerlink" title="130. Surrounded Regions"></a>130. Surrounded Regions</h3><p>如果1的周围有边界的话，设置为M作为标准，之后再改回来。之后的same as Island</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">solve</span>(<span class="params">self, board</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type board: List[List[str]]</span></span><br><span class="line"><span class="string">        :rtype: void Do not return anything, modify board in-place instead.</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> board <span class="keyword">or</span> <span class="keyword">not</span> board[<span class="number">0</span>]:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        m = <span class="built_in">len</span>(board)</span><br><span class="line">        n = <span class="built_in">len</span>(board[<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(m):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">                <span class="comment"># border case</span></span><br><span class="line">                <span class="keyword">if</span> (i == <span class="number">0</span> <span class="keyword">or</span> j == <span class="number">0</span> <span class="keyword">or</span> i == m-<span class="number">1</span> <span class="keyword">or</span> j == n -<span class="number">1</span>) <span class="keyword">and</span> board[i][j] == <span class="string">&#x27;O&#x27;</span>:</span><br><span class="line">                    board[i][j] == <span class="string">&#x27;M&#x27;</span></span><br><span class="line">                    <span class="variable language_">self</span>.dfs(i,j,board)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(m):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">                <span class="keyword">if</span> board[i][j] == <span class="string">&#x27;O&#x27;</span>:</span><br><span class="line">                    board[i][j] = <span class="string">&#x27;X&#x27;</span></span><br><span class="line">                <span class="keyword">elif</span> board[i][j] == <span class="string">&#x27;M&#x27;</span>:</span><br><span class="line">                    board[i][j] = <span class="string">&#x27;O&#x27;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">dfs</span>(<span class="params">self, r, c, board</span>):</span><br><span class="line">        <span class="keyword">if</span> r &lt; <span class="number">0</span> <span class="keyword">or</span> c &lt; <span class="number">0</span> <span class="keyword">or</span> r &gt;= <span class="built_in">len</span>(board) <span class="keyword">or</span> c &gt;= <span class="built_in">len</span>(board[<span class="number">0</span>]) <span class="keyword">or</span> board[r][c] == <span class="string">&#x27;X&#x27;</span> <span class="keyword">or</span> board[r][c] == <span class="string">&#x27;M&#x27;</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        board[r][c] = <span class="string">&#x27;M&#x27;</span></span><br><span class="line">        <span class="variable language_">self</span>.dfs(r+<span class="number">1</span>, c, board)</span><br><span class="line">        <span class="variable language_">self</span>.dfs(r-<span class="number">1</span>, c, board)</span><br><span class="line">        <span class="variable language_">self</span>.dfs(r, c+<span class="number">1</span>, board)</span><br><span class="line">        <span class="variable language_">self</span>.dfs(r, c-<span class="number">1</span>, board)</span><br></pre></td></tr></table></figure>
+
+<h3 id="200-Number-of-Islands"><a href="#200-Number-of-Islands" class="headerlink" title="200. Number of Islands"></a>200. Number of Islands</h3><p>如果岛屿周围为1，置为0</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">numIslands</span>(<span class="params">self, grid</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type grid: List[List[str]]</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> grid <span class="keyword">or</span> <span class="keyword">not</span> grid[<span class="number">0</span>]:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        m = <span class="built_in">len</span>(grid)</span><br><span class="line">        n = <span class="built_in">len</span>(grid[<span class="number">0</span>])</span><br><span class="line">        count = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(m):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">                <span class="keyword">if</span> grid[i][j] == <span class="string">&#x27;1&#x27;</span>:</span><br><span class="line">                    count += <span class="number">1</span></span><br><span class="line">                    <span class="variable language_">self</span>.dfs(i,j,grid)</span><br><span class="line">        <span class="keyword">return</span> count</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">dfs</span>(<span class="params">self, r, c, grid</span>):</span><br><span class="line">        <span class="keyword">if</span> r &lt; <span class="number">0</span> <span class="keyword">or</span> c &lt; <span class="number">0</span> <span class="keyword">or</span> r &gt;= <span class="built_in">len</span>(grid) <span class="keyword">or</span> c &gt;= <span class="built_in">len</span>(grid[<span class="number">0</span>]) <span class="keyword">or</span> grid[r][c] == <span class="string">&#x27;0&#x27;</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        grid[r][c] = <span class="string">&#x27;0&#x27;</span></span><br><span class="line"></span><br><span class="line">        <span class="variable language_">self</span>.dfs(r+<span class="number">1</span>,c,  grid)</span><br><span class="line">        <span class="variable language_">self</span>.dfs(r-<span class="number">1</span>, c, grid)</span><br><span class="line">        <span class="variable language_">self</span>.dfs(r, c-<span class="number">1</span>, grid)</span><br><span class="line">        <span class="variable language_">self</span>.dfs(r, c+<span class="number">1</span>, grid)</span><br></pre></td></tr></table></figure>
+<h3 id="54201-Matrix"><a href="#54201-Matrix" class="headerlink" title="542	01 Matrix"></a>542	01 Matrix</h3><p>Same as Wall and Gate</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">updateMatrix</span>(<span class="params">self, matrix</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type matrix: List[List[int]]</span></span><br><span class="line"><span class="string">        :rtype: List[List[int]]</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> matrix <span class="keyword">or</span> <span class="keyword">not</span> matrix[<span class="number">0</span>]:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        m = <span class="built_in">len</span>(matrix)</span><br><span class="line">        n = <span class="built_in">len</span>(matrix[<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(m):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">                <span class="keyword">if</span> matrix[i][j] == <span class="number">1</span>:</span><br><span class="line">                    matrix[i][j] = <span class="built_in">float</span>(<span class="string">&#x27;inf&#x27;</span>)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(m):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">                <span class="keyword">if</span> matrix[i][j] == <span class="number">0</span>:</span><br><span class="line">                    <span class="variable language_">self</span>.dfs(i,j,matrix,<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> matrix</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">dfs</span>(<span class="params">self, i, j, matrix, d</span>):</span><br><span class="line">        <span class="keyword">if</span> i &lt; <span class="number">0</span> <span class="keyword">or</span> j &lt; <span class="number">0</span> <span class="keyword">or</span> i &gt;= <span class="built_in">len</span>(matrix) <span class="keyword">or</span> j &gt;= <span class="built_in">len</span>(matrix[<span class="number">0</span>]) <span class="keyword">or</span> matrix[i][j] &lt; d:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        matrix[i][j] = d</span><br><span class="line">        <span class="variable language_">self</span>.dfs(i+<span class="number">1</span>, j, matrix, d+<span class="number">1</span>)</span><br><span class="line">        <span class="variable language_">self</span>.dfs(i-<span class="number">1</span>, j, matrix, d+<span class="number">1</span>)</span><br><span class="line">        <span class="variable language_">self</span>.dfs(i, j-<span class="number">1</span>, matrix, d+<span class="number">1</span>)</span><br><span class="line">        <span class="variable language_">self</span>.dfs(i, j+<span class="number">1</span>, matrix, d+<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="286Walls-and-Gates"><a href="#286Walls-and-Gates" class="headerlink" title="286	Walls and Gates"></a>286	Walls and Gates</h3><p>找出0的位置，然后-1为墙</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">wallsAndGates</span>(<span class="params">self, rooms</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type rooms: List[List[int]]</span></span><br><span class="line"><span class="string">        :rtype: void Do not return anything, modify rooms in-place instead.</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> rooms <span class="keyword">or</span> <span class="keyword">not</span> rooms[<span class="number">0</span>]:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        m = <span class="built_in">len</span>(rooms)</span><br><span class="line">        n = <span class="built_in">len</span>(rooms[<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(m):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">                <span class="comment"># start</span></span><br><span class="line">                <span class="keyword">if</span> rooms[i][j] == <span class="number">0</span>:</span><br><span class="line">                    <span class="variable language_">self</span>.dfs(i, j, rooms, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">dfs</span>(<span class="params">self, r, c, rooms, d</span>):</span><br><span class="line">        <span class="keyword">if</span> r &lt; <span class="number">0</span> <span class="keyword">or</span> c &lt; <span class="number">0</span> <span class="keyword">or</span> r &gt;= <span class="built_in">len</span>(rooms) <span class="keyword">or</span> c &gt;= <span class="built_in">len</span>(rooms[<span class="number">0</span>]) <span class="keyword">or</span> rooms[r][c] &lt; d:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="comment"># mark as 0 and then other path + 1</span></span><br><span class="line">        rooms[r][c] = d</span><br><span class="line">        <span class="variable language_">self</span>.dfs(r+<span class="number">1</span>, c, rooms, d+<span class="number">1</span>)</span><br><span class="line">        <span class="variable language_">self</span>.dfs(r-<span class="number">1</span>, c, rooms, d+<span class="number">1</span>)</span><br><span class="line">        <span class="variable language_">self</span>.dfs(r, c+<span class="number">1</span>, rooms, d+<span class="number">1</span>)</span><br><span class="line">        <span class="variable language_">self</span>.dfs(r, c-<span class="number">1</span>, rooms, d+<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="Matrix-2"><a href="#Matrix-2" class="headerlink" title="Matrix 2"></a>Matrix 2</h2><p>有时候在Matrix的时候需要判断每一次DFS的情况，这时候也可以通过比较每一次更新的值来抉择</p>
+<h3 id="329-Longest-Increasing-Path-in-a-Matrix"><a href="#329-Longest-Increasing-Path-in-a-Matrix" class="headerlink" title="329. Longest Increasing Path in a Matrix"></a>329. Longest Increasing Path in a Matrix</h3><p>每一次找到递增的时候，继续DFS，然后用cache来记录每一个（i，j）最大可能的递增长度</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">longestIncreasingPath</span>(<span class="params">self, matrix</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type matrix: List[List[int]]</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> matrix <span class="keyword">or</span> <span class="keyword">not</span> matrix[<span class="number">0</span>]:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        m = <span class="built_in">len</span>(matrix)</span><br><span class="line">        n = <span class="built_in">len</span>(matrix[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line">        cache = [[<span class="number">0</span> <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n)] <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(m)]</span><br><span class="line"></span><br><span class="line">        ans = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(m):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">                ans = <span class="built_in">max</span>(ans, <span class="variable language_">self</span>.dfs(i,j,cache, matrix))</span><br><span class="line">        <span class="keyword">return</span> ans</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">dfs</span>(<span class="params">self, i, j, cache, matrix</span>):</span><br><span class="line">        <span class="comment"># find cache</span></span><br><span class="line">        <span class="keyword">if</span> cache[i][j] != <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> cache[i][j]</span><br><span class="line">        direction = [(<span class="number">0</span>,<span class="number">1</span>),(<span class="number">0</span>,-<span class="number">1</span>),(<span class="number">1</span>,<span class="number">0</span>),(-<span class="number">1</span>,<span class="number">0</span>)]</span><br><span class="line">        <span class="keyword">for</span> dire <span class="keyword">in</span> direction:</span><br><span class="line">            x, y = i + dire[<span class="number">0</span>], j + dire[<span class="number">1</span>]</span><br><span class="line">            <span class="keyword">if</span> x &lt; <span class="number">0</span> <span class="keyword">or</span> y &lt; <span class="number">0</span> <span class="keyword">or</span> x &gt;= <span class="built_in">len</span>(matrix) <span class="keyword">or</span> y &gt;= <span class="built_in">len</span>(matrix[<span class="number">0</span>]) <span class="keyword">or</span> matrix[i][j] &gt;= matrix[x][y]:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            cache[i][j] = <span class="built_in">max</span>(cache[i][j], <span class="variable language_">self</span>.dfs(x,y,cache, matrix))</span><br><span class="line">        <span class="comment"># self (i,j) + 1</span></span><br><span class="line">        cache[i][j] += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> cache[i][j]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="695-Max-Area-of-Island"><a href="#695-Max-Area-of-Island" class="headerlink" title="695. Max Area of Island"></a>695. Max Area of Island</h3><p>另外一种思路</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">maxAreaOfIsland</span>(<span class="params">self, grid</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type grid: List[List[int]]</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        seen = <span class="built_in">set</span>()  <span class="comment"># function scope var</span></span><br><span class="line">        res = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> row <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(grid)):</span><br><span class="line">            <span class="keyword">for</span> col <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(grid[<span class="number">0</span>])):</span><br><span class="line">                   <span class="keyword">if</span> grid[row][col] == <span class="number">1</span>:</span><br><span class="line">                    	res = <span class="built_in">max</span>(res,<span class="variable language_">self</span>.dfs(row, col, grid,seen))        <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">dfs</span>(<span class="params">self, row, col,grid, seen</span>):</span><br><span class="line">            <span class="string">&quot;&quot;&quot;if a point is valid, it should meet all requirements using &quot;and&quot; &quot;&quot;&quot;</span></span><br><span class="line">            <span class="keyword">if</span> <span class="number">0</span> &lt;= row &lt; <span class="built_in">len</span>(grid) <span class="keyword">and</span> <span class="number">0</span> &lt;= col &lt; <span class="built_in">len</span>(grid[<span class="number">0</span>]) <span class="keyword">and</span> (grid[row][col] == <span class="number">1</span>) <span class="keyword">and</span> (row, col) <span class="keyword">not</span> <span class="keyword">in</span> seen:</span><br><span class="line">                seen.add((row, col))             <span class="comment"># list this point to seen set so we won&#x27;t count it again</span></span><br><span class="line">                <span class="keyword">return</span> (<span class="variable language_">self</span>.dfs(row - <span class="number">1</span>, col,grid,seen) + <span class="variable language_">self</span>.dfs(row + <span class="number">1</span>, col,grid,seen)</span><br><span class="line">                        + <span class="variable language_">self</span>.dfs(row, col - <span class="number">1</span>,grid,seen) + <span class="variable language_">self</span>.dfs(row, col + <span class="number">1</span>,grid, seen)</span><br><span class="line">                        + <span class="number">1</span>)                     <span class="comment"># add 1 to the area and DFS(4-Conn Neighbors)</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span>                         <span class="comment"># not valid point return 0</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="417-Pacific-Atlantic-Water-Flow"><a href="#417-Pacific-Atlantic-Water-Flow" class="headerlink" title="417. Pacific Atlantic Water Flow"></a>417. Pacific Atlantic Water Flow</h3><p>这道题要从两方面来判断，太平洋和大西洋</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">pacificAtlantic</span>(<span class="params">self, matrix</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type matrix: List[List[int]]</span></span><br><span class="line"><span class="string">        :rtype: List[List[int]]</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="comment"># O(MN)</span></span><br><span class="line">        <span class="comment"># need to write more</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> matrix <span class="keyword">or</span> <span class="keyword">not</span> matrix[<span class="number">0</span>]:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line"></span><br><span class="line">        m = <span class="built_in">len</span>(matrix)</span><br><span class="line">        n = <span class="built_in">len</span>(matrix[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line">        p_visited = [[<span class="literal">False</span> <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n)] <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(m)]</span><br><span class="line">        a_visited = [[<span class="literal">False</span> <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n)] <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(m)]</span><br><span class="line"></span><br><span class="line">        res = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(m):</span><br><span class="line">            <span class="comment"># left and right</span></span><br><span class="line"></span><br><span class="line">            <span class="variable language_">self</span>.dfs(i, <span class="number">0</span>, p_visited, m, n, matrix)</span><br><span class="line">            <span class="variable language_">self</span>.dfs(i, n-<span class="number">1</span>, a_visited, m, n, matrix)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">            <span class="comment"># up and down</span></span><br><span class="line">            <span class="variable language_">self</span>.dfs(<span class="number">0</span>, j, p_visited, m, n, matrix)</span><br><span class="line">            <span class="variable language_">self</span>.dfs(m-<span class="number">1</span>, j, a_visited, m, n, matrix)</span><br><span class="line">        <span class="comment">#print p_visited, a_visited</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(m):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">                <span class="keyword">if</span> p_visited[i][j] <span class="keyword">and</span> a_visited[i][j]:</span><br><span class="line">                    res.append([i,j])</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">dfs</span>(<span class="params">self, i, j, visited, m, n, matrix</span>):</span><br><span class="line">        visited[i][j] = <span class="literal">True</span></span><br><span class="line">        direction = [(<span class="number">0</span>,<span class="number">1</span>),(<span class="number">0</span>,-<span class="number">1</span>),(<span class="number">1</span>,<span class="number">0</span>),(-<span class="number">1</span>,<span class="number">0</span>)]</span><br><span class="line">        <span class="keyword">for</span> dire <span class="keyword">in</span> direction:</span><br><span class="line">            x, y = i + dire[<span class="number">0</span>], j + dire[<span class="number">1</span>]</span><br><span class="line">            <span class="keyword">if</span> x &lt; <span class="number">0</span> <span class="keyword">or</span> y &lt; <span class="number">0</span> <span class="keyword">or</span> x &gt;= m <span class="keyword">or</span> y &gt;= n <span class="keyword">or</span> visited[x][y] <span class="keyword">or</span> matrix[i][j] &gt; matrix[x][y]:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            <span class="variable language_">self</span>.dfs(x, y, visited, m, n, matrix)</span><br></pre></td></tr></table></figure>
+
+<h1 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h1><h2 id="普通的"><a href="#普通的" class="headerlink" title="普通的"></a>普通的</h2><p>参见之前写过的BFS-border总结<br><a href="http://joshuablog.herokuapp.com/2017/09/10/BFS-Maze%E7%B1%BB%E5%9E%8B%E6%80%BB%E7%BB%93/">BFS-Maze总结</a></p>
+<h3 id="490"><a href="#490" class="headerlink" title="490"></a>490</h3><h3 id="499"><a href="#499" class="headerlink" title="499"></a>499</h3><h3 id="505"><a href="#505" class="headerlink" title="505"></a>505</h3><h3 id="542"><a href="#542" class="headerlink" title="542"></a>542</h3><h3 id="286"><a href="#286" class="headerlink" title="286"></a>286</h3><h2 id="狄杰斯特拉算法"><a href="#狄杰斯特拉算法" class="headerlink" title="狄杰斯特拉算法"></a>狄杰斯特拉算法</h2><p>求有缘路径的最短距离<br>算法导论的经典例子</p>
+<h3 id="743-Network-Delay-Time"><a href="#743-Network-Delay-Time" class="headerlink" title="743. Network Delay Time"></a>743. Network Delay Time</h3><p>使用heap操作，每次添加最短的路径cost</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">networkDelayTime</span>(<span class="params">self, times, N, K</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type times: List[List[int]]</span></span><br><span class="line"><span class="string">        :type N: int</span></span><br><span class="line"><span class="string">        :type K: int</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="comment"># O(ElgV) E edges, V vertices</span></span><br><span class="line">        <span class="comment"># Dijkstra&#x27;s</span></span><br><span class="line">        pq = [[<span class="number">0</span>,K]]</span><br><span class="line">        graph = collections.defaultdict(<span class="built_in">list</span>)</span><br><span class="line">        <span class="keyword">for</span> u,v,w <span class="keyword">in</span> times:</span><br><span class="line">            graph[u].append([v,w])</span><br><span class="line"></span><br><span class="line">        dic = <span class="built_in">dict</span>()</span><br><span class="line">        <span class="comment"># len(pq) ~ V</span></span><br><span class="line">        <span class="keyword">while</span> pq:</span><br><span class="line">            distance, node = heapq.heappop(pq)</span><br><span class="line"></span><br><span class="line">            <span class="comment">#visited</span></span><br><span class="line">            <span class="keyword">if</span> node <span class="keyword">in</span> dic:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            dic[node] = distance</span><br><span class="line">            <span class="comment"># O(E) ~ edges</span></span><br><span class="line">            <span class="keyword">for</span> desination, path <span class="keyword">in</span> graph[node]:</span><br><span class="line">                <span class="keyword">if</span> desination <span class="keyword">not</span> <span class="keyword">in</span> dic:</span><br><span class="line">                    heapq.heappush(pq,(distance + path, desination))</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">max</span>(dic.values()) <span class="keyword">if</span> <span class="built_in">len</span>(dic) == N <span class="keyword">else</span> -<span class="number">1</span></span><br></pre></td></tr></table></figure>
+<h3 id="787-Cheapest-Flights-Within-K-Stops"><a href="#787-Cheapest-Flights-Within-K-Stops" class="headerlink" title="787. Cheapest Flights Within K Stops"></a>787. Cheapest Flights Within K Stops</h3><p>几乎和上题一样</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">findCheapestPrice</span>(<span class="params">self, n, flights, src, dst, k</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type n: int</span></span><br><span class="line"><span class="string">        :type flights: List[List[int]]</span></span><br><span class="line"><span class="string">        :type src: int</span></span><br><span class="line"><span class="string">        :type dst: int</span></span><br><span class="line"><span class="string">        :type K: int</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="comment"># O(ElgV) E flight ways ,V cities</span></span><br><span class="line">        f = collections.defaultdict(<span class="built_in">dict</span>)</span><br><span class="line">        <span class="keyword">for</span> a, b, p <span class="keyword">in</span> flights:</span><br><span class="line">            f[a][b] = p</span><br><span class="line"></span><br><span class="line">        heap = [(<span class="number">0</span>, src, k + <span class="number">1</span>)]</span><br><span class="line">        <span class="keyword">while</span> heap:</span><br><span class="line">            p, i, k = heapq.heappop(heap)</span><br><span class="line">            <span class="keyword">if</span> i == dst:</span><br><span class="line">                <span class="keyword">return</span> p</span><br><span class="line">            <span class="keyword">if</span> k &gt; <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">for</span> j <span class="keyword">in</span> f[i]:</span><br><span class="line">                    heapq.heappush(heap, (p + f[i][j], j, k - <span class="number">1</span>))</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/BFS/" rel="tag"># BFS</a>
+              <a href="/tags/DFS/" rel="tag"># DFS</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2018/01/09/transmission-web-control/" rel="prev" title="Transmission Web Control">
+                  <i class="fa fa-chevron-left"></i> Transmission Web Control
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2018/03/11/TopLogicalSort-%E6%80%BB%E7%BB%93/" rel="next" title="TopLogicalSort 总结">
+                  TopLogicalSort 总结 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2026</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">darkalexwang</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Symbols count total">215k</span>
+  </span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"darkalexwang.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="说明本项目原作者为ronggang,原托管于GitHub的transmission-web-control。但不知道原作者是否已经停止跟新，为方便大家使用，现新建一个repo并托管于此，欢迎大家反馈问题或者pullrequest。 本项目主要目的是想加强Transmission Web的操作能力，本项目原本在Google Code托管，现迁移至GitHub。本项目设计之初仅针对PT站，因此增加了">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Transmission Web Control">
+<meta property="og:url" content="https://darkalexwang.github.io/2018/01/09/transmission-web-control/index.html">
+<meta property="og:site_name" content="DarkAlexWang&#39;s Blog">
+<meta property="og:description" content="说明本项目原作者为ronggang,原托管于GitHub的transmission-web-control。但不知道原作者是否已经停止跟新，为方便大家使用，现新建一个repo并托管于此，欢迎大家反馈问题或者pullrequest。 本项目主要目的是想加强Transmission Web的操作能力，本项目原本在Google Code托管，现迁移至GitHub。本项目设计之初仅针对PT站，因此增加了">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2018-01-09T03:08:41.000Z">
+<meta property="article:modified_time" content="2024-02-01T18:38:16.294Z">
+<meta property="article:author" content="darkalexwang">
+<meta property="article:tag" content="Technology">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://darkalexwang.github.io/2018/01/09/transmission-web-control/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://darkalexwang.github.io/2018/01/09/transmission-web-control/","path":"2018/01/09/transmission-web-control/","title":"Transmission Web Control"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Transmission Web Control | DarkAlexWang's Blog</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">DarkAlexWang's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%B4%E6%98%8E"><span class="nav-number">1.</span> <span class="nav-text">说明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#English-Introduction"><span class="nav-number">1.0.1.</span> <span class="nav-text">English Introduction</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%94%AF%E6%8C%81%E7%9A%84Transmission%E7%89%88%E6%9C%AC-Support-Transmission-Version"><span class="nav-number">1.1.</span> <span class="nav-text">支持的Transmission版本(Support Transmission Version)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B7%B2%E4%BF%AE%E5%A4%8D%E9%97%AE%E9%A2%98"><span class="nav-number">1.2.</span> <span class="nav-text">已修复问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.3.</span> <span class="nav-text">功能介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E6%94%AF%E6%8C%81"><span class="nav-number">1.4.</span> <span class="nav-text">浏览器支持</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95"><span class="nav-number">1.5.</span> <span class="nav-text">安装方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E5%A4%9A%E8%AF%AD%E8%A8%80-Multi-language"><span class="nav-number">1.6.</span> <span class="nav-text">关于多语言(Multi-language)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BD%93%E5%89%8D%E5%B7%B2%E6%94%AF%E6%8C%81%E7%9A%84%E8%AF%AD%E8%A8%80-Currently-supported-languages-%EF%BC%9A"><span class="nav-number">1.6.1.</span> <span class="nav-text">当前已支持的语言(Currently supported languages)：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction"><span class="nav-number">2.</span> <span class="nav-text">Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Support-Transmission-Version"><span class="nav-number">2.1.</span> <span class="nav-text">Support Transmission Version</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fixed-issues"><span class="nav-number">2.2.</span> <span class="nav-text">Fixed issues</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Features"><span class="nav-number">2.3.</span> <span class="nav-text">Features</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Browsers-support"><span class="nav-number">2.4.</span> <span class="nav-text">Browsers support</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Multi-language"><span class="nav-number">2.5.</span> <span class="nav-text">Multi-language</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#How-to-use-the-language-pack"><span class="nav-number">2.5.1.</span> <span class="nav-text">How to use the language pack:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Currently-supported-languages%EF%BC%9A"><span class="nav-number">2.5.2.</span> <span class="nav-text">Currently supported languages：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#How-to-install"><span class="nav-number">2.5.3.</span> <span class="nav-text">How to install</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Download"><span class="nav-number">2.6.</span> <span class="nav-text">Download</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E4%BA%8E-Create-2012-12-18%EF%BC%9B%E6%9B%B4%E6%96%B0%E4%BA%8E-Update-2014-10-13-By-%E6%A0%BD%E5%9F%B9%E8%80%85-ronggang-Updated-08-23-2016-by-DarkAlexWang"><span class="nav-number">2.6.0.0.1.</span> <span class="nav-text">创建于(Create): 2012.12.18；更新于(Update): 2014.10.13 By 栽培者(ronggang); Updated: 08-23-2016 by DarkAlexWang</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">darkalexwang</p>
+  <div class="site-description" itemprop="description">Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">62</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://darkalexwang.github.io/2018/01/09/transmission-web-control/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="darkalexwang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DarkAlexWang's Blog">
+      <meta itemprop="description" content="Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Transmission Web Control | DarkAlexWang's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Transmission Web Control
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2018-01-09 11:08:41" itemprop="dateCreated datePublished" datetime="2018-01-09T11:08:41+08:00">2018-01-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-02-02 02:38:16" itemprop="dateModified" datetime="2024-02-02T02:38:16+08:00">2024-02-02</time>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>4.9k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>4 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>本项目原作者为<a href="https://github.com/ronggang">ronggang</a>,<br>原托管于GitHub的<a href="https://github.com/ronggang/transmission-web-control">transmission-web-control</a>。但不知道原作者是否已经停止跟新，为方便大家使用，现新建一个repo并托管于此，欢迎大家反馈问题或者pull<br>request。</p>
+<p>本项目主要目的是想加强<a href="https://www.transmissionbt.com/">Transmission</a> Web的操作能力，本项目原本在<a href="https://code.google.com/p/transmission-control/">Google Code</a>托管，现迁移至GitHub。<br>本项目设计之初仅针对PT站，因此增加了 Tracker 服务器分组及状态，但这不并适用于普通BT种子。</p>
+<h4 id="English-Introduction"><a href="#English-Introduction" class="headerlink" title="English Introduction"></a><a href="#introduction">English Introduction</a></h4><h3 id="支持的Transmission版本-Support-Transmission-Version"><a href="#支持的Transmission版本-Support-Transmission-Version" class="headerlink" title="支持的Transmission版本(Support Transmission Version)"></a>支持的Transmission版本(Support Transmission Version)</h3><ul>
+<li>Transmission 2.40 及以上版本（RPC版本：14及以上）</li>
+<li>Transmission 2.40 and above (RPC version: 14 and above)</li>
+</ul>
+<h3 id="已修复问题"><a href="#已修复问题" class="headerlink" title="已修复问题"></a>已修复问题</h3><p>有时间的话我会尽量修改原repo里的问题，现在已经修改的问题如下：</p>
+<ul>
+<li>更新了源程序的tar文件</li>
+<li>修复英文界面的一些笔误</li>
+<li>添加了http的安装方法</li>
+<li>更新了install.sh的英文注释</li>
+</ul>
+<h3 id="功能介绍"><a href="#功能介绍" class="headerlink" title="功能介绍"></a>功能介绍</h3><ul>
+<li>在线查看Transmission当前工作情况；</li>
+<li>在线添加新的种子文件或连接；</li>
+<li>在线修改Transmission参数；</li>
+<li>分页浏览方式加载种子；</li>
+<li>多语言环境支持；</li>
+<li>文件拖放添加种子；</li>
+<li>删除指定的种子；</li>
+<li>批量修改 Tracker；</li>
+<li>移动指定种子的数据存放目录；</li>
+<li>可按 Trackers 分组浏览；</li>
+<li>其他……</li>
+</ul>
+<span id="more"></span>
+<h3 id="浏览器支持"><a href="#浏览器支持" class="headerlink" title="浏览器支持"></a>浏览器支持</h3><ul>
+<li>所有支持HTML5的浏览器(Chrome 15.0.874，Firefox 8.0.1，IE 9.0.8112，Opera 11.52)</li>
+</ul>
+<h3 id="安装方法"><a href="#安装方法" class="headerlink" title="安装方法"></a>安装方法</h3><ul>
+<li>可通过以下地址获取最新版的程序：</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/DarkAlexWang/transmission-web-control/raw/master/release/transmission-control-full.tar.gz</span><br></pre></td></tr></table></figure>
+<ul>
+<li>或到下载安装脚本，此脚本只需要下载一次，以后只需要执行即可:</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/DarkAlexWang/transmission-web-control/raw/master/release/tr-control-easy-install.sh</span><br><span class="line">sudo bash tr-control-easy-install.sh</span><br></pre></td></tr></table></figure>
+<ul>
+<li>如果需要http而不是https，请使用以下命令;</li>
+</ul>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/DarkAlexWang/transmission-web-control/raw/master/release/tr-control-easy-install-en-http.sh --no-check-certificate</span><br><span class="line">sudo bash tr-control-easy-install-en-http.sh</span><br></pre></td></tr></table></figure>
+
+<h3 id="关于多语言-Multi-language"><a href="#关于多语言-Multi-language" class="headerlink" title="关于多语言(Multi-language)"></a>关于多语言(Multi-language)</h3><p>系统使用多语言的方式构建，所以可以支持其他任何语言；但，由于本人水平有限，只会中文，所以需要懂其他语言的您的帮助，如果您已经翻译好了一个语言版本，请同时发给我一份，我会打包在一起，分享给更多的用户，谢谢。</p>
+<h4 id="当前已支持的语言-Currently-supported-languages-："><a href="#当前已支持的语言-Currently-supported-languages-：" class="headerlink" title="当前已支持的语言(Currently supported languages)："></a>当前已支持的语言(Currently supported languages)：</h4><ul>
+<li><code>2013-04-22</code> <a href="https://github.com/ronggang/transmission-web-control/raw/master/src/tr-web-control/lang/zh-CN.js">简体中文(Simplified Chinese)</a> @栽培者</li>
+<li><code>2014-02-09</code> <a href="https://github.com/ronggang/transmission-web-control/raw/master/src/tr-web-control/lang/zh-TW.js">正體中文(Traditional Chinese)</a> @Sean</li>
+<li><code>2013-04-22</code> <a href="https://github.com/ronggang/transmission-web-control/raw/master/src/tr-web-control/lang/en.js">英文(English)</a> @栽培者</li>
+<li><code>2014-02-09</code> <a href="https://github.com/ronggang/transmission-web-control/raw/master/src/tr-web-control/lang/ru.js">俄语(Russian)</a> @Oleksandr Gureiev &amp; @irherder</li>
+<li><code>2013-04-17</code> <a href="https://github.com/ronggang/transmission-web-control/raw/master/src/tr-web-control/lang/es.js">西班牙语(Spanish)</a> @Adrián González</li>
+<li><code>2013-02-05</code> <a href="https://github.com/ronggang/transmission-web-control/raw/master/src/tr-web-control/lang/pl.js">波兰语(Polish)</a> @Daniel Kolek</li>
+<li><code>2013-11-11</code> <a href="https://github.com/ronggang/transmission-web-control/raw/master/src/tr-web-control/lang/hu.js">匈牙利语(Hungarian)</a> @Swartzy</li>
+<li><code>2013-05-18</code> <a href="https://github.com/ronggang/transmission-web-control/raw/master/src/tr-web-control/lang/ro.js">罗马尼亚(Romanian)</a> @Laurentiu Dinulescu</li>
+<li><code>2013-05-28</code> <a href="https://github.com/ronggang/transmission-web-control/raw/master/src/tr-web-control/lang/it.js">意大利(Italian)</a> @Daniele Buccilli</li>
+<li><code>2014-02-12</code> <a href="https://github.com/ronggang/transmission-web-control/raw/master/src/tr-web-control/lang/pt-BR.js">葡萄牙语（巴西）(Brazilian Portuguese)</a> @Dudu Maroja &amp; @pcgaldo</li>
+<li><code>2013-08-20</code> <a href="https://github.com/ronggang/transmission-web-control/raw/master/src/tr-web-control/lang/nl.js">荷兰语 (Dutch&#x2F;Flemmisch)</a> @Alwin Hummels</li>
+<li><code>2013-09-12</code> <a href="https://github.com/ronggang/transmission-web-control/raw/master/src/tr-web-control/lang/fr.js">法语 (French)</a> @Amaury Aubry</li>
+<li><code>2013-12-05</code> <a href="https://github.com/ronggang/transmission-web-control/raw/master/src/tr-web-control/lang/ko.js">韩语 (Korean)</a> @kdsz330</li>
+<li><code>2014-02-12</code> <a href="https://github.com/ronggang/transmission-web-control/raw/master/src/tr-web-control/lang/pt-PT.js">葡萄牙语(European Portuguese)</a> @pcgaldo</li>
+</ul>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>The origianl author is <a href="https://github.com/ronggang">ronggang</a>, and the original repo is <a href="https://github.com/ronggang/transmission-web-control">transmission-web-control</a>. Not sure if the original<br>author has stopped maintenance or not, but in order to better serve the PTer or<br>myself, I have opened a new repo with several issues fixed. Welcome to give me<br>any feedback or submit a Pull Request.</p>
+<p>Transmission Web Control is a custom web UI. The project began in <a href="https://code.google.com/p/transmission-control/">Goolge Code</a>.</p>
+<h3 id="Support-Transmission-Version"><a href="#Support-Transmission-Version" class="headerlink" title="Support Transmission Version"></a>Support Transmission Version</h3><ul>
+<li>Transmission 2.40 and above (RPC version: 14 and above)</li>
+</ul>
+<h3 id="Fixed-issues"><a href="#Fixed-issues" class="headerlink" title="Fixed issues"></a>Fixed issues</h3><p>I will do my best to fix the issues that in the origianl repo.</p>
+<ul>
+<li>Updated the install tar file</li>
+<li>Fixed several typos in English interface</li>
+<li>Added http install script</li>
+<li>Added install.sh with English comments</li>
+</ul>
+<h3 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h3><ul>
+<li>Add torrent files or URLs</li>
+<li>Drag-and-drop to add torrent files</li>
+<li>Online modify the Transmission setting (Download folder,Speed ​​limit,Port,etc.)</li>
+<li>Pause &#x2F; resume &#x2F; recheck selected or all torrents</li>
+<li>View the current torrents status (Files,Peers,Trackers,etc.)</li>
+<li>View Statistics(Cumulative&#x2F;Current)</li>
+<li>The pagination torrents</li>
+<li>Set files priority</li>
+<li>Change the torrent download directory</li>
+<li>Trackers list</li>
+<li>…</li>
+</ul>
+<h3 id="Browsers-support"><a href="#Browsers-support" class="headerlink" title="Browsers support"></a>Browsers support</h3><ul>
+<li>All browsers support HTML5. (Chrome 15.0.874，Firefox 8.0.1，IE 9.0.8112，Opera 11.52 etc.)</li>
+</ul>
+<h3 id="Multi-language"><a href="#Multi-language" class="headerlink" title="Multi-language"></a>Multi-language</h3><h4 id="How-to-use-the-language-pack"><a href="#How-to-use-the-language-pack" class="headerlink" title="How to use the language pack:"></a>How to use the language pack:</h4><ul>
+<li>All language files are needed to put in the “lang” directory, format refer “lang&#x2F;en.js”;</li>
+<li>Translated language file naming, and then copied to the lang directory, note that necessary “.js” suffix, such as: en.js;</li>
+<li>Modify the the “lang&#x2F;<code>_</code>languages.js” file, the new language format to add a line;</li>
+<li>Regain access to the TR, if your browser’s default configuration language “<code>_</code>languages.js” where it will automatically display the current language, if not, please manually select the language or the end of the page plus “?lang&#x3D;language”; such as: 192.168.1.1&#x2F;transmission&#x2F;web&#x2F;?lang&#x3D;en</li>
+</ul>
+<h4 id="Currently-supported-languages："><a href="#Currently-supported-languages：" class="headerlink" title="Currently supported languages："></a>Currently supported languages：</h4><ul>
+<li><code>2013-04-22</code> <a href="https://github.com/ronggang/transmission-web-control/raw/master/src/tr-web-control/lang/zh-CN.js">Simplified Chinese</a> @ronggang</li>
+<li><code>2014-02-09</code> <a href="https://github.com/ronggang/transmission-web-control/raw/master/src/tr-web-control/lang/zh-TW.js">Traditional Chinese</a> @Sean</li>
+<li><code>2013-04-22</code> <a href="https://github.com/ronggang/transmission-web-control/raw/master/src/tr-web-control/lang/en.js">English</a> @ronggang</li>
+<li><code>2014-02-09</code> <a href="https://github.com/ronggang/transmission-web-control/raw/master/src/tr-web-control/lang/ru.js">Russian</a> @Oleksandr Gureiev &amp; @irherder</li>
+<li><code>2013-04-17</code> <a href="https://github.com/ronggang/transmission-web-control/raw/master/src/tr-web-control/lang/es.js">Spanish</a> @Adrián González</li>
+<li><code>2013-02-05</code> <a href="https://github.com/ronggang/transmission-web-control/raw/master/src/tr-web-control/lang/pl.js">Polish</a> @Daniel Kolek</li>
+<li><code>2013-11-11</code> <a href="https://github.com/ronggang/transmission-web-control/raw/master/src/tr-web-control/lang/hu.js">Hungarian</a> @Swartzy</li>
+<li><code>2013-05-18</code> <a href="https://github.com/ronggang/transmission-web-control/raw/master/src/tr-web-control/lang/ro.js">Romanian</a> @Laurentiu Dinulescu</li>
+<li><code>2013-05-28</code> <a href="https://github.com/ronggang/transmission-web-control/raw/master/src/tr-web-control/lang/it.js">Italian</a> @Daniele Buccilli</li>
+<li><code>2014-02-12</code> <a href="https://github.com/ronggang/transmission-web-control/raw/master/src/tr-web-control/lang/pt-BR.js">Brazilian Portuguese</a> @Dudu Maroja &amp; @pcgaldo</li>
+<li><code>2013-08-20</code> <a href="https://github.com/ronggang/transmission-web-control/raw/master/src/tr-web-control/lang/nl.js">Dutch&#x2F;Flemmisch</a> @Alwin Hummels</li>
+<li><code>2013-09-12</code> <a href="https://github.com/ronggang/transmission-web-control/raw/master/src/tr-web-control/lang/fr.js">French</a> @Amaury Aubry</li>
+<li><code>2013-12-05</code> <a href="https://github.com/ronggang/transmission-web-control/raw/master/src/tr-web-control/lang/ko.js">Korean</a> @kdsz330</li>
+<li><code>2014-02-12</code> <a href="https://github.com/ronggang/transmission-web-control/raw/master/src/tr-web-control/lang/pt-PT.js">European Portuguese</a> @pcgaldo</li>
+<li>If you have translated a language pack, please upload it here issue 9</li>
+</ul>
+<h4 id="How-to-install"><a href="#How-to-install" class="headerlink" title="How to install"></a><a href="https://code.google.com/p/transmission-control/wiki/Install#1._Automatic_Installation_(Linux)">How to install</a></h4><h3 id="Download"><a href="#Download" class="headerlink" title="Download"></a>Download</h3><ul>
+<li>You can get the latest version of the program for this address:</li>
+</ul>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/DarkAlexWang/transmission-web-control/raw/master/release/transmission-control-full.tar.gz</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Or download easy install script:</li>
+</ul>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/DarkAlexWang/transmission-web-control/raw/master/release/tr-control-easy-install.sh</span><br><span class="line">sudo bash tr-control-easy-install.sh</span><br></pre></td></tr></table></figure>
+<ul>
+<li>If you need http download instead of https, please use the following<br>  commands:</li>
+</ul>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/DarkAlexWang/transmission-web-control/raw/master/release/tr-control-easy-install-en-http.sh --no-check-certificate</span><br><span class="line">sudo bash tr-control-easy-install-en-http.sh</span><br></pre></td></tr></table></figure>
+<ul>
+<li>install.sh script with english comments:</li>
+</ul>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/DarkAlexWang/transmission-web-control/raw/master/release/tr-control-easy-install-en.sh</span><br></pre></td></tr></table></figure>
+
+<h6 id="创建于-Create-2012-12-18；更新于-Update-2014-10-13-By-栽培者-ronggang-Updated-08-23-2016-by-DarkAlexWang"><a href="#创建于-Create-2012-12-18；更新于-Update-2014-10-13-By-栽培者-ronggang-Updated-08-23-2016-by-DarkAlexWang" class="headerlink" title="创建于(Create): 2012.12.18；更新于(Update): 2014.10.13 By 栽培者(ronggang); Updated: 08-23-2016 by DarkAlexWang"></a>创建于(Create): 2012.12.18；更新于(Update): 2014.10.13 By 栽培者(ronggang); Updated: 08-23-2016 by DarkAlexWang</h6>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Technology/" rel="tag"># Technology</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2018/01/09/hello-world/" rel="prev" title="Hello World!">
+                  <i class="fa fa-chevron-left"></i> Hello World!
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2018/03/10/DFS-BFS-%E6%80%BB%E7%BB%93/" rel="next" title="DFS-BFS 总结">
+                  DFS-BFS 总结 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2026</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">darkalexwang</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Symbols count total">215k</span>
+  </span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

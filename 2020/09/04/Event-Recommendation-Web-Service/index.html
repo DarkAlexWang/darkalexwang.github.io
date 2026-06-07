@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"darkalexwang.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Event Recommendation SystemsBusiness Design To design a personalization based event recommendation systems for event search.  General Instruction Design a web service with RESTful APIs in Java to hand">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Event-Recommendation-Web-Service">
+<meta property="og:url" content="https://darkalexwang.github.io/2020/09/04/Event-Recommendation-Web-Service/index.html">
+<meta property="og:site_name" content="DarkAlexWang&#39;s Blog">
+<meta property="og:description" content="Event Recommendation SystemsBusiness Design To design a personalization based event recommendation systems for event search.  General Instruction Design a web service with RESTful APIs in Java to hand">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/Wangxh329/EventRecommendation/master/img_font_icon_sources/doc/local.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Wangxh329/EventRecommendation/master/img_font_icon_sources/doc/remote.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Wangxh329/EventRecommendation/master/img_font_icon_sources/doc/APIs.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Wangxh329/EventRecommendation/master/img_font_icon_sources/doc/recommendation.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Wangxh329/EventRecommendation/master/img_font_icon_sources/doc/mysql.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Wangxh329/EventRecommendation/master/img_font_icon_sources/doc/elk.png">
+<meta property="article:published_time" content="2020-09-03T17:05:07.000Z">
+<meta property="article:modified_time" content="2024-02-01T18:38:16.291Z">
+<meta property="article:author" content="darkalexwang">
+<meta property="article:tag" content="Projects">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Wangxh329/EventRecommendation/master/img_font_icon_sources/doc/local.png">
+
+
+<link rel="canonical" href="https://darkalexwang.github.io/2020/09/04/Event-Recommendation-Web-Service/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://darkalexwang.github.io/2020/09/04/Event-Recommendation-Web-Service/","path":"2020/09/04/Event-Recommendation-Web-Service/","title":"Event-Recommendation-Web-Service"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Event-Recommendation-Web-Service | DarkAlexWang's Blog</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">DarkAlexWang's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Event-Recommendation-Systems"><span class="nav-number">1.</span> <span class="nav-text">Event Recommendation Systems</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Business-Design"><span class="nav-number">1.1.</span> <span class="nav-text">Business Design</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#General-Instruction"><span class="nav-number">1.2.</span> <span class="nav-text">General Instruction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Infrastructure-Design"><span class="nav-number">1.3.</span> <span class="nav-text">Infrastructure Design</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#API-Design"><span class="nav-number">1.4.</span> <span class="nav-text">API Design</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Database-Design"><span class="nav-number">1.5.</span> <span class="nav-text">Database Design</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Implementation-Details"><span class="nav-number">1.6.</span> <span class="nav-text">Implementation Details</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#User-Behavior-Analysis"><span class="nav-number">1.7.</span> <span class="nav-text">User Behavior Analysis</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">darkalexwang</p>
+  <div class="site-description" itemprop="description">Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">62</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://darkalexwang.github.io/2020/09/04/Event-Recommendation-Web-Service/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="darkalexwang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DarkAlexWang's Blog">
+      <meta itemprop="description" content="Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Event-Recommendation-Web-Service | DarkAlexWang's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Event-Recommendation-Web-Service
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-09-04 01:05:07" itemprop="dateCreated datePublished" datetime="2020-09-04T01:05:07+08:00">2020-09-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-02-02 02:38:16" itemprop="dateModified" datetime="2024-02-02T02:38:16+08:00">2024-02-02</time>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>3.4k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="Event-Recommendation-Systems"><a href="#Event-Recommendation-Systems" class="headerlink" title="Event Recommendation Systems"></a>Event Recommendation Systems</h1><h2 id="Business-Design"><a href="#Business-Design" class="headerlink" title="Business Design"></a>Business Design</h2><ul>
+<li>To design a personalization based event recommendation systems for event search.</li>
+</ul>
+<h2 id="General-Instruction"><a href="#General-Instruction" class="headerlink" title="General Instruction"></a>General Instruction</h2><ul>
+<li>Design a web service with <code>RESTful APIs</code> in Java to handle HTTP requests and responses</li>
+<li>Frontend: an interactive web page with <code>AJAX</code> technology implemented with <code>HTML</code>, <code>CSS</code> and <code>JavaScript</code>. The Event Recommendation Website realizes three main functions:<ul>
+<li><strong>Search</strong> events around users</li>
+<li><strong>Favorite</strong> events they like and also delete events they don’t like anymore</li>
+<li>Get <strong>recommendation of events</strong> around based on their favorite history and distance to where events will be hold</li>
+</ul>
+</li>
+<li>Backend: use <code>Java</code> to process logic request, and some supports are as below:<ul>
+<li>Built with both relational database and NoSQL database (<code>MySQL</code> and <code>MongoDB</code>) to support data storage from users and items searched in TicketMaster API</li>
+<li>Design <strong>content-based recommendation algorithm</strong> for event recommendation</li>
+</ul>
+</li>
+<li>Deploy website server on <code>Amazon EC2</code>: <a href="http://52.24.237.51/EventRecommend/">Event Recommendation System</a></li>
+<li>Analyze website traffic both online and offline with ELK (<code>ElasticSearch</code>, <code>Logstash</code> and <code>Kibana</code>) and <code>MapReduce</code> in MongoDB</li>
+</ul>
+<span id="more"></span>
+<h2 id="Infrastructure-Design"><a href="#Infrastructure-Design" class="headerlink" title="Infrastructure Design"></a>Infrastructure Design</h2><ul>
+<li>3-tier architecture<ul>
+<li>Presentation tier: HTML, CSS, JavaScript</li>
+<li>Data tier: MySQL, MongoDB</li>
+<li>Logic tier: Java</li>
+</ul>
+</li>
+<li>Local and remote development environment</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Wangxh329/EventRecommendation/master/img_font_icon_sources/doc/local.png" alt="local environment"></p>
+<blockquote>
+<p>Local development environment</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/Wangxh329/EventRecommendation/master/img_font_icon_sources/doc/remote.png" alt="remote environment"></p>
+<blockquote>
+<p>Remote development environment</p>
+</blockquote>
+<h2 id="API-Design"><a href="#API-Design" class="headerlink" title="API Design"></a>API Design</h2><ul>
+<li>Logic tier(Java Servlet to RPC)<ul>
+<li>Search<ul>
+<li>searchItems</li>
+<li>Ticketmaster API</li>
+<li>parse and clean data, saveItems</li>
+<li>return response</li>
+</ul>
+</li>
+<li>History<ul>
+<li>get, set, delete favorite items</li>
+<li>query database</li>
+<li>return response</li>
+</ul>
+</li>
+<li>Recommendation<ul>
+<li>recommendItems</li>
+<li>get favorite history</li>
+<li>search similar events, sorting</li>
+<li>return response</li>
+</ul>
+</li>
+<li>Login<ul>
+<li>GET: check if the session is logged in</li>
+<li>POST: verify the user name and password, set session time and marked as logged in</li>
+<li>query database to verify</li>
+<li>return response</li>
+</ul>
+</li>
+<li>Logout<ul>
+<li>GET: invalid the session if exists and redirect to <code>index.html</code></li>
+<li>POST: the same as GET</li>
+<li>return response</li>
+</ul>
+</li>
+<li>Register<ul>
+<li>Set a new user into users table&#x2F;collection in database</li>
+<li>return response</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Wangxh329/EventRecommendation/master/img_font_icon_sources/doc/APIs.png" alt="APIs design"></p>
+<blockquote>
+<p>APIs design in logic tier</p>
+</blockquote>
+<ul>
+<li>TicketMasterAPI<br><a href="https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/">Official Doc - Discovery API</a></li>
+<li>Recommendation Algorithms design<ul>
+<li><strong>Content-based Recommendation</strong>: find categories from item profile from a user’s favorite, and recommend the similar items with same categories.</li>
+<li>Present recommended items with ranking based on distance (geolocation of users)</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Wangxh329/EventRecommendation/master/img_font_icon_sources/doc/recommendation.png" alt="recommendation algorithm"></p>
+<blockquote>
+<p>Process of recommend request</p>
+</blockquote>
+<h2 id="Database-Design"><a href="#Database-Design" class="headerlink" title="Database Design"></a>Database Design</h2><ul>
+<li>MySQL<ul>
+<li><strong>users</strong> - store user information.</li>
+<li><strong>items</strong> - store item information.</li>
+<li><strong>category</strong> - store item-category relationship</li>
+<li><strong>history</strong> - store user favorite history</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Wangxh329/EventRecommendation/master/img_font_icon_sources/doc/mysql.png" alt="mysql"></p>
+<blockquote>
+<p>MySQL database design</p>
+</blockquote>
+<ul>
+<li>MongoDB<ul>
+<li><strong>users</strong> - store user information and favorite history. &#x3D; (users + history)</li>
+<li><strong>items</strong> - store item information and item-category relationship. &#x3D; (items + category)</li>
+<li><strong>logs</strong> – store log information</li>
+</ul>
+</li>
+</ul>
+<h2 id="Implementation-Details"><a href="#Implementation-Details" class="headerlink" title="Implementation Details"></a>Implementation Details</h2><ul>
+<li>Design pattern<ul>
+<li><strong>Builder pattern</strong>: <code>Item.java</code><ul>
+<li>When convert events from TicketMasterAPI to java Items, use builder pattern to freely add fields.</li>
+</ul>
+</li>
+<li><strong>Factory pattern</strong>: <code>ExternalAPIFactory.java</code>, <code>DBConnectionFactory.java</code><ul>
+<li><code>ExternalAPIFactory.java</code>: support multiple function like recommendation of event, restaurant, news, jobs… just link to different public API like TicketMasterAPI. Improve extension ability.</li>
+<li><code>DBConnectionFactory.java</code>: support multiple database like MySQL and MongoDB. Improve extension ability.</li>
+</ul>
+</li>
+<li><strong>Singleton pattern</strong>: <code>MySQLConnection.java</code>, <code>MongoDBConnection.java</code><ul>
+<li>Only create specific number of instance of database, and the class can control the instance itself, and give the global access to outerclass</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="User-Behavior-Analysis"><a href="#User-Behavior-Analysis" class="headerlink" title="User Behavior Analysis"></a>User Behavior Analysis</h2><ul>
+<li>Online (<strong>ElasticSearch</strong>, <strong>Logstash</strong>, <strong>Kibana</strong>)<ul>
+<li>Use Logstash to fetch log (in NoSQL-like form), then store data in ElasticSearch, finally use Kibana to analyze the data in ElasticSearch, getting some tables and graphs like APIs use, request status, geolocation of visitors, etc</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Wangxh329/EventRecommendation/master/img_font_icon_sources/doc/elk.png" alt="ELK analysis"></p>
+<blockquote>
+<p>Remote development environment</p>
+</blockquote>
+<ul>
+<li>Offline (<strong>MapReduce in MongoDB</strong>)<ul>
+<li>Copy-paste some logs from Tomcat server</li>
+<li>Purify log data and store in MongoDB</li>
+<li>Do <code>mapreduce()</code> in MongoDB</li>
+<li>Get a list of timebucket-count in descending order of count, then find the peak time of website traffic</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Projects/" rel="tag"># Projects</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/09/04/Event-Reporter/" rel="prev" title="Event-Reporter">
+                  <i class="fa fa-chevron-left"></i> Event-Reporter
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/05/23/Bluetooth/" rel="next" title="给X3刷code增加蓝牙播放功能">
+                  给X3刷code增加蓝牙播放功能 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2026</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">darkalexwang</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Symbols count total">215k</span>
+  </span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
